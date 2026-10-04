@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kenhvn-iptv",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-10",
+  "observability": {
+    "enabled": true
+  },
+  "routes": [
+    {
+      "pattern": "tivi.k-20.xyz",
+      "custom_domain": true
+    }
+  ]
+}
