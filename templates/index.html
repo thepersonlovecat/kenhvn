@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film4K Web Player & TV Live Stream</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    :root {
+      --bg-primary: #0a0c14;
+      --bg-surface: rgba(18, 22, 36, 0.75);
+      --bg-surface-hover: rgba(30, 36, 58, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --accent-gradient: linear-gradient(135deg, #7928ca 0%, #ff0080 100%);
+      --accent-cyan: #00f2fe;
+      --accent-purple: #7928ca;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-main);
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(121, 40, 202, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 242, 254, 0.12) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 12, 20, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 0.75rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 4px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+    }
+
+    .nav-tab {
+      padding: 0.5rem 1.25rem;
+      border-radius: 20px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .nav-tab.active {
+      background: var(--accent-gradient);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(255, 0, 128, 0.3);
+    }
+
+    /* MAIN CONTAINER */
+    main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* PLAYER CONTAINER */
+    #player-section {
+      display: none;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .player-controls-bar {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* SEARCH & FILTER */
+    .filter-bar {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 0.75rem 1.25rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--text-main);
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-cyan);
+    }
+
+    /* MOVIE GRID */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .media-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .media-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+      border-color: rgba(0, 242, 254, 0.4);
+    }
+
+    .poster-box {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      background: #111;
+      position: relative;
+    }
+
+    .poster-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .rating-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      color: #ffd700;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .card-info {
+      padding: 0.8rem;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* CHANNELS GRID */
+    .channel-categories {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cat-btn {
+      padding: 0.4rem 1rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .cat-btn.active {
+      background: var(--accent-cyan);
+      color: #000;
+      border-color: var(--accent-cyan);
+    }
+
+    .channel-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .channel-card:hover {
+      background: var(--bg-surface-hover);
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    .channel-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      object-fit: contain;
+      padding: 4px;
+    }
+
+    .channel-name {
+      font-size: 1rem;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-content {
+      background: #131722;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .episodes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .ep-btn {
+      padding: 0.6rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .ep-btn:hover, .ep-btn.active {
+      background: var(--accent-gradient);
+      border-color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">
+      <span>🎬</span> FILM4K WEB STREAMER
+    </a>
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="switchTab('movies')">🎬 Kho Phim (VOD)</button>
+      <button class="nav-tab" onclick="switchTab('tv')">⚽ Truyền Hình & Thể Thao (198 Kênh)</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- BUILT-IN PLAYER SECTION -->
+    <section id="player-section">
+      <div class="section-title">
+        <span id="player-title">▶ Đang phát video</span>
+        <button class="btn btn-secondary" onclick="closePlayer()">✕ Đóng trình phát</button>
+      </div>
+      <div class="video-wrapper">
+        <video id="video" controls autoplay playsinline></video>
+      </div>
+      <div class="player-controls-bar">
+        <div id="player-meta" style="color: var(--text-muted); font-size: 0.9rem;"></div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-secondary" onclick="copyStreamLink()">📋 Copy Direct Link (VLC / IDM)</button>
+          <a id="open-vlc-btn" class="btn btn-primary" href="#" target="_blank">📺 Mở link</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOVIES TAB -->
+    <section id="tab-movies">
+      <div class="filter-bar">
+        <input type="text" id="movie-search" class="search-input" placeholder="🔍 Tìm kiếm phim nhanh..." oninput="filterMovies()">
+      </div>
+      <div class="section-title">
+        <span>🔥 Phim Mới & Phim Hot</span>
+      </div>
+      <div id="movies-grid" class="media-grid">
+        <div style="color: var(--text-muted);">Đang tải danh sách phim từ Film4k...</div>
+      </div>
+    </section>
+
+    <!-- TV TAB -->
+    <section id="tab-tv" style="display: none;">
+      <div class="filter-bar">
+        <input type="text" id="tv-search" class="search-input" placeholder="🔍 Tìm kênh (TNT Sports, Sky Sports, VTV1, On Sports...)" oninput="filterChannels()">
+      </div>
+      <div id="channel-categories" class="channel-categories"></div>
+      <div id="channels-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+        <div style="color: var(--text-muted);">Đang tải danh sách kênh truyền hình...</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MOVIE DETAIL MODAL -->
+  <div id="movie-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    let allMovies = [];
+    let allChannels = [];
+    let currentStreamUrl = '';
+    let hls = null;
+    let selectedCat = 'ALL';
+
+    // TAB SWITCHING
+    function switchTab(tab) {
+      document.querySelectorAll('.nav-tab').forEach((t, i) => {
+        t.classList.toggle('active', (tab === 'movies' && i === 0) || (tab === 'tv' && i === 1));
+      });
+      document.getElementById('tab-movies').style.display = tab === 'movies' ? 'block' : 'none';
+      document.getElementById('tab-tv').style.display = tab === 'tv' ? 'block' : 'none';
+    }
+
+    // INIT DATA
+    async function init() {
+      loadMovies();
+      loadChannels();
+    }
+
+    // LOAD MOVIES
+    async function loadMovies() {
+      try {
+        const res = await fetch('/api/home');
+        const data = await res.json();
+        allMovies = data.list || [];
+        renderMovies(allMovies);
+      } catch (e) {
+        document.getElementById('movies-grid').innerHTML = '<div style="color:red">Lỗi tải dữ liệu phim!</div>';
+      }
+    }
+
+    function renderMovies(list) {
+      const container = document.getElementById('movies-grid');
+      if (!list.length) {
+        container.innerHTML = '<div>Không tìm thấy phim phù hợp.</div>';
+        return;
+      }
+      container.innerHTML = list.map(m => {
+        const posterUrl = m.poster?.vi || m.poster?.en || m.poster || 'https://via.placeholder.com/300x450?text=No+Poster';
+        const title = m.title?.vi || m.title?.en || m.title || m.slug;
+        const year = m.year || '';
+        const score = m.score ? `★ ${m.score.toFixed(1)}` : '';
+        return `
+          <div class="media-card" onclick="openMovie('${m.slug}', '${m.mediaType || 'movie'}')">
+            <div class="poster-box">
+              <img src="${posterUrl}" alt="${title}" loading="lazy">
+              ${score ? `<div class="rating-badge">${score}</div>` : ''}
+            </div>
+            <div class="card-info">
+              <div class="card-title" title="${title}">${title}</div>
+              <div class="card-meta">
+                <span>${year}</span>
+                <span>${m.mediaType === 'tv' ? 'Phim Bộ' : 'Phim Lẻ'}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterMovies() {
+      const q = document.getElementById('movie-search').value.toLowerCase().trim();
+      const filtered = allMovies.filter(m => {
+        const title = (m.title?.vi || m.title?.en || m.title || '').toLowerCase();
+        return title.includes(q) || m.slug.includes(q);
+      });
+      renderMovies(filtered);
+    }
+
+    // MOVIE DETAIL & EPISODES
+    let currentMovieData = null;
+
+    async function openMovie(slug, mediaType) {
+      const modal = document.getElementById('movie-modal');
+      const body = document.getElementById('modal-body');
+      body.innerHTML = '<div>Đang tải thông tin phim...</div>';
+      modal.style.display = 'flex';
+
+      try {
+        const res = await fetch(`/api/title/${slug}`);
+        const data = await res.json();
+        currentMovieData = data;
+        const movie = data.movie || {};
+        const title = movie.title?.vi || movie.title?.en || movie.title || slug;
+        const overview = movie.overview?.vi || movie.overview?.en || movie.overview || '';
+        const poster = movie.poster?.vi || movie.poster?.en || '';
+        const episodes = data.episodes || [];
+
+        let epHtml = '';
+        if (episodes && episodes.length > 0) {
+          epHtml = `
+            <div style="margin-top: 1.5rem;">
+              <h4 style="margin-bottom: 0.5rem;">Danh sách tập phim (${episodes.length} tập):</h4>
+              <div class="episodes-grid">
+                ${episodes.map((ep, idx) => `
+                  <button class="ep-btn" onclick="playEpisode(${idx})">Tập ${ep.episode || (idx+1)}</button>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        } else {
+          epHtml = `
+            <div style="margin-top: 1.5rem;">
+              <button class="btn btn-primary" onclick="playMovieSingle('${slug}')">▶ Phát Phim Ngay</button>
+            </div>
+          `;
+        }
+
+        body.innerHTML = `
+          <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+            ${poster ? `<img src="${poster}" style="width: 140px; border-radius: 8px; object-fit: cover;">` : ''}
+            <div style="flex: 1;">
+              <h2>${title}</h2>
+              <div style="color: var(--text-muted); margin: 0.5rem 0;">Năm: ${movie.year || 'N/A'} • Điểm: ★ ${movie.score || 'N/A'}</div>
+              <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">${overview}</p>
+            </div>
+          </div>
+          ${epHtml}
+        `;
+      } catch (e) {
+        body.innerHTML = '<div style="color:red">Lỗi tải thông tin phim!</div>';
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('movie-modal').style.display = 'none';
+    }
+
+    // PLAY EPISODE (SERIES)
+    function playEpisode(epIndex) {
+      closeModal();
+      if (!currentMovieData || !currentMovieData.episodes || !currentMovieData.episodes[epIndex]) {
+        alert('Không tìm thấy dữ liệu tập phim!');
+        return;
+      }
+      const ep = currentMovieData.episodes[epIndex];
+      const movie = currentMovieData.movie || {};
+      const title = movie.title?.vi || movie.title?.en || 'Phim';
+      
+      const sources = ep.sources || [];
+      if (!sources.length) {
+        alert('Tập phim này hiện chưa có nguồn phát video!');
+        return;
+      }
+      
+      const streamRel = sources[0].url;
+      const fullStreamUrl = streamRel.startsWith('/api/hls/') ? `/proxy/hls/${streamRel.substring(9)}` : (streamRel.startsWith('http') ? streamRel : `https://fiml4k.fun${streamRel}`);
+      startPlayer(fullStreamUrl, `${title} - Tập ${ep.episode || (epIndex+1)}`, `Nguồn: ${sources[0].label || 'Server 1'}`);
+    }
+
+    // PLAY SINGLE MOVIE
+    async function playMovieSingle(slug) {
+      closeModal();
+      try {
+        const res = await fetch(`/api/watch/${slug}`);
+        const data = await res.json();
+        const sources = data.sources || [];
+        if (!sources.length) {
+          alert('Không tìm thấy nguồn phát video cho phim này!');
+          return;
+        }
+        const streamRel = sources[0].url;
+        const fullStreamUrl = streamRel.startsWith('/api/hls/') ? `/proxy/hls/${streamRel.substring(9)}` : (streamRel.startsWith('http') ? streamRel : `https://fiml4k.fun${streamRel}`);
+        const title = data.movie?.title?.vi || data.movie?.title?.en || slug;
+        startPlayer(fullStreamUrl, title, `Nguồn: ${sources[0].label || 'Server 1'}`);
+      } catch (e) {
+        alert('Lỗi lấy link stream: ' + e);
+      }
+    }
+
+    // LOAD CHANNELS
+    async function loadChannels() {
+      try {
+        const res = await fetch('/api/tv/channels');
+        const data = await res.json();
+        allChannels = data.channels || [];
+        
+        // Build categories
+        const cats = ['ALL', ...new Set(allChannels.map(c => c.category || 'Kênh khác'))];
+        const catContainer = document.getElementById('channel-categories');
+        catContainer.innerHTML = cats.map(cat => `
+          <button class="cat-btn ${cat === selectedCat ? 'active' : ''}" onclick="selectCategory('${cat}')">${cat === 'ALL' ? 'Tất cả (198)' : cat}</button>
+        `).join('');
+
+        renderChannels();
+      } catch (e) {
+        document.getElementById('channels-grid').innerHTML = '<div style="color:red">Lỗi tải danh sách kênh!</div>';
+      }
+    }
+
+    function selectCategory(cat) {
+      selectedCat = cat;
+      document.querySelectorAll('.cat-btn').forEach(b => {
+        b.classList.toggle('active', b.innerText.includes(cat) || (cat === 'ALL' && b.innerText.includes('Tất cả')));
+      });
+      renderChannels();
+    }
+
+    function renderChannels() {
+      const q = document.getElementById('tv-search').value.toLowerCase().trim();
+      const container = document.getElementById('channels-grid');
+      
+      const filtered = allChannels.filter(c => {
+        const matchCat = selectedCat === 'ALL' || (c.category || 'Kênh khác') === selectedCat;
+        const matchQ = c.name.toLowerCase().includes(q) || String(c.id).toLowerCase().includes(q);
+        return matchCat && matchQ;
+      });
+
+      if (!filtered.length) {
+        container.innerHTML = '<div>Không có kênh phù hợp.</div>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(c => {
+        const logo = c.logo || c.icon || 'https://via.placeholder.com/48?text=TV';
+        return `
+          <div class="channel-card" onclick="playChannel('${c.id}', '${c.name}')">
+            <img src="${logo}" class="channel-icon" alt="${c.name}" onerror="this.src='https://via.placeholder.com/48?text=TV'">
+            <div class="channel-name">${c.name}</div>
+            <span style="color: var(--accent-cyan); font-size: 0.9rem;">▶</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterChannels() {
+      renderChannels();
+    }
+
+    // PLAY CHANNEL
+    async function playChannel(channelId, channelName) {
+      try {
+        const res = await fetch(`/api/tv/${encodeURIComponent(channelId)}/stream`);
+        const data = await res.json();
+        const relUrl = data.url;
+        let streamUrl = relUrl;
+        if (relUrl.startsWith('/api/tv/')) {
+          streamUrl = `/proxy/tv/${relUrl.substring(8)}`;
+        } else if (!relUrl.startsWith('http')) {
+          streamUrl = `https://fiml4k.fun${relUrl}`;
+        }
+        startPlayer(streamUrl, `📺 Kênh: ${channelName}`, `ID: ${channelId}`);
+      } catch (e) {
+        alert('Lỗi phát kênh: ' + e);
+      }
+    }
+
+    // PLAYER ENGINE
+    function startPlayer(url, title, meta) {
+      const section = document.getElementById('player-section');
+      const video = document.getElementById('video');
+      const titleEl = document.getElementById('player-title');
+      const metaEl = document.getElementById('player-meta');
+
+      currentStreamUrl = url.startsWith('http') ? url : window.location.origin + url;
+      titleEl.innerText = title;
+      metaEl.innerText = meta;
+      section.style.display = 'block';
+      section.scrollIntoView({ behavior: 'smooth' });
+
+      document.getElementById('open-vlc-btn').href = currentStreamUrl;
+
+      if (hls) {
+        hls.destroy();
+      }
+
+      if (Hls.isSupported()) {
+        hls = new Hls({
+          enableWorker: true,
+          lowLatencyMode: true,
+        });
+        hls.loadSource(url);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+          video.play().catch(e => console.log('Autoplay prevented:', e));
+        });
+        hls.on(Hls.Events.ERROR, function (event, data) {
+          if (data.fatal) {
+            switch (data.type) {
+              case Hls.ErrorTypes.NETWORK_ERROR:
+                console.log('HLS Network error, attempting recovery...');
+                hls.startLoad();
+                break;
+              case Hls.ErrorTypes.MEDIA_ERROR:
+                console.log('HLS Media error, attempting recovery...');
+                hls.recoverMediaError();
+                break;
+              default:
+                console.log('HLS Fatal error:', data);
+                break;
+            }
+          }
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;
+        video.addEventListener('loadedmetadata', function () {
+          video.play();
+        });
+      }
+    }
+
+    function closePlayer() {
+      const video = document.getElementById('video');
+      video.pause();
+      if (hls) {
+        hls.destroy();
+        hls = null;
+      }
+      document.getElementById('player-section').style.display = 'none';
+    }
+
+    function copyStreamLink() {
+      navigator.clipboard.writeText(currentStreamUrl);
+      alert('Đã sao chép link stream vào clipboard:\n' + currentStreamUrl);
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>

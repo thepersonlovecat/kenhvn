@@ -1,0 +1,440 @@
+================================================================================
+            DANH SÁCH TOÀN BỘ KÊNH TRUYỀN HÌNH TRỰC TIẾP (FILM4K TV)
+Tài khoản: thepersonlovecat@gmail.com
+Tổng số kênh: 191 kênh (Kèm đầy đủ LINK STREAM GỐC M3U8)
+Thời gian cập nhật: 2026-10-05 03:31:51
+================================================================================
+
+--------------------------------------------------------------------------------
+★ NHÓM: KÊNH KHÁC (19 kênh)
+--------------------------------------------------------------------------------
+  • ID: ants:3     | TNT Sports 1
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/3/index.m3u8
+  • ID: ants:4     | TNT Sports 2
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/4/index.m3u8
+  • ID: ants:5     | TNT Sports 3
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/5/index.m3u8
+  • ID: ants:20    | Sky Sports Main Events
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/20/index.m3u8
+  • ID: ants:16    | Sky Sports Action
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/16/index.m3u8
+  • ID: ants:26    | Sky Sports News
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/26/index.m3u8
+  • ID: ants:28    | Sky Sports Tennis
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/28/index.m3u8
+  • ID: ants:21    | Sky Sports F1
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/21/index.m3u8
+  • ID: ants:23    | Sky Sports Golf
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/23/index.m3u8
+  • ID: ants:2420  | BBC News
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/2420/index.m3u8
+  • ID: ants:2443  | BBC TWO
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/2443/index.m3u8
+  • ID: ants:2445  | BBC ONE
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/2445/index.m3u8
+  • ID: ants:7867  | Premier Sports 1
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/7867/index.m3u8
+  • ID: ants:7868  | Premier Sports 2
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/7868/index.m3u8
+  • ID: ants:12311 | NFL RedZone
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/12311/index.m3u8
+  • ID: ants:7     | ITV1
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/7/index.m3u8
+  • ID: ants:8     | ITV2
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/8/index.m3u8
+  • ID: ants:9     | ITV3
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/9/index.m3u8
+  • ID: ants:10    | ITV4
+    Link Stream gốc: https://fiml4k.fun/api/tv/ants/10/index.m3u8
+
+--------------------------------------------------------------------------------
+★ NHÓM: KÊNH THIẾT YẾU (5 kênh)
+--------------------------------------------------------------------------------
+  • ID: 2          | VTV1
+    Link Stream gốc: https://tr-netcdn.tv360.vn/netcdn-live/154/output/index.m3u8?timestamp=1791163329&wmkid=0&token=c69cea6e9f011dee90a59104ed379178&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 20         | ANTV
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/378/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMjYsInVyaSI6Ii9icGstdHYvMzc4L291dHB1dC9pbmRleC5tM3U4In0.VL4GT4S2cRceTf01VI8FzPdo_ZfWXpi0qC0Oj0yyIFw&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 19         | QPVN HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/141/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMjYsInVyaSI6Ii9icGstdHYvMTQxL291dHB1dC9pbmRleC5tM3U4In0.GFmEIPCfuMQrZycwHKD6R1lEXYoPUNYWB5JyysATKYU&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 110        | VTV5
+    Link Stream gốc: https://tr-netcdn.tv360.vn/netcdn-live/194/output/index.m3u8?timestamp=1791163329&wmkid=0&token=c062bbef5e40c0d76b5111c1bd2b74aa&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 9951       | VIETNAM TODAY HD
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/448/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ0OC9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDIyNn0.0fK6NVpLv4HE6PynK7FmAZEhcJLK0Sf55Q-9lP9pAu8eKWposXItY8ZfFvnuS_NDc88IeA8SrnqKs34qRy8ssA&screen=MHL&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: KÊNH VTV (10 kênh)
+--------------------------------------------------------------------------------
+  • ID: 3          | VTV2
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/192/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjA1MDYsInVyaSI6Ii9icGstdHYvMTkyL291dHB1dC9pbmRleC5tM3U4In0.IQNIkc16EPM6kxmcw76IXlMYatL_eQHJRdcJpUxKls8&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 4          | VTV3
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/155/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzE1NS9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDIyOX0.z_tND3AallRkO5_P8ANZjAoC8z94PggSbCkEPVZLM0v2KteRGo8kNmorp71ZwOAFWfZSx0z-rl1bS3m9g0boRQ&screen=MHL&uid=294779473
+  • ID: 108        | VTV4
+    Link Stream gốc: https://lsm-g11.tv360.vn/viettel/channel/193/193.m3u8?AdaptiveType=HLS&VOD_RequestID=jKQSNY7t2gBBBDpQnm9ycYEZmIkztQgIDouHhU4EV5RoN6E13L62bEXI46eA+cGUDSypQ6RpFfres1nXowehWVb/yBp3GgJkRWy1LErE1HwmRIvTWpZjn7IzVujyfd71r9eOYwBTHDqWkuX7mcwm/BXpnUJqYlzPCRefbN8DxjurZ4wasFRpHKaZXS955AaP34C17A5+MajLB2WrDh9qqw==&uid=294779473
+  • ID: 207        | VTV5 Tây Nguyên
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/308/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMjYsInVyaSI6Ii9icGstdHYvMzA4L291dHB1dC9pbmRleC5tM3U4In0.vwzPKJywPapCMLEWuM35G2FL-eu8pLKPhYdKZtFEbTc&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 157        | VTV5 Tây Nam Bộ
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/307/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMjYsInVyaSI6Ii9icGstdHYvMzA3L291dHB1dC9pbmRleC5tM3U4In0.IySZqkaLxEYO2e11l9gEliSop7RoV-TkDNXoFA9XToU&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 10043      | VTV6
+    Link Stream gốc: https://tr-netcdn.tv360.vn/netcdn-live/479/output/index.m3u8?timestamp=1791164229&wmkid=0&token=385989edf5fc7b97424e9d1790fb2318&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 6          | VTV7
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/195/HLS_Clean_MHL_2s_new/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzE5NS9ITFNfQ2xlYW5fTUhMXzJzX25ldy8iLCJleHAiOjE3OTExNjQyMjl9.yPXuFzgM9tHiOU-61tCk-kCjXSGz6TJvwo5agW7rDE3TlP_rM0fA-orCZQKENXoUDmziDlTXPFfEUx3pMZqoqg&screen=MHL&uid=294779473
+  • ID: 115        | VTV8
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/196/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMjksInVyaSI6Ii9icGstdHYvMTk2L291dHB1dC9pbmRleC5tM3U4In0.7fFIRABvHlAlfZntqvJyG7bOX07SRZexu5ORvVIJmzc&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 8          | VTV9
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/197/HLS_Clean_MHL_2s/197.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzE5Ny9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDIzMn0.YNQYaJyErge3Eg4RQh1zozD-cLKMtd_SMy8DoeHwDu1Z4HK71qHoEd_WZKHm1XKtowgUahvl-m-x4k_IfCTbRw&screen=MHL&uid=294779473
+  • ID: 98         | VTV10
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/156/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzE1Ni9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDIzMn0.1cNWe17IP5mrxhwbPg9eUqQUogz308d-6yfBcC9-gnymH-MQCgl05BGMrB14UKhDaTXyN4-UHdKH1lKD4_Rb_w&screen=MHL&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: SỰ KIỆN TRỰC TIẾP (17 kênh)
+--------------------------------------------------------------------------------
+  • ID: 2554       | TV360+ 1
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/198/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzIsInVyaSI6Ii9icGstdHYvMTk4L291dHB1dC9pbmRleC5tcGQifQ.NFZbsAfueHlbINOGGAp-um-I-NRh3CbVHgVb0ZXYpvE&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 1          | TV360+ 2
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/199/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzIsInVyaSI6Ii9icGstdHYvMTk5L291dHB1dC9pbmRleC5tcGQifQ.KrWACJ37CQrgE0j5iTC_Vsp74hrZi4cTPO1V54Eh2Zo&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 148        | TV360+ 3
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/200/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzIwMC9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTY0MjMyfQ.bXITzJBRQzSkwrMc6I7YM6lMSLXamUAjzk8Emrn7siwX6jXIKB91TVeiKwfGpfKUrPHElRvbW4tEs4AK46zlLQ&screen=MHL&uid=294779473
+  • ID: 2458       | TV360+ 4
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/201/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjM2NTMsInVyaSI6Ii9icGstdHYvMjAxL291dHB1dC9pbmRleC5tcGQifQ.IQgT1T4Z5IieF2R64lvqC-S8Xt69pU9L34YO5CTOB8E&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 9867       | TV360+ 5
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/367/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzM2Ny9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTYzNjUzfQ._fDo5soshkp1Qb6QhP2m4IcxndakpxFYpDPOXjgNCXRj7sZnhT_wb6LhXfMDWSyFa7JFQK0Cy0aCqyugUpuc0Q&screen=MHL&uid=294779473
+  • ID: 9868       | TV360+ 6
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/368/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzIsInVyaSI6Ii9icGstdHYvMzY4L291dHB1dC9pbmRleC5tcGQifQ.Wxq9vy1v1VfGcEcVtXCIPkkJ8-aG8xbWHVy8h8miYp8&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 9869       | TV360+ 7
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/369/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjM4MjQsInVyaSI6Ii9icGstdHYvMzY5L291dHB1dC9pbmRleC5tcGQifQ.CANp7OPNiOhe_vHPLwSx1-WHj1ZnI2sa_fuE3QrNbrI&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 9870       | TV360+ 8
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/370/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzM3MC9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTY0MjMyfQ.K2MkaFyRQkWgo51e5UXXyxHDEyudYgKNPzZqe63xp47-FeBot8988KRQ3tRLeoK0L8YTrnrs640kWZ1IdtR4wg&screen=MHL&uid=294779473
+  • ID: 9887       | TV360+ 9
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/379/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzM3OS9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDIzNX0.TKpiSToDTxk92SDrX9LFMe4S96umwunm0adK23IzeRZwq3RjXNbDbzLNAfTAXvUXZ79oJzbYx-RSMeQCwM52fQ&screen=MHL&uid=294779473
+  • ID: 9957       | TV360+ 10
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/449/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzUsInVyaSI6Ii9icGstdHYvNDQ5L291dHB1dC9pbmRleC5tM3U4In0.m3akZ5EBIhpOSMnbzoNmOrem_ZniYKWelHXiOZxYJQ0&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 9958       | TV360+ 11
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/450/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjMzMzIsInVyaSI6Ii9icGstdHYvNDUwL291dHB1dC9pbmRleC5tM3U4In0.qSTUveIc09ihRflVPuUnDLMRk1CCJpgBx3Cp7NdD9WM&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 10001      | TV360+ 12
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/465/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjMzMzIsInVyaSI6Ii9icGstdHYvNDY1L291dHB1dC9pbmRleC5tcGQifQ.5NnvfihxH37YIU5m5xbHF9VUm99sTgVPBgzXTu7MVXc&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 10022      | TV360+ 13
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/471/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzUsInVyaSI6Ii9icGstdHYvNDcxL291dHB1dC9pbmRleC5tcGQifQ.D8j1U3QnHncMs_VVGbyYNz1tFWQcHbOj4Wtbn6VBq_E&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 10023      | TV360+ 14
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/472/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzgsInVyaSI6Ii9icGstdHYvNDcyL291dHB1dC9pbmRleC5tcGQifQ.83msh2qk0X59vWcabcJ9uYfV1OkeT-PIxJzcBBqhvgQ&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 10024      | TV360+ 15
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/473/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzgsInVyaSI6Ii9icGstdHYvNDczL291dHB1dC9pbmRleC5tcGQifQ.nAIa4HHNsivZAxGnjmNKJN2tg8EfXWET6tSfSHQqklQ&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 9904       | TV360
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/427/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQyNy9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDIzOH0.KYO5idIIvdihLvRATuq1N8UZ9XsCLaJBFi51-H1QA7hahL2jybzPuxCWc8XR7T_MuYyJPa7Dj9jIsNVL8pskyg&screen=MHL&uid=294779473
+  • ID: 9965       | YFEST
+    Link Stream gốc: https://livestream-evg8.tv360.vn/71t1dxGgk96Hh9Bl6veoJA/1791229038/manifest/livestream-04/master.m3u8?manifestfilter=video_bitrate:1-12767168&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: GIẢI TRÍ (11 kênh)
+--------------------------------------------------------------------------------
+  • ID: 9902       | Phim Việt
+    Link Stream gốc: https://tr1-netcdn.tv360.vn/video1/2025/02/12/00/712f4bc4/36ca87/h264/master.m3u8?timestamp=1791153420&token=c86e4e74d8f09473b90a26f935cf2555&uid=294779473
+  • ID: 9903       | Phim Âu Mỹ
+    Link Stream gốc: https://tr1-netcdn.tv360.vn/video1/2023/08/31/08/b83ff82e/6534b6/h264/dash/stream.mpd?timestamp=1791153420&token=c80382c9a21fe21a98ae742396654526&uid=294779473
+  • ID: 9934       | Hoạt hình
+    Link Stream gốc: https://tr1-netcdn.tv360.vn/video1/2025/05/21/01/2c684478-c998-49c3-b327-c59be95a2201/6/master.m3u8?timestamp=1791142020&token=29548bf71178c017cb0b8669fa8f6647&uid=294779473
+  • ID: 10008      | 360 Hoa Ngữ
+    Link Stream gốc: https://tr1-netcdn.tv360.vn/video1/2021/09/17/21/6b0b4a98/4a0c8b/h264/master.m3u8?timestamp=1791153420&token=2f6468070ad3098b43b8b80a76f0e9cc&uid=294779473
+  • ID: 10009      | 360 Hành động Châu Á
+    Link Stream gốc: https://tr1-netcdn.tv360.vn/video1/2025/08/28/13/368abc14/6/master.m3u8?timestamp=1791153420&token=0c23be71a326c55e2d178187456ca6ac&uid=294779473
+  • ID: 10010      | 360 K-Drama
+    Link Stream gốc: https://rr2-ateme.tv360.vn/video1/2023/03/21/14/e739d960/f62da4/h264/master.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDIzLzAzLzIxLzE0L2U3MzlkOTYwL2Y2MmRhNC9oMjY0LyIsIm1ldGhvZCI6IkdFVCIsImV4cCI6MTc5MTE2NjkyMH0.ERvhGAmiEWzllRkATSj0gAC8x8K9ych0UOYnJhO6AJadW4hZ4DWESXRc7Ydk7Z104wxbSS1nVc-evxp9O0qbxQ&uid=294779473
+  • ID: 10011      | 360 Hài -Tình cảm
+    Link Stream gốc: https://tr1-netcdn.tv360.vn/video1/2023/03/03/10/52e4d4c2/a93d46/h264/master.m3u8?timestamp=1791153420&token=de448c84a9af5007f6498cdb1405e1a2&uid=294779473
+  • ID: 10012      | 360 Phim Kinh điển
+    Link Stream gốc: https://rr2-ateme.tv360.vn/video1/2025/11/18/13/7b400412/c534cb/h264/dash/stream.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDI1LzExLzE4LzEzLzdiNDAwNDEyL2M1MzRjYi9oMjY0L2Rhc2gvIiwibWV0aG9kIjoiR0VUIiwiZXhwIjoxNzkxMTU2NzIwfQ._ri4SgHdSci9tG2LI4xM0GB0exNGMVQUldGzumcKMHH7cGL2ZiWhAmjDF2RPZQ-va4wX8N6m6sxpftXsmPdJzA&uid=294779473
+  • ID: 10013      | 360 Anime
+    Link Stream gốc: https://rr2-ateme.tv360.vn/video1/2026/01/30/16/9fb426d7/1e08dd/h264/master.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDI2LzAxLzMwLzE2LzlmYjQyNmQ3LzFlMDhkZC9oMjY0LyIsIm1ldGhvZCI6IkdFVCIsImV4cCI6MTc5MTE1ODcwMH0.3235OGWWxz03SI1yv4Cjcor_6-fswJ2Vlnb1FEM5H-UenXOV2gvW7eca1Fl_zQcdkUjsxt0Xv6ANDPtNg-NYXQ&uid=294779473
+  • ID: 10045      | 360 Thiếu Nhi
+    Link Stream gốc: https://tr1-netcdn.tv360.vn/video1/2023/12/27/13/221aebde/d00867/h264/master.m3u8?timestamp=1791153420&token=c7585bdebae3d94b71b554783cd50615&uid=294779473
+  • ID: 10055      | 360 Phim 4K
+    Link Stream gốc: https://rr2-ateme.tv360.vn/video1/2024/09/05/10/335489e9/cc145b/h264/dash/stream.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDI0LzA5LzA1LzEwLzMzNTQ4OWU5L2NjMTQ1Yi9oMjY0L2Rhc2gvIiwibWV0aG9kIjoiR0VUIiwiZXhwIjoxNzkxMTY0MjIwfQ.YceK4ffuu__u6T-9RxcOZLakEQvE1BW0lOze7Ep8u2X-bX1Rk0uU8WTFNA1Yl0OeFqNX_Aq8xXhvAuUNl9WCJQ&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: THỂ THAO (8 kênh)
+--------------------------------------------------------------------------------
+  • ID: 10014      | 360 C1 Châu Âu
+    Link Stream gốc: https://rr2-ateme.tv360.vn/video1/2025/08/27/05/2635dc0d/2635dc0d-90db-4802-9cae-bfbfadaf86d7_6.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDI1LzA4LzI3LzA1LzI2MzVkYzBkLyIsIm1ldGhvZCI6IkdFVCIsImV4cCI6MTc5MTE1NjM2MH0._0_XRe99buKj59DmSd1IrQKYsSt8gkOkMDYeTVYrGF6yc8P3ijRR9EO1rKAUWIuB5Q9BYOAwrzD5BfQvSgEwGQ&uid=294779473
+  • ID: 10015      | 360 C2 Châu Âu
+    Link Stream gốc: https://rr2-ateme.tv360.vn/video1/2026/02/20/20/eaf918e9/7e2080/h264/master.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDI2LzAyLzIwLzIwL2VhZjkxOGU5LzdlMjA4MC9oMjY0LyIsIm1ldGhvZCI6IkdFVCIsImV4cCI6MTc5MTE2NDIyMH0.7Ko8v85bvt7L20slR68y-LjKKkURpum-fmDL782aFiMOqQQ2hiDzuKPouKdHZZsZckUv2wcWcwXTEKYAweyiZQ&uid=294779473
+  • ID: 10016      | 360 C3 Châu Âu
+    Link Stream gốc: https://rr2-ateme.tv360.vn/video1/2024/12/14/18/540bdd09/540bdd09-57d8-49e2-9e0a-ec6ed7661bca_6.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDI0LzEyLzE0LzE4LzU0MGJkZDA5LyIsIm1ldGhvZCI6IkdFVCIsImV4cCI6MTc5MTE2NDIyMH0.g6Z03QfSZQIF46XmzNvgB7T2LxerwiL5ikMbhoUX4S2godsXr-Dbozve2ZMbHFCbs2-N2p-2cxkK3FtytaqmVw&uid=294779473
+  • ID: 10017      | 360 Thể Thao Châu Á
+    Link Stream gốc: https://tr1-netcdn.tv360.vn/video1/2026/01/10/22/a4ace87f/3c40f3/h264/master.m3u8?timestamp=1791153420&token=c3ff41da155bf9c83f11223ef91448fd&uid=294779473
+  • ID: 10018      | 360 Công Thức 1
+    Link Stream gốc: https://rr2-ateme.tv360.vn/video1/2026/06/26/20/25b31a97/da0254/h264/master.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDI2LzA2LzI2LzIwLzI1YjMxYTk3L2RhMDI1NC9oMjY0LyIsIm1ldGhvZCI6IkdFVCIsImV4cCI6MTc5MTE2NDIyMH0.W9FHfl7ZQBR4FeJdB1qQXc-vS_GPf0kzcOyIwnAsezmD650VAyC7AsCg4MY4IUijjauBaR6mzhm2IA77cnSwkw&uid=294779473
+  • ID: 10019      | 360 Bundesliga
+    Link Stream gốc: https://tr1-netcdn.tv360.vn/video1/2026/09/06/00/d6a687a9/79b7c9/h264/master.m3u8?timestamp=1791153420&token=93391a8ca68ae26cf6726d454f74480d&uid=294779473
+  • ID: 10020      | 360 Golf
+    Link Stream gốc: https://tr1-netcdn.tv360.vn/video1/2026/06/27/22/feb9f206/72e15f/h264/master.m3u8?timestamp=1791153420&token=fbf57eebe27b46c6b16a06c756bbbdce&uid=294779473
+  • ID: 10021      | 360 Tennis
+    Link Stream gốc: https://rr2-ateme.tv360.vn/video1/2026/01/27/14/10a38595/34f708/h264/master.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDI2LzAxLzI3LzE0LzEwYTM4NTk1LzM0ZjcwOC9oMjY0LyIsIm1ldGhvZCI6IkdFVCIsImV4cCI6MTc5MTE2NDIyMH0.Pe54CMlixJxph7vji2xqraeMoXRlBobwGcqxUP3tHudnUWRm8KGJ9S0i8D83v7lGWpZcYizhFG-MJnuKQdUICw&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: KÊNH QUỐC TẾ (27 kênh)
+--------------------------------------------------------------------------------
+  • ID: 271        | HBO
+    Link Stream gốc: https://prv.film4k.net/live/tv360/271/manifest.mpd
+  • ID: 239        | Cinemax
+    Link Stream gốc: https://prv.film4k.net/live/tv360/239/manifest.mpd
+  • ID: 273        | Warner TV
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/241/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTAsInVyaSI6Ii9icGstdHYvMjQxL291dHB1dC9pbmRleC5tcGQifQ.b0VUJyyDPWEC8rE8cQgdEOGabTCYx4JrSuSRLxzoyLg&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 281        | AXN
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/262/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTAsInVyaSI6Ii9icGstdHYvMjYyL291dHB1dC9pbmRleC5tcGQifQ.RqkH2n8z-8ZlgHI2wlL1InhvO0IW-0ltsCJJRpVM_lU&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 159        | Cinema World
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/461/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTAsInVyaSI6Ii9icGstdHYvNDYxL291dHB1dC9pbmRleC5tcGQifQ.Mxft9EEaKAD07BpygXsOdAYj2n6VxFvqSoEXfCUQSfk&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 235        | DreamWorks
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/463/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ2My9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTY0MjUwfQ.2eLSlo5Zg9TSM5BiOJ4yYhuUa_0yCd2gbUT7zjUrFyGPmaHBjBE28lmu704LbmFK7bVnpTGEQ7sVgU9wbDcA8w&screen=MHL&uid=294779473
+  • ID: 277        | Cartoon
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/240/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTAsInVyaSI6Ii9icGstdHYvMjQwL291dHB1dC9pbmRleC5tcGQifQ.6XXGvblh4TLbn6GYF-qT_vmKzgf1a7vK4b2bU5zdDE0&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 163        | FashionTV
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/464/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTAsInVyaSI6Ii9icGstdHYvNDY0L291dHB1dC9pbmRleC5tcGQifQ.wATKzTK8Lf835yQvD9UAfT9yLw7UF4L-1Yc3aTDtruA&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 237        | Bloomberg
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/462/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ2Mi9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTY0MjUzfQ.SDC7I-dyU9PVUoJPBTfMsnNKQQd4rpIYjVsReqayV74CiXzBno2dYU3YoEI6WwxPxXV7PXaowx5PCreWGzj_-Q&screen=MHL&uid=294779473
+  • ID: 279        | Discovery Channel
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/264/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTMsInVyaSI6Ii9icGstdHYvMjY0L291dHB1dC9pbmRleC5tcGQifQ.WElzRhKUg94iObTBUOpLOBkH6ZHpLeZmICzTPN2Tb84&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 275        | CNN
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/242/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTYsInVyaSI6Ii9icGstdHYvMjQyL291dHB1dC9pbmRleC5tcGQifQ.tAFKkD7BglIUxGIp0c0NaMEa88DRfYWOIBdWnMEbco0&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 283        | ABC Australia
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/269/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTYsInVyaSI6Ii9icGstdHYvMjY5L291dHB1dC9pbmRleC5tcGQifQ.FsY865VVhY_h2O9tXPHYCzY3nxonT_t0GqZLOsYd8fM&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 216        | Outdoor HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/146/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTYsInVyaSI6Ii9icGstdHYvMTQ2L291dHB1dC9pbmRleC5tM3U4In0.02RhIg-4h8wD3-El89gUg6NWYT2Z0kpUn60ALY3CxD8&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 112        | Channel News Asia
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/433/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTksInVyaSI6Ii9icGstdHYvNDMzL291dHB1dC9pbmRleC5tM3U4In0.gQ_D2YxpKHp-YnX54vIcUxMRGmbSmJSbET9flaEDzPA&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 215        | AFN HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/178/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTksInVyaSI6Ii9icGstdHYvMTc4L291dHB1dC9pbmRleC5tM3U4In0.onNVK4GGzaRc-DYg-9fF7Ar8VjPmykZCbi1OOtQltqk&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 99         | HGTV
+    Link Stream gốc: 
+  • ID: 213        | KBS World
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/422/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTksInVyaSI6Ii9icGstdHYvNDIyL291dHB1dC9pbmRleC5tM3U4In0.3GE0yIthfBhe8a0DHd_wkRujopT9YJ2M2PJAEvKPGOI&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 109        | DW
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/432/HLS_Clean_MHL_6s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQzMi9ITFNfQ2xlYW5fTUhMXzZzLyIsImV4cCI6MTc5MTE2NDI1OX0.05xG7yKW4gYhLeDti91LggE1ykE00z0KJrFCnRsM5FDhR_WshInn8tCZweC435scalqrFhWGS9O5V_4rZvSoSA&screen=MHL&uid=294779473
+  • ID: 106        | NHK
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/467/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTksInVyaSI6Ii9icGstdHYvNDY3L291dHB1dC9pbmRleC5tM3U4In0.hDr0uTRJS_VWoAyFB50vHlXo7yzfOJ8eLxWtQYo_ov8&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 96         | France 24
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/470/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjIsInVyaSI6Ii9icGstdHYvNDcwL291dHB1dC9pbmRleC5tM3U4In0.vYDPEs81pfED2j3dZoQipC5qVlSp3qrNG-B33Tyddj4&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 9852       | TV5
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/468/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ2OC9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI2Mn0.iRHekhoThScq_Z6MFkZC851e-Rar7t1UmgYq4KiJVwikr1SIZ_M_CA6X7P11rV9Xy8rhSAuVlTTcPFSniXpacw&screen=MHL&uid=294779473
+  • ID: 9855       | CNBC
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/469469/HLS_Clean_MHL_6s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ2OTQ2OS9ITFNfQ2xlYW5fTUhMXzZzLyIsImV4cCI6MTc5MTE2NDI2Mn0.rk7Ol-nglnBZywnmRb7zc18c7fRkL18OQn1tvylUsZj6y3qrp8ne4o9DODb6G8ZH3Pf0zMbAJdjyVJ1KyuhHuQ&screen=MHL&uid=294779473
+  • ID: 9856       | History HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/191/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjIsInVyaSI6Ii9icGstdHYvMTkxL291dHB1dC9pbmRleC5tM3U4In0.ICxU5l0H0lms3fMW4N7YruiDka7uM4MdwYBKZpXwdEw&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 9901       | Kix
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/166/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjIsInVyaSI6Ii9icGstdHYvMTY2L291dHB1dC9pbmRleC5tM3U4In0.VA2eBklXnLWfAvNbEo83abUkPzrlisSAbF5TJuIFuSQ&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 10007      | France 24 SD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/287/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjIsInVyaSI6Ii9icGstdHYvMjg3L291dHB1dC9pbmRleC5tM3U4In0.EvMfrjmtpANPakR5CfH8w0ZEPnZy2CD0RUanjRM4OrQ&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 111        | Arirang
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/466/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ2Ni9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI2Mn0.B2BAQlOn3LDKv34TK3yhXOvxwGWEoKRSgDTw3Kg3wdaMiu2V8kUyJ8I9hOLFYkhINBKiYVSqETydHfre1-UI8g&screen=MHL&uid=294779473
+  • ID: 214        | DaVinci HD
+    Link Stream gốc: https://lsm-g11.tv360.vn:18443/173.m3u8?AdaptiveType=HLS&VOD_RequestID=jKQSNY7t2gBBBDpQnm9ycYEZmIkztQgIDouHhU4EV5QmG8+tk9t0/LdNWW/Kah7sBdx7PrZt+IAIK7o/gMGQjmdepPgauQga91JIuOL2yvHfMy9PpatSP24mukDuo4cR5Da8GvlKBMLHcmrFiye8aQEM/e5KRBxzMqR1c/t7ywx1CxxCZqU2k042BcRPBxtUmq3eTyyT0nxgOquBj+iPdA==&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: KÊNH VĨNH LONG (5 kênh)
+--------------------------------------------------------------------------------
+  • ID: 25         | Vĩnh Long 1
+    Link Stream gốc: https://tr-netcdn.tv360.vn/netcdn-live/252/output/index.m3u8?timestamp=1791164262&wmkid=0&token=de058082422975377a469c87340708a0&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 26         | Vĩnh Long 2
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/249/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjUsInVyaSI6Ii9icGstdHYvMjQ5L291dHB1dC9pbmRleC5tM3U4In0.de8OHc9oyZZNWxgIA4pbYkGxOX8opEkcBhJczmeR8vQ&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 219        | Vĩnh Long 3
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/250/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjUsInVyaSI6Ii9icGstdHYvMjUwL291dHB1dC9pbmRleC5tM3U4In0.BsMUxoGMmef1K7u1aXqORe-s4As4f_SkCRrHW5V86vQ&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 220        | Vĩnh Long 4
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/251/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjUsInVyaSI6Ii9icGstdHYvMjUxL291dHB1dC9pbmRleC5tM3U4In0.UDC0BRp-j-EbKf8Pg2a89JzJDPgu5ac55vP85bXfVWs&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 91         | Vĩnh Long 5
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/423/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjUxMzUsInVyaSI6Ii9icGstdHYvNDIzL291dHB1dC9pbmRleC5tM3U4In0.mvdkTtMuvBxlkzfVheWOUk1QGLZ5kLSiIM1zzuw6Qxs&minrate=0&maxrate=12000000&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: KÊNH HTV (15 kênh)
+--------------------------------------------------------------------------------
+  • ID: 190        | HTV1
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/441/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ0MS9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI2NX0.us_K43ZyFL17w6G75293qPlOTW5hOytgHTfojb_okxsnTFjVkHRY12pyGKy0v2SG2PyUP7zcJsJGa3jWh42QLg&screen=MHL&uid=294779473
+  • ID: 191        | HTV2
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/54/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzU0L0hMU19DbGVhbl9NSExfMnMvIiwiZXhwIjoxNzkxMTY0MjY4fQ.5fob3_NgkNNDLA6JLDoffdMLfD7jfKFOGbiyfCovMcnOJhLcJ0QzvDXVVw6uICesLtK_MD_fge_C_4OHu5O5LQ&screen=MHL&uid=294779473
+  • ID: 192        | HTV3
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/442/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ0Mi9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI2OH0.LZxzTpTlG21akGmNnFW0uyIILUHeXKmKrZ0myArTwJB0bsexEMoIV3wJJ_WwNd2rfxdW5I66CCiwAXcUUqB4MQ&screen=MHL&uid=294779473
+  • ID: 9          | HTV4
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/443/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjgsInVyaSI6Ii9icGstdHYvNDQzL291dHB1dC9pbmRleC5tM3U4In0.6_dyQxKuM74vrVTcI2eycxs98qD-f7kxIi_R9FEC248&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 193        | HTV7 HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/157/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjgsInVyaSI6Ii9icGstdHYvMTU3L291dHB1dC9pbmRleC5tM3U4In0.RZ3r3AcH4IM0FGCKheAGJEpYszQM_7caFvtBfvgTUWs&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 194        | HTV9 HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/158/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjgsInVyaSI6Ii9icGstdHYvMTU4L291dHB1dC9pbmRleC5tM3U4In0.gdXxAGKyUnj03CDOmng7WLx9C7XF_XEJtzXN75V4Q6Y&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 195        | HTV Thể Thao
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/304/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjgsInVyaSI6Ii9icGstdHYvMzA0L291dHB1dC9pbmRleC5tM3U4In0.bAQjChgFHoHwsisLp5ywJniGfQWN14j_Cy0G7Pz9anM&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 11         | HTVC gia đình
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/398/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNjgsInVyaSI6Ii9icGstdHYvMzk4L291dHB1dC9pbmRleC5tM3U4In0.XPZ-YgBuczkOIaYUNEZkA6gZ4zHAWGMk0lCCKUzCfuk&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 12         | HTVC phụ Nữ
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/420/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQyMC9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI2OH0.h1hm0ECYOX8W9HuV8lWI9zhw7doAW79CWucAC07kfzXL7oXb_YRKjoVb2xTcumrDcAqjtArUKr8SWG9dq65BZw&screen=MHL&uid=294779473
+  • ID: 13         | HTVC thuần việt
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/160/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzEsInVyaSI6Ii9icGstdHYvMTYwL291dHB1dC9pbmRleC5tM3U4In0.ZnYQj8gOVfZqsxBqSZAGwgXZwT8XQGPWmR8rA2P4l6o&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 15         | HTVC phim truyện HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/159/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzEsInVyaSI6Ii9icGstdHYvMTU5L291dHB1dC9pbmRleC5tM3U4In0.pb5mH_my0uDfEUhr_bWZhJ4HB9nI9_Ozhhp9vEMWB0M&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 14         | HTVC ca nhạc
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/421/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzEsInVyaSI6Ii9icGstdHYvNDIxL291dHB1dC9pbmRleC5tM3U4In0.qxm47uu9yZxeoM8hXk1FTBaUJx5xye5qWlsA2iuhZpA&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 132        | HTVC+ Channel B
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/419/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzEsInVyaSI6Ii9icGstdHYvNDE5L291dHB1dC9pbmRleC5tM3U4In0.kRzqcZ-lDXtlSM4xMZOllRyFSSxe4pLDnXQzYTbD-3E&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 133        | HTVC du lịch & cuộc sống
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/399/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzEsInVyaSI6Ii9icGstdHYvMzk5L291dHB1dC9pbmRleC5tM3U4In0.Pp1o086KDEN04mr27GNnZ3aIC6dS_zkGREnBPBKmaS4&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 151        | An Viên HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/246/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzEsInVyaSI6Ii9icGstdHYvMjQ2L291dHB1dC9pbmRleC5tM3U4In0.reZWcNltlXj41bHm3bNYeYFxJTo776gs_IruBD-fb2A&minrate=0&maxrate=12000000&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: KÊNH FM (6 kênh)
+--------------------------------------------------------------------------------
+  • ID: 9906       | FM96
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/429/HLS_Clean_MHL_6s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQyOS9ITFNfQ2xlYW5fTUhMXzZzLyIsImV4cCI6MTc5MTE2NDI3MX0.nWfbrtDi-h0VdTsHArdyvIbscwt_68njX0wyQmKTC9u1VoOxoPhqCOxv2pp1f6wZysetdcNjEGAOEw8fE5TIAw&screen=MHL&uid=294779473
+  • ID: 10036      | VOH AM610
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/476/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ3Ni9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI3NH0.qaiMysjx0W9h6iccJ1JVbfUjQPeZYdlUylF7h5xCJ2vAGgImZPD85bbWHCvL7AEp0E7m11TrcbUvkihFwG4_LA&screen=MHL&uid=294779473
+  • ID: 10037      | VOH FM99
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/478/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ3OC9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI3NH0.a9CPQLOAt8eZAGh_3mmJ3FKPZ-OqWlHJxNRS_MaUcbfT552BNoBq6n7zgNtPVdbKo8F008mNkHlSTvFeOZouDA&screen=MHL&uid=294779473
+  • ID: 10038      | VOH FM87
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/474/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ3NC9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI3NH0.6p2f4y3vDozHEEOBtoqc12s3srmpStNpJC8R-nzB70FHgtqu0-5Hefqwn80eF3pCG9mj7bHzE4X7WZsKcq2LVA&screen=MHL&uid=294779473
+  • ID: 10039      | VOH FM95
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/475/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ3NS9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI3NH0.9Qn-3mIDnpKaWLWvrennnliffqrNg1xf2jvuqkTi8XJQqGm0gjbSLtTyqr8jIGFMxUHIGzB7A8pdcsgk1X2oKA&screen=MHL&uid=294779473
+  • ID: 10040      | VOH FM92 Radio
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/477/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ3Ny9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI3NH0.qKJ_SXVasYkOlB7GLP9BYP4lSyNKY6fChbr-PTssm0NPqzj0xvhPNg4ZCvZoWhNdahyghqtqCCCytX-XfWHqcA&screen=MHL&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: KÊNH SCTV (2 kênh)
+--------------------------------------------------------------------------------
+  • ID: 232        | SCTV6
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/297/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzQsInVyaSI6Ii9icGstdHYvMjk3L291dHB1dC9pbmRleC5tM3U4In0.oHxtxhwjy4yS98WUTNJAx_fuo2Wv6r6SNGtFvgM6ng0&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 201        | SCTV2 - Today TV
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/343/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzQsInVyaSI6Ii9icGstdHYvMzQzL291dHB1dC9pbmRleC5tM3U4In0.XgnCnNe-azDqceD5YekvupoAEIv9Qu_1YPFEDjpqz4g&minrate=0&maxrate=12000000&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: KÊNH VTV CAB (20 kênh)
+--------------------------------------------------------------------------------
+  • ID: 174        | VTVcab 16 - On Football HD
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/222/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzIyMi9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTY0Mjc0fQ.-VQVXlChVHtJg8anc6gwT9Y3pGWre7DIcvK4AMZpInCI10dnueGw9B2y0BSI1XBrAJ1F9n4Ye_E5Til4St0IbA&screen=MHL&uid=294779473
+  • ID: 173        | VTVcab 3 - On Sports
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/221/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzQsInVyaSI6Ii9icGstdHYvMjIxL291dHB1dC9pbmRleC5tcGQifQ.fqjpkaVCEPFBRp3Lybi9udX2UdtruQZqPeinY6MrILA&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 170        | VTVcab 18 - On Sports News
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/223/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzcsInVyaSI6Ii9icGstdHYvMjIzL291dHB1dC9pbmRleC5tcGQifQ.GhWe32QuOsFVJoBfPr8-dJHuKnVnh0f-pz9yF1P11iQ&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 169        | VTVcab 23 - Golf Channel
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/289/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzcsInVyaSI6Ii9icGstdHYvMjg5L291dHB1dC9pbmRleC5tM3U4In0.kcAeKyfpwPo4xyvL3rlrHXkJl1OWhS_cazT9xUxPj3A&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 183        | VTVcab 6 - On Sports +
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/216/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzcsInVyaSI6Ii9icGstdHYvMjE2L291dHB1dC9pbmRleC5tcGQifQ.AOUTwb2wgwMth-x4KkvwFWhmjB3z11ZV3MEsLaLCpDM&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 180        | VTVcab 1 - Vie Giải Trí HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/211/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzcsInVyaSI6Ii9icGstdHYvMjExL291dHB1dC9pbmRleC5tM3U4In0.V-m0i3Q6sRkKcOBL92CGIodO5s0nJYJRMQATDBJvYbk&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 175        | VTVcab 2 - Phim Việt HD
+    Link Stream gốc: https://lsm-g11.tv360.vn:18443/348.m3u8?AdaptiveType=HLS&VOD_RequestID=jKQSNY7t2gBBBDpQnm9ycYEZmIkztQgIDouHhU4EV5TUHm2lWZR3mbgVnrlJ08lXqbZ5ut8LX1shbK6c0Ku4tp9oxyjkZTAblkTSrF8etD4XYlfrqQjtWi0SbnTHqDY9cfYXJiwWz6cP5wpeNiUu8jeKdA1d1UE7e2qUZuIyG0PriDZe1/kQKSNWh28juzYMNWPD6JbiAjys1/qvGZy2AA==&uid=294779473
+  • ID: 176        | VTVcab10 - On Cine HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/226/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzcsInVyaSI6Ii9icGstdHYvMjI2L291dHB1dC9pbmRleC5tM3U4In0.xtWAe3KDjFh2FM1juDqTerh3VN0F0Bspdgd-zr0HHt0&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 177        | VTVcab19 – Vie Dramas
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/339/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzcsInVyaSI6Ii9icGstdHYvMzM5L291dHB1dC9pbmRleC5tM3U4In0.FkM1PjnxNgD6YQa9GHe8mNhlVk8FTGML8HgzlS9nRi0&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 178        | VTVcab 8 Bibi SD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/263/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODAsInVyaSI6Ii9icGstdHYvMjYzL291dHB1dC9pbmRleC5tM3U4In0.s2AvMgvs8Lci2WHHlRb92SuHoOoZWupUNWQR1-bfTkA&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 179        | VTVcab 21- Cartoon Kids HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/234/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODAsInVyaSI6Ii9icGstdHYvMjM0L291dHB1dC9pbmRleC5tM3U4In0.XKnV_g06katvfx2unFFTlKZFqHXXuRHU08DUxttv0O4&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 181        | Vtvcab 4 – On Movies
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/346/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODAsInVyaSI6Ii9icGstdHYvMzQ2L291dHB1dC9pbmRleC5tM3U4In0.uWGBQJgCqnZ3fZHiVRYiFBSiCIfmX7C7niQxD7S4q1c&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 182        | VTVcab 5 - E Channel HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/212/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODAsInVyaSI6Ii9icGstdHYvMjEyL291dHB1dC9pbmRleC5tM3U4In0.A7D3JbcaMhfP0N9v7x9QIRll-l_fRlRBD1lMqJHKzUw&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 184        | VTVcab 12 - StyleTV HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/219/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODAsInVyaSI6Ii9icGstdHYvMjE5L291dHB1dC9pbmRleC5tM3U4In0.58Sn0t7poWGBZ7uh0pLyqfnTDtjHOzJylk-PhZs7QvI&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 185        | VTVcab15 – On Music
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/220/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODMsInVyaSI6Ii9icGstdHYvMjIwL291dHB1dC9pbmRleC5tM3U4In0.yoyjL85suer8YyyLeNl4dx5Wjb7zZEXOmPeCi1QOiWI&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 186        | Vtvcab17 – Trending TV
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/350/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODMsInVyaSI6Ii9icGstdHYvMzUwL291dHB1dC9pbmRleC5tM3U4In0.J84CTRxOtRL-XobgY4iYBC6lPPnsd2FfPpvG_Y_I9fU&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 187        | VTVcab 20 - V Family HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/351/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODMsInVyaSI6Ii9icGstdHYvMzUxL291dHB1dC9pbmRleC5tM3U4In0.fKMBjcMSMdFpFDDVSYPGz5tds6in7767rjhgPSu1rLw&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 188        | VTVcab 22 - Life TV HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/347/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODMsInVyaSI6Ii9icGstdHYvMzQ3L291dHB1dC9pbmRleC5tM3U4In0.c8Zmk3U_W_W2z5NQ53kvVrBJr9QUNxWmQXfOwVCtXYE&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 189        | VTVcab 9 - InfoTV HD
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/349/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODMsInVyaSI6Ii9icGstdHYvMzQ5L291dHB1dC9pbmRleC5tM3U4In0.BFBsBUEloj5jjkgMNmUUqRQQ7eLhLCcxzkv56fJ3I-o&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 136        | O2TV
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/218/HLS_Clean_MHL_6s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzIxOC9ITFNfQ2xlYW5fTUhMXzZzLyIsImV4cCI6MTc5MTE2NDI4M30.pnisSzVb32sx21MiNcxgSJlwv6SxyGEHtfpeV0F5-Kb4AMVSjA7iFIt-tj5RV5qMLqXM18C7QGE7NlfN1h7bWw&screen=MHL&uid=294779473
+
+--------------------------------------------------------------------------------
+★ NHÓM: KÊNH ĐỊA PHƯƠNG (46 kênh)
+--------------------------------------------------------------------------------
+  • ID: 134        | Quảng Ninh 3
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/390/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODMsInVyaSI6Ii9icGstdHYvMzkwL291dHB1dC9pbmRleC5tM3U4In0.qJFtyRhpArBYz4bVDMRe4n7x4eO9iAKS_H41eZJjx5w&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 33         | Hà Nội 1
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/282/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODMsInVyaSI6Ii9icGstdHYvMjgyL291dHB1dC9pbmRleC5tM3U4In0.LyChSie95WtupnU0J_q5KLoQ1NkngUhQNqoj4YfhwX0&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 34         | Hà Nội 2
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/283/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODMsInVyaSI6Ii9icGstdHYvMjgzL291dHB1dC9pbmRleC5tM3U4In0.OkOixoUXMhJYeFD6Vnn4CV4B0_7pWDVnBEbFw2lKiHc&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 35         | An Giang 2
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/3144/CMAF_Clean_MHL_6s/3144.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMxNDQvQ01BRl9DbGVhbl9NSExfNnMvIiwiZXhwIjoxNzkxMTY0MjgzfQ.GXP19x-6PL-DxHEO31EfSZsjOdRyH7rTLOsRcJEkgcz9_2Ph_Ikh-cfL65ELiyAveKQzt08MT3mx2mFVvXdh_Q&screen=MHL&uid=294779473
+  • ID: 9838       | BTV6
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/182/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzE4Mi9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI4M30.gj99NuRwF95GO0Mvza7k36ZHUTVFmeGripsK7ZXY9fhpd8diYc1RM75aHvv204xkTfGyJKMZFi86Q5qHhxu6zw&screen=MHL&uid=294779473
+  • ID: 31         | YouTV
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/447/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODMsInVyaSI6Ii9icGstdHYvNDQ3L291dHB1dC9pbmRleC5tM3U4In0.UTTG00xzfMUFCSbhBW4k7z4s7rZABltir4MxoMMS0j4&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 32         | HITV
+    Link Stream gốc: https://lsm-g11.tv360.vn:18443/332.m3u8?AdaptiveType=HLS&VOD_RequestID=jKQSNY7t2gBBBDpQnm9ycYEZmIkztQgIDouHhU4EV5TedVAEjojvWZY/eUQMAkrLvNbQytfgp6Plybw59x2xXb6xqIYkg3PyF9KBDOW6H3MaJfPl6xUHY778pmD8Rv+UR948B8Q1ACLD27qFL4PWfPsXX/Gtlv0kuDwPh1B9ulfg2Jt351inG66FftS3EaLFAoDU2gO9oeM3Xbaf0z/K3g==&uid=294779473
+  • ID: 39         | Bắc Ninh
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/328/CMAF_Clean_MHL_6s/328.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMyOC9DTUFGX0NsZWFuX01ITF82cy8iLCJleHAiOjE3OTExNjQyODZ9.H1sk9H7AYbj9b1QVPedWJCkct39Yo7Do1OVHHE5d63M4SnnsDm-5L2hMUlZh3pZUzSlt0F2saQ9pLXTdHFpJRA&screen=MHL&uid=294779473
+  • ID: 45         | Lâm Đồng 2
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/393/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzM5My9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI4Nn0.VcLzbD1GHJX__yFeck_xZVQRLFpzNVOFVAcuzLGicBRJCgN6F9PP0jeZUCYsVDHYCzzs9xRKnjxPg7NV2lhvvg&screen=MHL&uid=294779473
+  • ID: 46         | Cà Mau
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/314/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMxNC9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI4Nn0.ABNhbZ44IvpV7zNTYs17u3x6J-zjiuKNxAr2LL4GlzBdpVNqQUf2GlwYnHjG0scNhXPhboPravXQM13xuEIhtA&screen=MHL&uid=294779473
+  • ID: 47         | Cần Thơ 1
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/326/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODYsInVyaSI6Ii9icGstdHYvMzI2L291dHB1dC9pbmRleC5tM3U4In0.oZeiym8IBy4TNhshx88OiERNNjOQSRHx3YuY4XAurPE&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 48         | Cao Bằng
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/364/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODYsInVyaSI6Ii9icGstdHYvMzY0L291dHB1dC9pbmRleC5tM3U4In0.IfnPCu5yXzyFyVwqlv5pTeYfIxKNTkpjMC92yLbLH34&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 49         | Đà Nẵng 1
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/436/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQzNi9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDI4Nn0.AsneSm-LdIqMD1AGYJiZknBZvHv4Lj9sdBKjRcEgaF4Dresu31eNcChjD0dO_7zoJ6WNvMwLLATX2hakoE560w&screen=MHL&uid=294779473
+  • ID: 51         | Đắk Lắk
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/273/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODYsInVyaSI6Ii9icGstdHYvMjczL291dHB1dC9pbmRleC5tM3U4In0.JlSjDnJB1UerSo3nKkvqGyiGwdU2G5eXZ5fnyrVDg9Q&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 52         | Điện Biên
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/395/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODksInVyaSI6Ii9icGstdHYvMzk1L291dHB1dC9pbmRleC5tM3U4In0.wN168b5mCttddQ-duUJ3OoTRnrNvhoHbZ0ZmD5WM90s&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 53         | Đồng Nai 1
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/371/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODksInVyaSI6Ii9icGstdHYvMzcxL291dHB1dC9pbmRleC5tM3U4In0.xVZimRY_uF_rnFnlJKl_4R6B3CoqpphGqYsI_NS496g&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 54         | Đồng Tháp 1
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/372/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODksInVyaSI6Ii9icGstdHYvMzcyL291dHB1dC9pbmRleC5tM3U4In0.mkbCthHsNze_hfc94AA_24HMsWBjwErU9pFLD-QWOv8&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 55         | Gia Lai
+    Link Stream gốc: https://lsm-g11.tv360.vn:18443/259.m3u8?AdaptiveType=HLS&VOD_RequestID=jKQSNY7t2gBBBDpQnm9ycYEZmIkztQgIDouHhU4EV5QdABMCex28q/nISGvg44DddJT6gg4yENjWPfDDKUYlCCLR8gw3jZgPm8lid7tOLjSvB41sDGJakfl8gIfs694kgKhlewEA2EYIPNKsQ69NzBWwJU9n/5s/1oQkgszlKGwS50zAPyUGMM5umGGG1hLObNQpBCFqq899sR+/sivBnQ==&uid=294779473
+  • ID: 58         | Hà Tĩnh
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/365/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODksInVyaSI6Ii9icGstdHYvMzY1L291dHB1dC9pbmRleC5tM3U4In0.-l-BBBxXzjzuzCkPA537VXNZLqCf3QlA36rproJp9hs&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 59         | Hải Phòng 3
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/317/CMAF_Clean_MHL_6s/317.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMxNy9DTUFGX0NsZWFuX01ITF82cy8iLCJleHAiOjE3OTExNjQyODl9.D1eEfdUDTkztiivxVHZdyX6XGjYU3avrREfnGapa1Tq9ZA-RAEASfFfmob6M3uv0pCKfL0w4kJjQRerjSnmOaw&screen=MHL&uid=294779473
+  • ID: 60         | Hải Phòng
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/305/CMAF_Clean_MHL_6s/305.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMwNS9DTUFGX0NsZWFuX01ITF82cy8iLCJleHAiOjE3OTExNjQyODl9.vA0whFPC_E2YwuKrIx0b5WKXmRmeU2mxRMTWPhKPku7a89_FB9xiS0Uwf37WX1hRZ4wii90W7pvllnWNR7fepg&screen=MHL&uid=294779473
+  • ID: 61         | Cần Thơ 2
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/397/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyODksInVyaSI6Ii9icGstdHYvMzk3L291dHB1dC9pbmRleC5tM3U4In0.6HfT9srEBZeXNoqKiHmE5Rhws_Mssz-NczCWYHc2SdI&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 63         | Huế
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/322/CMAF_Clean_MHL_6s/322.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMyMi9DTUFGX0NsZWFuX01ITF82cy8iLCJleHAiOjE3OTExNjQyOTJ9.kljKdEcfj7w7sATDb2MK_k9878uqXjUjEVLHgv7qXB8rHqE17KiDUTyn89PlCp88DASAgoEXyo5IICWL69si6g&screen=MHL&uid=294779473
+  • ID: 64         | Hưng Yên
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/325/CMAF_Clean_MHL_6s/325.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMyNS9DTUFGX0NsZWFuX01ITF82cy8iLCJleHAiOjE3OTExNjQyOTJ9.sJ7OMtIq2jibZ3lhK1dsmadVdEgvKAzCV_cYXDueP0vhntkesU2gykaLX7x7-f3TM_4NaN7l0fqZGehI3NzLfQ&screen=MHL&uid=294779473
+  • ID: 65         | Khánh Hòa
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/318/CMAF_Clean_MHL_6s/318.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMxOC9DTUFGX0NsZWFuX01ITF82cy8iLCJleHAiOjE3OTExNjQyOTJ9.WEdjDjSpjxo7Sendbjb8mVFIibTZNsVscDJrUsl0rR7NOPj20uw_91nvO_J7jiRu9JZUfL1dIEgZiFuUYz82WA&screen=MHL&uid=294779473
+  • ID: 66         | An Giang 1
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/424/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTIsInVyaSI6Ii9icGstdHYvNDI0L291dHB1dC9pbmRleC5tM3U4In0.cPl3gTydURNq2mxh1UQoZf5a6LIV-msA1jLin3XIvrg&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 68         | Lai Châu
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/374/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTIsInVyaSI6Ii9icGstdHYvMzc0L291dHB1dC9pbmRleC5tM3U4In0.BQnAqc2VssS_LzwjAWC3djtS6_7J3DXNT8fLgn7Bw_A&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 69         | Lâm Đồng 1
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/375/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTIsInVyaSI6Ii9icGstdHYvMzc1L291dHB1dC9pbmRleC5tM3U4In0.lP2pTfJ4QocibBxVJylLy12B893KvHEgsA84QBukGOA&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 70         | Lạng Sơn
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/321/CMAF_Clean_MHL_6s/321.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMyMS9DTUFGX0NsZWFuX01ITF82cy8iLCJleHAiOjE3OTExNjQyOTJ9.QZKAGkk9Pwr7AXaxeEL9IvoJl4aPKpnHa5dAA1P5VVripCt-iuKvo9irb5hboMGYR6AKPcXPS34gV5tR9M9Okg&screen=MHL&uid=294779473
+  • ID: 71         | Lào Cai
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/385/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTUsInVyaSI6Ii9icGstdHYvMzg1L291dHB1dC9pbmRleC5tM3U4In0.UuZqaiCkzvxXeEOBOJ8bBuVDcbjeDqyWRQBxQLTxqIE&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 72         | Tây Ninh 1
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/430/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTUsInVyaSI6Ii9icGstdHYvNDMwL291dHB1dC9pbmRleC5tM3U4In0.YAgMRrAX0wJnfqYknQyifC6Zw3CXjKoZMVf78ZFr1Ic&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 74         | Nghệ An
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/437/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTUsInVyaSI6Ii9icGstdHYvNDM3L291dHB1dC9pbmRleC5tM3U4In0.jfYtoPXGtyKvrn5AsYiyrOrX_dpAMb6CyYSx5M8E3wo&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 75         | Ninh Bình
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/376/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTUsInVyaSI6Ii9icGstdHYvMzc2L291dHB1dC9pbmRleC5tM3U4In0.kgTQEIZWrY2853_DNekNHE39vWWW0mTeAHfuEf6AKQM&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 76         | Khánh Hòa 1
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/319/CMAF_Clean_MHL_6s/319.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMxOS9DTUFGX0NsZWFuX01ITF82cy8iLCJleHAiOjE3OTExNjQyOTV9.R924KXUoR2_zkSc5bhIFe8DAPUb9xUyZso-O-psTgaIISL9ubktorahwpmb-GzuBcdjCLHooSSTrwTKDjJW5DQ&screen=MHL&uid=294779473
+  • ID: 77         | Phú Thọ
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/320/CMAF_Clean_MHL_6s/320.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMyMC9DTUFGX0NsZWFuX01ITF82cy8iLCJleHAiOjE3OTExNjQyOTV9.-mKX2b7sWAcl0_j2TgYAL6OiDDh_ndy92xTAXhG8n9puY2jbb9Bjk-DOdMwBEVDhhxiLU4rMDkNrt1PZTvB2Eg&screen=MHL&uid=294779473
+  • ID: 80         | Đà Nẵng 2
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/377/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTUsInVyaSI6Ii9icGstdHYvMzc3L291dHB1dC9pbmRleC5tM3U4In0.wD4YtNK-u2_jiEjBn4EUlzWNeVYZTE9t-AuIuda0V4w&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 81         | Quảng Ngãi
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/366/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTUsInVyaSI6Ii9icGstdHYvMzY2L291dHB1dC9pbmRleC5tM3U4In0.lr4g8-rUlDO_ducgbZ8wYK8h24sF2vxfeGiw93bVKW0&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 82         | Quảng Ninh 1
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/389/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTUsInVyaSI6Ii9icGstdHYvMzg5L291dHB1dC9pbmRleC5tM3U4In0.FfZ7O0MW_fsgznor9G3XJG85_2wIF_i5fIyiRMMR0Eg&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 83         | Quảng Trị
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/260/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTUsInVyaSI6Ii9icGstdHYvMjYwL291dHB1dC9pbmRleC5tM3U4In0.NSzMrBxgS-j9dlQzb-NcHlz4OWCqHBmmjO67C1K_ops&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 84         | Cần Thơ 3
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/362/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTUsInVyaSI6Ii9icGstdHYvMzYyL291dHB1dC9pbmRleC5tM3U4In0.tAZmVMm7mgXyjOiUp1-jmbJ4n5Q9FXPMyNqqqM1z3VU&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 85         | Sơn La
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/444/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTgsInVyaSI6Ii9icGstdHYvNDQ0L291dHB1dC9pbmRleC5tM3U4In0.FRkLcexgeKYbcGF4RBue5QxtkXfcZNDUZ-0l79mnq0Q&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 88         | Thái Nguyên
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/381/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTgsInVyaSI6Ii9icGstdHYvMzgxL291dHB1dC9pbmRleC5tM3U4In0.VXaiYTxkuYGk-ppT6rxTxwiwFpWlWFLgaTfPv8BILRo&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 89         | Thanh Hóa
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/383/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTgsInVyaSI6Ii9icGstdHYvMzgzL291dHB1dC9pbmRleC5tM3U4In0.1ohbLuZEusWKSZzyllJ2tWX2YBplpOXfX-5lIuf4oHY&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 90         | Đồng Tháp 2
+    Link Stream gốc: https://fo-hlc.tv360.vn/bpk-tv/363/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyOTgsInVyaSI6Ii9icGstdHYvMzYzL291dHB1dC9pbmRleC5tM3U4In0.gk5oIGj-cqK-jyLAaejYm8ZkqLX2fIEcD1_BJVTKgB4&minrate=0&maxrate=12000000&uid=294779473
+  • ID: 92         | Tuyên Quang
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/303/CMAF_Clean_MHL_6s/303.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzMwMy9DTUFGX0NsZWFuX01ITF82cy8iLCJleHAiOjE3OTExNjQyOTh9.WWK7PtumknVODhh7DFpMzfG4shdaGLF6ySB6yVQugFXgSF3f0vm_1S-hv9lVrRDFrqLZMQiCIP4cogDJ-nGiHg&screen=MHL&uid=294779473
+  • ID: 255        | Đồng Nai
+    Link Stream gốc: https://rr1-ateme.tv360.vn/live/eds/286/HLS_Clean_MHL_6s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzI4Ni9ITFNfQ2xlYW5fTUhMXzZzLyIsImV4cCI6MTc5MTE2NDI5OH0.wUZJR_87bjmr2IPw60inae-DBlWWj85Ze2FbiS29oQJI7Q5AycReEtM3SBqlnYTUA9u6uJqA0iR_6Nv9NCkTOg&screen=MHL&uid=294779473

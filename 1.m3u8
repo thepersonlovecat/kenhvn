@@ -1,0 +1,97 @@
+#EXTM3U
+
+#EXTINF:-1 tvg-id="ants:3" tvg-name="TNT Sports 1" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/tnt-sports-1.png",TNT Sports 1
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/3/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:4" tvg-name="TNT Sports 2" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/tnt-sports-2.png",TNT Sports 2
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/4/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:5" tvg-name="TNT Sports 3" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/tnt-sports-3.png",TNT Sports 3
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/5/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:6" tvg-name="TNT Sports 4" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/tnt-sports-4.png",TNT Sports 4
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/6/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:22" tvg-name="Sky Sports Football" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-football.png",Sky Sports Football
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/22/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:20" tvg-name="Sky Sports Main Events" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-events.png",Sky Sports Main Events
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/20/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:4482" tvg-name="Sky Sports League" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-league.svg",Sky Sports League
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/4482/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:16" tvg-name="Sky Sports Action" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-action.png",Sky Sports Action
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/16/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:18" tvg-name="Sky Sports Cricket" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-cricket.png",Sky Sports Cricket
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/18/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:21" tvg-name="Sky Sports F1" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-f1.png",Sky Sports F1
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/21/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:23" tvg-name="Sky Sports Golf" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-golf.png",Sky Sports Golf
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/23/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:4755" tvg-name="France 24" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://api.antsports.tv/storage/flags/20260423/69ea2784898dc.png",France 24
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/4755/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:2420" tvg-name="BBC News" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/bbc-news.png",BBC News
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/2420/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:2443" tvg-name="BBC2" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/bbc2.png",BBC2
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/2443/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:2447" tvg-name="Film4" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/film4.png",Film4
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/2447/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:2445" tvg-name="BBC ONE" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/bbc-one.png",BBC ONE
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/2445/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:7867" tvg-name="Premier Sports 1" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/premier-sports-1.png",Premier Sports 1
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/7867/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:7868" tvg-name="Premier Sports 2" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/premier-sports-2.png",Premier Sports 2
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/7868/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:35" tvg-name="ESPN" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/espn.png",ESPN
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/35/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:38" tvg-name="ESPNU" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/espnu.png",ESPNU
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/38/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:7" tvg-name="ITV1" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/itv1.png",ITV1
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/7/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:8" tvg-name="ITV2" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/itv2.png",ITV2
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/8/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:9" tvg-name="ITV3" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/itv3.png",ITV3
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/9/index.m3u8
+
+#EXTINF:-1 tvg-id="ants:10" tvg-name="ITV4" group-title="Kênh Thể Thao & Quốc Tế" tvg-logo="https://static.antsports.tv/tvlogo/itv4.png",ITV4
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
+https://fiml4k.fun/api/tv/ants/10/index.m3u8

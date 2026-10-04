@@ -1,0 +1,1759 @@
+{
+  "channels": [
+    {
+      "id": "ants:3",
+      "name": "TNT Sports 1",
+      "logo": "https://static.antsports.tv/tvlogo/tnt-sports-1.png",
+      "src": "3",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:4",
+      "name": "TNT Sports 2",
+      "logo": "https://static.antsports.tv/tvlogo/tnt-sports-2.png",
+      "src": "4",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:5",
+      "name": "TNT Sports 3",
+      "logo": "https://static.antsports.tv/tvlogo/tnt-sports-3.png",
+      "src": "5",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:20",
+      "name": "Sky Sports Main Events",
+      "logo": "https://static.antsports.tv/tvlogo/sky-sports-events.png",
+      "src": "20",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:16",
+      "name": "Sky Sports Action",
+      "logo": "https://static.antsports.tv/tvlogo/sky-sports-action.png",
+      "src": "16",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:26",
+      "name": "Sky Sports News",
+      "logo": "https://static.antsports.tv/tvlogo/sky-sports-news.png",
+      "src": "26",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:28",
+      "name": "Sky Sports Tennis",
+      "logo": "https://static.antsports.tv/tvlogo/sky-sports-tennis.png",
+      "src": "28",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:21",
+      "name": "Sky Sports F1",
+      "logo": "https://static.antsports.tv/tvlogo/sky-sports-f1.png",
+      "src": "21",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:23",
+      "name": "Sky Sports Golf",
+      "logo": "https://static.antsports.tv/tvlogo/sky-sports-golf.png",
+      "src": "23",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:2420",
+      "name": "BBC News",
+      "logo": "https://static.antsports.tv/tvlogo/bbc-news.png",
+      "src": "2420",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:2443",
+      "name": "BBC TWO",
+      "logo": "https://static.antsports.tv/tvlogo/bbc2.png",
+      "src": "2443",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:2445",
+      "name": "BBC ONE",
+      "logo": "https://static.antsports.tv/tvlogo/bbc-one.png",
+      "src": "2445",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:7867",
+      "name": "Premier Sports 1",
+      "logo": "https://static.antsports.tv/tvlogo/premier-sports-1.png",
+      "src": "7867",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:7868",
+      "name": "Premier Sports 2",
+      "logo": "https://static.antsports.tv/tvlogo/premier-sports-2.png",
+      "src": "7868",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:12311",
+      "name": "NFL RedZone",
+      "logo": "https://static.antsports.tv/tvlogo/nfl-redzone.png",
+      "src": "12311",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:7",
+      "name": "ITV1",
+      "logo": "https://static.antsports.tv/tvlogo/itv1.png",
+      "src": "7",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:8",
+      "name": "ITV2",
+      "logo": "https://static.antsports.tv/tvlogo/itv2.png",
+      "src": "8",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:9",
+      "name": "ITV3",
+      "logo": "https://static.antsports.tv/tvlogo/itv3.png",
+      "src": "9",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "ants:10",
+      "name": "ITV4",
+      "logo": "https://static.antsports.tv/tvlogo/itv4.png",
+      "src": "10",
+      "number": "",
+      "source": "custom"
+    },
+    {
+      "id": "2",
+      "name": "VTV1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789027955396/02dce36fc3ff_480_270.png",
+      "slug": "vtv1",
+      "category": "Kênh thiết yếu",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "20",
+      "name": "ANTV",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600822516608/b33963dc0df8_480_270.png",
+      "slug": "antv",
+      "category": "Kênh thiết yếu",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "19",
+      "name": "QPVN HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600822254297/3c150355b7f8_480_270.png",
+      "slug": "qpvn-hd",
+      "category": "Kênh thiết yếu",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "110",
+      "name": "VTV5",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789028197435/9250c116a95a_480_270.png",
+      "slug": "vtv5",
+      "category": "Kênh thiết yếu",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9951",
+      "name": "VIETNAM TODAY HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/12/05/09/1764903286193/46f72417f718_480_270.png",
+      "slug": "vietnam-today-hd",
+      "category": "Kênh thiết yếu",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "3",
+      "name": "VTV2",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789027996819/72d1db4aee30_480_270.png",
+      "slug": "vtv2",
+      "category": "Kênh VTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "4",
+      "name": "VTV3",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789028028518/5e31c4d0e6df_480_270.png",
+      "slug": "vtv3",
+      "category": "Kênh VTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "108",
+      "name": "VTV4",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789028176727/7330e5a3b2d9_480_270.png",
+      "slug": "vtv4",
+      "category": "Kênh VTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "207",
+      "name": "VTV5 Tây Nguyên",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789028476364/6cc9a1e13281_480_270.png",
+      "slug": "vtv5-tay-nguyen",
+      "category": "Kênh VTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "157",
+      "name": "VTV5 Tây Nam Bộ",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789028453349/679543a01193_480_270.png",
+      "slug": "vtv5-tay-nam-bo",
+      "category": "Kênh VTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10043",
+      "name": "VTV6",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789028251332/3b8d99f01cf8_480_270.png",
+      "slug": "vtv6",
+      "category": "Kênh VTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "6",
+      "name": "VTV7",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789028340304/12d1ff56339c_480_270.png",
+      "slug": "vtv7",
+      "category": "Kênh VTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "115",
+      "name": "VTV8",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789028374733/17d3b1dcfa56_480_270.png",
+      "slug": "vtv8",
+      "category": "Kênh VTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "8",
+      "name": "VTV9",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789028403548/13cc721d59b3_480_270.png",
+      "slug": "vtv9",
+      "category": "Kênh VTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "98",
+      "name": "VTV10",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/09/10/15/178902829313/9caa3cdd2362_480_270.png",
+      "slug": "vtv10",
+      "category": "Kênh VTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "2554",
+      "name": "TV360+ 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776266760359/ba1ca843cd06_480_270.png",
+      "slug": "tv360-1",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "1",
+      "name": "TV360+ 2",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776266826697/9647033848f3_480_270.png",
+      "slug": "tv360-2",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "148",
+      "name": "TV360+ 3",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776266894249/af82cd28fcda_480_270.png",
+      "slug": "tv360-3",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "2458",
+      "name": "TV360+ 4",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776266956801/9a85754a5bd9_480_270.png",
+      "slug": "tv360-4",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9867",
+      "name": "TV360+ 5",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267019948/634cdb439c75_480_270.png",
+      "slug": "tv360-5",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9868",
+      "name": "TV360+ 6",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267080314/d06a99b5bd9c_480_270.png",
+      "slug": "tv360-6",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9869",
+      "name": "TV360+ 7",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/177626714329/4631db40bb03_480_270.png",
+      "slug": "tv360-7",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9870",
+      "name": "TV360+ 8",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267211780/516c4028c806_480_270.png",
+      "slug": "tv360-8",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9887",
+      "name": "TV360+ 9",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267283364/c30a206da84a_480_270.png",
+      "slug": "tv360-9",
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9957",
+      "name": "TV360+ 10",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267388401/5f459b37721d_480_270.png",
+      "slug": "tv360-10",
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9958",
+      "name": "TV360+ 11",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267558745/5fc303f5ba08_480_270.png",
+      "slug": "tv360-11",
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10001",
+      "name": "TV360+ 12",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267662370/76b4144bff34_480_270.png",
+      "slug": "tv360-12",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10022",
+      "name": "TV360+ 13",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/05/15/01/1778782670293/dd4067f28084_480_270.png",
+      "slug": "tv360-13",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10023",
+      "name": "TV360+ 14",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/05/15/01/177878325467/bbecb3ccb477_480_270.png",
+      "slug": "tv360-14",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10024",
+      "name": "TV360+ 15",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/05/15/01/1778783528367/ddfa21d56253_480_270.png",
+      "slug": "tv360-15",
+      "isDrm": 3,
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9904",
+      "name": "TV360",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/09/17/17/175810574912/a5f8181388ab_480_270.png",
+      "slug": "tv360",
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9965",
+      "name": "YFEST",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/10/02/16/1790933604362/06aaada73ab3_480_270.png",
+      "slug": "yfest",
+      "category": "Sự kiện trực tiếp",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9902",
+      "name": "Phim Việt",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/07/15/1775549899305/f54a93a767c5_480_270.png",
+      "slug": "phim-viet",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9903",
+      "name": "Phim Âu Mỹ",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/09/08/1775697767861/9a6dc88794cf_480_270.png",
+      "slug": "phim-au-my",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9934",
+      "name": "Hoạt hình",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/08/03/16/178574886930/9daa0ca42fd8_480_270.png",
+      "slug": "hoat-hinh",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10008",
+      "name": "360 Hoa Ngữ",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/09/08/1775697736867/3854900b7263_480_270.png",
+      "slug": "360-hoa-ngu",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10009",
+      "name": "360 Hành động Châu Á",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/08/10/1775617851169/1f38a5af77c1_480_270.png",
+      "slug": "360-hanh-dong-chau-a",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10010",
+      "name": "360 K-Drama",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/09/21/1775744591740/79928f9b003f_480_270.png",
+      "slug": "360-k-drama",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10011",
+      "name": "360 Hài -Tình cảm",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/13/13/1776063183880/03439dc9da19_480_270.png",
+      "slug": "360-hai-tinh-cam",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10012",
+      "name": "360 Phim Kinh điển",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/13/13/1776063200976/6ced2ef539a4_480_270.png",
+      "slug": "360-phim-kinh-dien",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10013",
+      "name": "360 Anime",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/13/13/1776063223569/462daff06d9d_480_270.png",
+      "slug": "360-anime",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10045",
+      "name": "360 Thiếu Nhi",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/06/18/13/1781765362332/737c1501b0c5_480_270.png",
+      "slug": "360-thieu-nhi",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10055",
+      "name": "360 Phim 4K",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/07/30/10/1785382803894/362700e9107b_480_270.png",
+      "slug": "360-phim-4k",
+      "category": "Giải trí",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10014",
+      "name": "360 C1 Châu Âu",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/22/177626841934/e289a43bd190_480_270.png",
+      "slug": "360-c1-chau-au",
+      "category": "Thể thao",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10015",
+      "name": "360 C2 Châu Âu",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/23/1776269925378/3875f76de1cd_480_270.png",
+      "slug": "360-c2-chau-au",
+      "category": "Thể thao",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10016",
+      "name": "360 C3 Châu Âu",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/23/1776269965595/9f150757c9e3_480_270.png",
+      "slug": "360-c3-chau-au",
+      "category": "Thể thao",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10017",
+      "name": "360 Thể Thao Châu Á",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/16/00/1776274695415/4b2703dbb4c4_480_270.png",
+      "slug": "360-the-thao-chau-a",
+      "category": "Thể thao",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10018",
+      "name": "360 Công Thức 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/15/23/1776269172914/ceaa765c5dbe_480_270.png",
+      "slug": "360-cong-thuc-1",
+      "category": "Thể thao",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10019",
+      "name": "360 Bundesliga",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/16/08/1776301510855/e14eaed5c4d8_480_270.png",
+      "slug": "360-bundesliga",
+      "category": "Thể thao",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10020",
+      "name": "360 Golf",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/16/14/1776326073777/e6e315b781fb_480_270.png",
+      "slug": "360-golf",
+      "category": "Thể thao",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10021",
+      "name": "360 Tennis",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/16/15/177632805669/a8c9881d6b08_480_270.png",
+      "slug": "360-tennis",
+      "category": "Thể thao",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "271",
+      "name": "HBO",
+      "logo": "https://img-zlr1.tv360.vn/image1/2021/10/04/02/163329112517/6cb3ef1d12de_480_270.png",
+      "slug": "hbo",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "239",
+      "name": "Cinemax",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/12/30/23/1767113557980/0de97d4682ea_480_270.png",
+      "slug": "cinemax",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "273",
+      "name": "Warner TV",
+      "logo": "https://img-zlr1.tv360.vn/image1/2021/09/30/17/1632996783674/68825acc06f6_480_270.png",
+      "slug": "warner-tv",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "281",
+      "name": "AXN",
+      "logo": "https://img-zlr1.tv360.vn/image1/2021/09/30/21/1633012168716/95bc496176f2_480_270.png",
+      "slug": "axn",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "159",
+      "name": "Cinema World",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/12/31/00/1767114171189/011dc2ee60d6_480_270.png",
+      "slug": "cinema-world",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "235",
+      "name": "DreamWorks",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/12/31/00/1767114503767/16fabdd762a9_480_270.png",
+      "slug": "dreamworks",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "277",
+      "name": "Cartoon",
+      "logo": "https://img-zlr1.tv360.vn/image1/2021/09/30/17/16329991075/0c76e4e7e984_480_270.png",
+      "slug": "cartoon",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "163",
+      "name": "FashionTV",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/12/31/00/1767114669220/2a4f94f276e2_480_270.png",
+      "slug": "fashiontv",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "237",
+      "name": "Bloomberg",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/12/31/00/1767115195629/60e0ef5853e1_480_270.png",
+      "slug": "bloomberg",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "279",
+      "name": "Discovery Channel",
+      "logo": "https://img-zlr1.tv360.vn/image1/2021/09/30/17/1632999438220/cb5b2ef01b69_480_270.png",
+      "slug": "discovery-channel",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "275",
+      "name": "CNN",
+      "logo": "https://img-zlr1.tv360.vn/image1/2021/10/01/08/1633052531161/ccb61db3f667_480_270.png",
+      "slug": "cnn",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "283",
+      "name": "ABC Australia",
+      "logo": "https://img-zlr1.tv360.vn/image1/2021/09/30/21/1633012334655/9f82fec7aa58_480_270.png",
+      "slug": "abc-australia",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "216",
+      "name": "Outdoor HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020/11/12/10/1605151414697/e4570232b05d_480_270.png",
+      "slug": "outdoor-hd",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "112",
+      "name": "Channel News Asia",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/09/30/22/172770964477/d5bbdfff9927_480_270.png",
+      "slug": "channel-news-asia",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "215",
+      "name": "AFN HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600822480473/e6bb9f277480_480_270.png",
+      "slug": "afn-hd",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "99",
+      "name": "HGTV",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600822040158/9eca53663279_480_270.png",
+      "slug": "hgtv",
+      "isDrm": 3,
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "213",
+      "name": "KBS World",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823332611/f8ac56be52c6_480_270.png",
+      "slug": "kbs-world",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "109",
+      "name": "DW",
+      "logo": "https://img-zlr1.tv360.vn/image1/2022/05/10/15/1652170991466/3334568ab702_480_270.png",
+      "slug": "dw",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "106",
+      "name": "NHK",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823240223/dc739d55a0f5_480_270.png",
+      "slug": "nhk",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "96",
+      "name": "France 24",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/160082328472/0da91b00311f_480_270.png",
+      "slug": "france-24",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9852",
+      "name": "TV5",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/05/03/23/1714753734110/8e356cdac7e9_480_270.png",
+      "slug": "tv5",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9855",
+      "name": "CNBC",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/03/29/23/1774802901669/9a839f2886f1_480_270.png",
+      "slug": "cnbc",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9856",
+      "name": "History HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/20/14/177667111674/a2a11d8f4a75_480_270.png",
+      "slug": "history-hd",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9901",
+      "name": "Kix",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/01/24/22/1737733016558/b6a8f1955817_480_270.png",
+      "slug": "kix",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10007",
+      "name": "France 24 SD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/07/23/1775577775404/09de37d2a0ee_480_270.png",
+      "slug": "france-24-sd",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "111",
+      "name": "Arirang",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823492603/d4586db1b09a_480_270.png",
+      "slug": "arirang",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "214",
+      "name": "DaVinci HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/20/14/1776671050490/04b840309da4_480_270.png",
+      "slug": "davinci-hd",
+      "category": "Kênh quốc tế",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "25",
+      "name": "Vĩnh Long 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/17/1728296900530/38c6e7b9cb86_480_270.png",
+      "slug": "vinh-long-1",
+      "category": "Kênh Vĩnh Long",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "26",
+      "name": "Vĩnh Long 2",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/16/1728294117402/52d6fd6199a5_480_270.png",
+      "slug": "vinh-long-2",
+      "category": "Kênh Vĩnh Long",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "219",
+      "name": "Vĩnh Long 3",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/04/17/22/1744905347918/48d1f6b96d4b_480_270.png",
+      "slug": "vinh-long-3",
+      "category": "Kênh Vĩnh Long",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "220",
+      "name": "Vĩnh Long 4",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/16/1728294229199/5f70465aa342_480_270.png",
+      "slug": "vinh-long-4",
+      "category": "Kênh Vĩnh Long",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "91",
+      "name": "Vĩnh Long 5",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/09/26/10/1758857744376/434dd0684f49_480_270.png",
+      "slug": "vinh-long-5",
+      "category": "Kênh Vĩnh Long",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "190",
+      "name": "HTV1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823417472/075a37be16f6_480_270.png",
+      "slug": "htv1",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "191",
+      "name": "HTV2",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823424622/fd4c849487f6_480_270.png",
+      "slug": "htv2",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "192",
+      "name": "HTV3",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823498725/2e64140da5c1_480_270.png",
+      "slug": "htv3",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9",
+      "name": "HTV4",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/20/15/1776673483732/71e6c03ac958_480_270.png",
+      "slug": "htv4",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "193",
+      "name": "HTV7 HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600822381421/47d2615f6141_480_270.png",
+      "slug": "htv7-hd",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "194",
+      "name": "HTV9 HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600822390705/a9fc59138d3b_480_270.png",
+      "slug": "htv9-hd",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "195",
+      "name": "HTV Thể Thao",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/04/03/16/1680514594557/ab2557f0b015_480_270.png",
+      "slug": "htv-the-thao",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "11",
+      "name": "HTVC gia đình",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/160082347056/e8ce9503d96a_480_270.png",
+      "slug": "htvc-gia-dinh",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "12",
+      "name": "HTVC phụ Nữ",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823432136/86f5cc6afcf6_480_270.png",
+      "slug": "htvc-phu-nu",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "13",
+      "name": "HTVC thuần việt",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/160082344024/e0032bc647da_480_270.png",
+      "slug": "htvc-thuan-viet",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "15",
+      "name": "HTVC phim truyện HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2021/07/01/15/1625129239161/48401c7a9ce3_480_270.png",
+      "slug": "htvc-phim-truyen-hd",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "14",
+      "name": "HTVC ca nhạc",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823449894/0834e6a36f71_480_270.png",
+      "slug": "htvc-ca-nhac",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "132",
+      "name": "HTVC+ Channel B",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020/12/25/10/160886616399/c002b68d052e_480_270.png",
+      "slug": "htvc",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "133",
+      "name": "HTVC du lịch & cuộc sống",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020/12/25/08/1608860643587/bb01290ccde1_480_270.png",
+      "slug": "htvc-du-lich-cuoc-song",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "151",
+      "name": "An Viên HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/19/17/1776592892204/faf411a67b05_480_270.png",
+      "slug": "an-vien-hd",
+      "category": "Kênh HTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9906",
+      "name": "FM96",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/03/04/21/1741100081578/f16fac473216_480_270.png",
+      "slug": "fm96",
+      "category": "Kênh FM",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10036",
+      "name": "VOH AM610",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/05/25/08/1779673099710/c321a9c85d33_480_270.png",
+      "slug": "voh-am610",
+      "category": "Kênh FM",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10037",
+      "name": "VOH FM99",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/05/25/08/1779673413230/6095d75f830a_480_270.png",
+      "slug": "voh-fm99",
+      "category": "Kênh FM",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10038",
+      "name": "VOH FM87",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/05/25/08/1779673834679/564a27e6f7b6_480_270.png",
+      "slug": "voh-fm87",
+      "category": "Kênh FM",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10039",
+      "name": "VOH FM95",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/05/25/08/1779674089161/8e51d80307bf_480_270.png",
+      "slug": "voh-fm95",
+      "category": "Kênh FM",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "10040",
+      "name": "VOH FM92 Radio",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/05/25/08/1779674230519/04eefef71c5b_480_270.png",
+      "slug": "voh-fm92-radio",
+      "category": "Kênh FM",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "232",
+      "name": "SCTV6",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/23/09/1753236453485/c454ca3f905f_480_270.png",
+      "slug": "sctv6",
+      "category": "Kênh SCTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "201",
+      "name": "SCTV2 - Today TV",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/23/09/1753236497766/f76b7bf7b94c_480_270.png",
+      "slug": "sctv2-today-tv",
+      "category": "Kênh SCTV",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "174",
+      "name": "VTVcab 16 - On Football HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/04/28/09/1682650260303/bc7fe5334315_480_270.png",
+      "slug": "vtvcab-16-hd",
+      "isDrm": 3,
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "173",
+      "name": "VTVcab 3 - On Sports",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/04/28/09/1682650417399/08d4190f7711_480_270.png",
+      "slug": "vtvcab-3-on-sports",
+      "isDrm": 3,
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "170",
+      "name": "VTVcab 18 - On Sports News",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/04/28/09/1682650363143/71956aa35c78_480_270.png",
+      "slug": "vtvcab-18-on-sports-news",
+      "isDrm": 3,
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "169",
+      "name": "VTVcab 23 - Golf Channel",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/04/28/09/1682650320416/f57f4fd63788_480_270.png",
+      "slug": "vtvcab-23-golf-channel",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "183",
+      "name": "VTVcab 6 - On Sports +",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/04/28/09/1682650447548/72acfa0eca2c_480_270.png",
+      "slug": "vtvcab-6-on-sports",
+      "isDrm": 3,
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "180",
+      "name": "VTVcab 1 - Vie Giải Trí HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/01/02/23/1704211446236/d1503bd3566e_480_270.png",
+      "slug": "vtvcab-1-vie-giai-tri-hd",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "175",
+      "name": "VTVcab 2 - Phim Việt HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2021/09/07/16/1631007494845/516efb158133_480_270.png",
+      "slug": "vtvcab-2-phim-viet-hd",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "176",
+      "name": "VTVcab10 - On Cine HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2021/09/07/17/1631009339636/95e9bc61877c_480_270.png",
+      "slug": "vtvcab10-on-cine-hd",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "177",
+      "name": "VTVcab19 – Vie Dramas",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/01/03/07/1704241415128/050934936855_480_270.png",
+      "slug": "vtvcab19-vie-dramas",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "178",
+      "name": "VTVcab 8 Bibi SD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/07/19/08/1689731979485/df22eff3c261_480_270.png",
+      "slug": "vtvcab-8-bi-bi-sd",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "179",
+      "name": "VTVcab 21- Cartoon Kids HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/21/14/1753083917555/313a5cc8943c_480_270.png",
+      "slug": "vtvcab-21-cartoon-kids-hd",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "181",
+      "name": "Vtvcab 4 – On Movies",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/02/16/16/1676540062912/f21d4df5b545_480_270.png",
+      "slug": "vtvcab-4-on-movies",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "182",
+      "name": "VTVcab 5 - E Channel HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/07/19/15/1689755306897/935d4d4cde0d_480_270.png",
+      "slug": "vtvcab-5-e-channel-hd",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "184",
+      "name": "VTVcab 12 - StyleTV HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/07/19/09/1689732221934/7138a2e2ade1_480_270.png",
+      "slug": "vtvcab-12-styletv-hd",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "185",
+      "name": "VTVcab15 – On Music",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/07/20/10/1689822524259/0f3a4d1ebfaf_480_270.png",
+      "slug": "vtvcab15-on-music",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "186",
+      "name": "Vtvcab17 – Trending TV",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/07/19/16/1689759248732/ebe66c03d7f6_480_270.png",
+      "slug": "vtvcab17-trending-tv",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "187",
+      "name": "VTVcab 20 - V Family HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/07/19/09/1689732486538/904f55c861b5_480_270.png",
+      "slug": "vtvcab-20-v-family-hd",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "188",
+      "name": "VTVcab 22 - Life TV HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/07/19/09/1689732652862/f124f55c3587_480_270.png",
+      "slug": "vtvcab-22-life-tv-hd",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "189",
+      "name": "VTVcab 9 - InfoTV HD",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/07/19/09/1689732099410/a13853e5de55_480_270.png",
+      "slug": "vtvcab-9-infotv-hd",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "136",
+      "name": "O2TV",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/08/06/23/1722961565788/ba3ae8e7865d_480_270.png",
+      "slug": "o2tv",
+      "category": "Kênh VTV Cab",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "134",
+      "name": "Quảng Ninh 3",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/03/21/1727967101708/09889ad04773_480_270.png",
+      "slug": "quang-ninh-3",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "33",
+      "name": "Hà Nội 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/17/1728296855302/149490571e60_480_270.png",
+      "slug": "ha-noi-1",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "34",
+      "name": "Hà Nội 2",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/16/1728293033798/d23973063be9_480_270.png",
+      "slug": "ha-noi-2",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "35",
+      "name": "An Giang 2",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/15/1751358776543/87a0d91f8e5a_480_270.png",
+      "slug": "an-giang-2",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "9838",
+      "name": "BTV6",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/07/31/00/1785431520501/782bdfe129db_480_270.png",
+      "slug": "btv6",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "31",
+      "name": "YouTV",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823396313/7b474bf7bbce_480_270.png",
+      "slug": "youtv",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "32",
+      "name": "HITV",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823412691/61627b84a612_480_270.png",
+      "slug": "hitv",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "39",
+      "name": "Bắc Ninh",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/16/1728292026843/2a0e3c73a0a3_480_270.png",
+      "slug": "bac-ninh",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "45",
+      "name": "Lâm Đồng 2",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/09/16/10/1757993660312/1082b4f9d963_480_270.png",
+      "slug": "lam-dong-2",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "46",
+      "name": "Cà Mau",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/16/1728292350834/ec688c9d5bb2_480_270.png",
+      "slug": "ca-mau",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "47",
+      "name": "Cần Thơ 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/11/05/16/1762336328954/07ecc9b857a5_480_270.png",
+      "slug": "can-tho-1",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "48",
+      "name": "Cao Bằng",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/16/1728292499129/aeb3499f5824_480_270.png",
+      "slug": "cao-bang",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "49",
+      "name": "Đà Nẵng 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/09/1751337054302/df569bbaeead_480_270.png",
+      "slug": "da-nang-1",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "51",
+      "name": "Đắk Lắk",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/06/30/11/1751256466336/bda77a407209_480_270.png",
+      "slug": "dak-lak",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "52",
+      "name": "Điện Biên",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823593760/3a9a9e608e8d_480_270.png",
+      "slug": "dien-bien",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "53",
+      "name": "Đồng Nai 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/16/1728292646666/9cb8f84c6b6a_480_270.png",
+      "slug": "dong-nai-1",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "54",
+      "name": "Đồng Tháp 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/08/1751331689553/f287ef8d8574_480_270.png",
+      "slug": "dong-thap-1",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "55",
+      "name": "Gia Lai",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/15/1751357063814/d3ab51ec71c8_480_270.png",
+      "slug": "gia-lai",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "58",
+      "name": "Hà Tĩnh",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/17/1751364753117/4f1f0d74fc87_480_270.png",
+      "slug": "ha-tinh",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "59",
+      "name": "Hải Phòng 3",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/08/1751332762796/cf7b86889958_480_270.png",
+      "slug": "hai-phong-3",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "60",
+      "name": "Hải Phòng",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/16/1728293124933/96ed2cfade28_480_270.png",
+      "slug": "hai-phong",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "61",
+      "name": "Cần Thơ 2",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/11/05/16/176233636246/8ded7c5a9010_480_270.png",
+      "slug": "can-tho-2",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "63",
+      "name": "Huế",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/17/1751364479653/fdd748c39c4d_480_270.png",
+      "slug": "hue",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "64",
+      "name": "Hưng Yên",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/07/18/14/1689667110643/2aa9348c16ec_480_270.png",
+      "slug": "hung-yen",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "65",
+      "name": "Khánh Hòa",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/05/16/02/1684179436941/f2452666b507_480_270.png",
+      "slug": "khanh-hoa",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "66",
+      "name": "An Giang 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/15/1751358809467/9f6c4f3dc4d0_480_270.png",
+      "slug": "an-giang-1",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "68",
+      "name": "Lai Châu",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/16/1728293379395/ade5683c1b92_480_270.png",
+      "slug": "lai-chau",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "69",
+      "name": "Lâm Đồng 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/09/16/10/1757993571149/e3bbf8cbc985_480_270.png",
+      "slug": "lam-dong-1",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "70",
+      "name": "Lạng Sơn",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/05/16/03/1684183176485/baf863bc2690_480_270.png",
+      "slug": "lang-son",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "71",
+      "name": "Lào Cai",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/07/1751329203146/5c287ccfa91a_480_270.png",
+      "slug": "lao-cai",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "72",
+      "name": "Tây Ninh 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/01/10/08/1768009863485/1206cb944f9e_480_270.png",
+      "slug": "tay-ninh-1",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "74",
+      "name": "Nghệ An",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600821989411/75bfb004e210_480_270.png",
+      "slug": "nghe-an",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "75",
+      "name": "Ninh Bình",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/16/1728293640310/9aea44bf0f8d_480_270.png",
+      "slug": "ninh-binh",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "76",
+      "name": "Khánh Hòa 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/08/1751333362278/30e1a394f567_480_270.png",
+      "slug": "khanh-hoa-1",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "77",
+      "name": "Phú Thọ",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/05/16/02/168417957456/7016ca1be5fa_480_270.png",
+      "slug": "phu-tho",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "80",
+      "name": "Đà Nẵng 2",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/09/175133702497/eded20e0d35c_480_270.png",
+      "slug": "da-nang-2",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "81",
+      "name": "Quảng Ngãi",
+      "logo": "https://img-zlr1.tv360.vn/image1/2026/04/24/17/1777025132946/f2412266a876_480_270.png",
+      "slug": "quang-ngai",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "82",
+      "name": "Quảng Ninh 1",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823547870/8f0cdf38412a_480_270.png",
+      "slug": "quang-ninh-1",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "83",
+      "name": "Quảng Trị",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/09/1751335585476/9d5c42897302_480_270.png",
+      "slug": "quang-tri",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "84",
+      "name": "Cần Thơ 3",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/11/05/16/1762336060807/7b1128d4e7c7_480_270.png",
+      "slug": "can-tho-3",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "85",
+      "name": "Sơn La",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600823599924/b1d77a6c01a0_480_270.png",
+      "slug": "son-la",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "88",
+      "name": "Thái Nguyên",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/07/01/07/1751329966912/3ddadef93c24_480_270.png",
+      "slug": "thai-nguyen",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "89",
+      "name": "Thanh Hóa",
+      "logo": "https://img-zlr1.tv360.vn/image1/2020_09_23/1600821878406/58ff77e57117_480_270.png",
+      "slug": "thanh-hoa",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "90",
+      "name": "Đồng Tháp 2",
+      "logo": "https://img-zlr1.tv360.vn/image1/2025/09/16/10/1757993795684/45f17a4f3b90_480_270.png",
+      "slug": "dong-thap-2",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "92",
+      "name": "Tuyên Quang",
+      "logo": "https://img-zlr1.tv360.vn/image1/2023/05/10/03/1683663305895/0f3f1e5bd284_480_270.png",
+      "slug": "tuyen-quang",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    },
+    {
+      "id": "255",
+      "name": "Đồng Nai",
+      "logo": "https://img-zlr1.tv360.vn/image1/2024/10/07/14/1728286716831/f297eef035cf_480_270.png",
+      "slug": "dong-nai",
+      "category": "Kênh địa phương",
+      "number": "",
+      "source": "tv360"
+    }
+  ],
+  "events": [
+    {
+      "id": "2458",
+      "title": "Bóng đá: UEFA Nations League 2026/27 Lượt 4, Bồ Đào Nha vs Na Uy, 1giờ 45 phút, ngày 5/10, kênh TV360+ 4",
+      "image": "https://img-zlr1.tv360.vn/image1/2026/09/28/10/179056467275/c06bd472818e_1280_720.png",
+      "status": "",
+      "begin": 1791139500,
+      "end": 1791148500
+    },
+    {
+      "id": "9867",
+      "title": "Bóng đá: UEFA Nations League 2026/27 Lượt 4, Hy Lạp vs Đức, 1 giờ 45 phút , ngày 5/10, kênh TV360+ 5",
+      "image": "https://img-zlr1.tv360.vn/image1/2026/09/28/09/1790562799407/1648e25ec0d7_1280_720.png",
+      "status": "",
+      "begin": 1791139500,
+      "end": 1791148500
+    },
+    {
+      "id": "9869",
+      "title": "Bóng đá: UEFA Nations League 2026/27 Lượt 4, Hà Lan vs Serbia, 1 giờ 45 phút , ngày 5/10, kênh TV360+ 7",
+      "image": "https://img-zlr1.tv360.vn/image1/2026/09/28/09/1790563087218/095e40c77b51_1280_720.png",
+      "status": "",
+      "begin": 1791139500,
+      "end": 1791148500
+    }
+  ]
+}
