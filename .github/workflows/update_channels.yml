@@ -28,11 +28,12 @@ jobs:
 
       - name: Run token refresh script
         env:
-          FILM4K_EMAIL: ${{ secrets.FILM4K_EMAIL || 'thepersonlovecat@gmail.com' }}
-          FILM4K_PASS: ${{ secrets.FILM4K_PASS || '123123qwe' }}
+          FILM4K_EMAIL: ${{ secrets.FILM4K_EMAIL }}
+          FILM4K_PASS: ${{ secrets.FILM4K_PASS }}
           FILM4K_BASE_URL: 'https://fiml4k.fun'
         run: |
           python auto_update_channels.py
+
 
       - name: Commit and push changes
         run: |

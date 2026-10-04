@@ -1,4 +1,19 @@
 __pycache__/
+.wrangler/
 *.pyc
 *.apk
+*.jpg
+*.png
+*.bat
+1.m3u8
+config.json
 .env
+
+# Cac script noi bo & thu muc tam
+fetch_direct_streams.py
+get_channels.py
+ket_qua_kiem_tra_apk.txt
+play.py
+templates/
+web_player_server.py
+danh_sach_kenh_truyen_hinh_film4k.txt

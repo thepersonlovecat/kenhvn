@@ -16,8 +16,21 @@ except Exception:
     pass
 
 BASE_URL = os.environ.get("FILM4K_BASE_URL", "https://fiml4k.fun")
-EMAIL = os.environ.get("FILM4K_EMAIL", "thepersonlovecat@gmail.com")
-PASSWORD = os.environ.get("FILM4K_PASS", "123123qwe")
+EMAIL = os.environ.get("FILM4K_EMAIL")
+PASSWORD = os.environ.get("FILM4K_PASS")
+
+# Tự động đọc từ config.json (cục bộ) nếu không có biến môi trường
+if not EMAIL or not PASSWORD:
+    cfg_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.json')
+    if os.path.exists(cfg_file):
+        try:
+            with open(cfg_file, 'r', encoding='utf-8') as f:
+                _cfg = json.load(f)
+                EMAIL = EMAIL or _cfg.get("email")
+                PASSWORD = PASSWORD or _cfg.get("pass")
+        except Exception:
+            pass
+
 
 session = requests.Session()
 session.verify = False
@@ -110,7 +123,6 @@ def main():
 
     ordered = [results[ch['id']] for ch in channels if ch['id'] in results]
 
-    # Save channels_live.json & direct_streams.json
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     with open(os.path.join(script_dir, 'direct_streams.json'), 'w', encoding='utf-8') as f:
@@ -118,6 +130,13 @@ def main():
 
     with open(os.path.join(script_dir, 'channels_live.json'), 'w', encoding='utf-8') as f:
         json.dump({"channels": channels, "events": events}, f, ensure_ascii=False, indent=2)
+
+    # 1. Phân loại kênh
+    # - Nhóm HLS mượt mà đưa lên đầu: VTV, Thiết yếu, Thể thao, Giải trí...
+    # - Nhóm TV360+ (MPD DRM) và Ants đưa xuống phía dưới
+    hls_channels = []
+    mpd_channels = []
+    ants_channels = []
 
     preferred_order = [
         'Kênh thiết yếu',
@@ -137,90 +156,103 @@ def main():
 
     groups = defaultdict(list)
     for c in ordered:
-        grp = c.get('category') or 'KÊNH KHÁC'
-        groups[grp].append(c)
+        surl = c.get('stream_url', '')
+        if not surl:
+            continue
+        if '.mpd' in surl:
+            mpd_channels.append(c)
+        elif 'api/tv/ants/' in surl:
+            ants_channels.append(c)
+        else:
+            grp = c.get('category') or 'KÊNH KHÁC'
+            groups[grp].append(c)
 
     for g in groups:
         if g not in preferred_order:
             preferred_order.append(g)
 
+    # Đưa các kênh HLS sắp xếp theo chuyên mục lên trước
+    for grp_name in preferred_order:
+        if grp_name in groups:
+            hls_channels.extend(groups[grp_name])
+
+    # Danh sách tổng hợp toàn bộ 190 kênh theo thứ tự tối ưu
+    all_ordered_channels = hls_channels + mpd_channels + ants_channels
+
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    # 1. Tao danh_sach_kenh_film4k.m3u (Tong hop tat ca kenh, uu tien HLS VTV len dau)
-    m3u_all = [
-        f'#EXTM3U name="Film4K IPTV Auto-Update" updated="{now_str}"'
-    ]
-    for grp_name in preferred_order:
-        if grp_name not in groups:
-            continue
-        for c in groups[grp_name]:
-            cid = str(c.get('id', '')).strip()
-            cname = str(c.get('name', '')).strip()
-            logo = c.get('logo', '') or ''
-            stream_url = c.get('stream_url', '')
-            if not stream_url:
-                continue
-            m3u_all.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp_name}",{cname}')
-            m3u_all.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36')
-            m3u_all.append(stream_url)
-
-    m3u_all_path = os.path.join(script_dir, 'danh_sach_kenh_film4k.m3u')
-    with open(m3u_all_path, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(m3u_all) + '\n')
-
-    # 2. Tao danh_sach_kenh_potplayer.m3u (Toi uu 100% cho PotPlayer: chi chua cac kenh HLS .m3u8 xem truc tiep ngon lanh)
+    # 1. Tạo danh_sach_kenh_potplayer.m3u (Đầy đủ 190 kênh, 140 kênh HLS lên đầu, sau đó đến TV360+ MPD và Ants)
     m3u_pot = [
-        f'#EXTM3U name="Film4K PotPlayer Optimized" updated="{now_str}"'
+        f'#EXTM3U name="Film4K PotPlayer All {len(all_ordered_channels)} Channels" updated="{now_str}"'
     ]
-    pot_count = 0
-    for grp_name in preferred_order:
-        if grp_name not in groups:
-            continue
-        for c in groups[grp_name]:
-            cid = str(c.get('id', '')).strip()
-            cname = str(c.get('name', '')).strip()
-            logo = c.get('logo', '') or ''
-            stream_url = c.get('stream_url', '')
-            # Bo qua link trong, link MPD (DRM), va link Ants bi chan
-            if not stream_url or '.mpd' in stream_url or 'api/tv/ants/' in stream_url:
-                continue
-            m3u_pot.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp_name}",{cname}')
-            m3u_pot.append(stream_url)
-            pot_count += 1
+    for c in all_ordered_channels:
+        cid = str(c.get('id', '')).strip()
+        cname = str(c.get('name', '')).strip()
+        logo = c.get('logo', '') or ''
+        surl = c.get('stream_url', '')
+        grp = c.get('category') or 'KÊNH KHÁC'
+        if '.mpd' in surl:
+            grp = f"{grp} (DRM MPD)"
+        elif 'api/tv/ants/' in surl:
+            grp = f"{grp} (Ants)"
+        m3u_pot.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
+        m3u_pot.append(surl)
 
     m3u_pot_path = os.path.join(script_dir, 'danh_sach_kenh_potplayer.m3u')
     with open(m3u_pot_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(m3u_pot) + '\n')
 
-    # 3. Tao danh_sach_kenh_tivimate.m3u (Kem header pipe User-Agent/Referer)
+    # 2. Tạo danh_sach_kenh_tivimate.m3u (Đầy đủ 190 kênh kèm Pipe Headers)
     m3u_tivi = [
-        f'#EXTM3U name="Film4K TiviMate" updated="{now_str}"'
+        f'#EXTM3U name="Film4K TiviMate All {len(all_ordered_channels)} Channels" updated="{now_str}"'
     ]
-    for grp_name in preferred_order:
-        if grp_name not in groups:
-            continue
-        for c in groups[grp_name]:
-            cid = str(c.get('id', '')).strip()
-            cname = str(c.get('name', '')).strip()
-            logo = c.get('logo', '') or ''
-            stream_url = c.get('stream_url', '')
-            if not stream_url:
-                continue
-            m3u_tivi.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp_name}",{cname}')
-            if 'tv360.vn' in stream_url:
-                pipe_url = f"{stream_url}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://tv360.vn/&Origin=https://tv360.vn"
-            else:
-                pipe_url = f"{stream_url}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://fiml4k.fun/&Origin=https://fiml4k.fun"
-            m3u_tivi.append(pipe_url)
+    for c in all_ordered_channels:
+        cid = str(c.get('id', '')).strip()
+        cname = str(c.get('name', '')).strip()
+        logo = c.get('logo', '') or ''
+        surl = c.get('stream_url', '')
+        grp = c.get('category') or 'KÊNH KHÁC'
+        if '.mpd' in surl:
+            grp = f"{grp} (DRM MPD)"
+        elif 'api/tv/ants/' in surl:
+            grp = f"{grp} (Ants)"
+        m3u_tivi.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
+        if 'tv360.vn' in surl:
+            pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://tv360.vn/&Origin=https://tv360.vn"
+        else:
+            pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://fiml4k.fun/&Origin=https://fiml4k.fun"
+        m3u_tivi.append(pipe_url)
 
     m3u_tivi_path = os.path.join(script_dir, 'danh_sach_kenh_tivimate.m3u')
     with open(m3u_tivi_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(m3u_tivi) + '\n')
 
-    print(f"[HOAN TAT] Da cap nhat token thanh cong vao:")
-    print(f"  - danh_sach_kenh_film4k.m3u ({len(ordered)} kenh)")
-    print(f"  - danh_sach_kenh_potplayer.m3u ({pot_count} kenh HLS tuong thich 100% PotPlayer)")
-    print(f"  - danh_sach_kenh_tivimate.m3u")
+    # 3. Tạo danh_sach_kenh_film4k.m3u (Đầy đủ 190 kênh chuẩn VLC)
+    m3u_all = [
+        f'#EXTM3U name="Film4K All {len(all_ordered_channels)} Channels" updated="{now_str}"'
+    ]
+    for c in all_ordered_channels:
+        cid = str(c.get('id', '')).strip()
+        cname = str(c.get('name', '')).strip()
+        logo = c.get('logo', '') or ''
+        surl = c.get('stream_url', '')
+        grp = c.get('category') or 'KÊNH KHÁC'
+        if '.mpd' in surl:
+            grp = f"{grp} (DRM MPD)"
+        elif 'api/tv/ants/' in surl:
+            grp = f"{grp} (Ants)"
+        m3u_all.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
+        m3u_all.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36')
+        m3u_all.append(surl)
+
+    m3u_all_path = os.path.join(script_dir, 'danh_sach_kenh_film4k.m3u')
+    with open(m3u_all_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(m3u_all) + '\n')
+
+    print(f"[HOAN TAT] Da cap nhat day du {len(all_ordered_channels)} kenh vao:")
+    print(f"  - danh_sach_kenh_potplayer.m3u ({len(all_ordered_channels)} kenh, 140 HLS len dau)")
+    print(f"  - danh_sach_kenh_tivimate.m3u ({len(all_ordered_channels)} kenh)")
+    print(f"  - danh_sach_kenh_film4k.m3u ({len(all_ordered_channels)} kenh)")
     print(f"  - direct_streams.json")
 
 if __name__ == '__main__':

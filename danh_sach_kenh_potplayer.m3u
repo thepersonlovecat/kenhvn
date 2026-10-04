@@ -1,4 +1,4 @@
-#EXTM3U name="Film4K PotPlayer Optimized" updated="2026-10-05 03:36:15"
+#EXTM3U name="Film4K PotPlayer All 190 Channels" updated="2026-10-05 03:50:57"
 #EXTINF:-1 tvg-id="2" tvg-name="VTV1" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789027955396/02dce36fc3ff_480_270.png" group-title="Kênh thiết yếu",VTV1
 https://tr-netcdn.tv360.vn/netcdn-live/154/output/index.m3u8?timestamp=1791163329&wmkid=0&token=c69cea6e9f011dee90a59104ed379178&minrate=0&maxrate=12000000&uid=294779473
 #EXTINF:-1 tvg-id="20" tvg-name="ANTV" tvg-logo="https://img-zlr1.tv360.vn/image1/2020_09_23/1600822516608/b33963dc0df8_480_270.png" group-title="Kênh thiết yếu",ANTV
@@ -279,3 +279,103 @@ https://fo-hlc.tv360.vn/bpk-tv/450/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsIn
 https://rr1-ateme.tv360.vn/live/eds/427/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQyNy9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTE2NDIzOH0.KYO5idIIvdihLvRATuq1N8UZ9XsCLaJBFi51-H1QA7hahL2jybzPuxCWc8XR7T_MuYyJPa7Dj9jIsNVL8pskyg&screen=MHL&uid=294779473
 #EXTINF:-1 tvg-id="9965" tvg-name="YFEST" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/10/02/16/1790933604362/06aaada73ab3_480_270.png" group-title="Sự kiện trực tiếp",YFEST
 https://livestream-evg8.tv360.vn/71t1dxGgk96Hh9Bl6veoJA/1791229038/manifest/livestream-04/master.m3u8?manifestfilter=video_bitrate:1-12767168&uid=294779473
+#EXTINF:-1 tvg-id="2554" tvg-name="TV360+ 1" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776266760359/ba1ca843cd06_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 1
+https://fo-hlc.tv360.vn/bpk-tv/198/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzIsInVyaSI6Ii9icGstdHYvMTk4L291dHB1dC9pbmRleC5tcGQifQ.NFZbsAfueHlbINOGGAp-um-I-NRh3CbVHgVb0ZXYpvE&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="1" tvg-name="TV360+ 2" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776266826697/9647033848f3_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 2
+https://fo-hlc.tv360.vn/bpk-tv/199/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzIsInVyaSI6Ii9icGstdHYvMTk5L291dHB1dC9pbmRleC5tcGQifQ.KrWACJ37CQrgE0j5iTC_Vsp74hrZi4cTPO1V54Eh2Zo&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="148" tvg-name="TV360+ 3" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776266894249/af82cd28fcda_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 3
+https://rr1-ateme.tv360.vn/live/eds/200/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzIwMC9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTY0MjMyfQ.bXITzJBRQzSkwrMc6I7YM6lMSLXamUAjzk8Emrn7siwX6jXIKB91TVeiKwfGpfKUrPHElRvbW4tEs4AK46zlLQ&screen=MHL&uid=294779473
+#EXTINF:-1 tvg-id="2458" tvg-name="TV360+ 4" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776266956801/9a85754a5bd9_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 4
+https://fo-hlc.tv360.vn/bpk-tv/201/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjM2NTMsInVyaSI6Ii9icGstdHYvMjAxL291dHB1dC9pbmRleC5tcGQifQ.IQgT1T4Z5IieF2R64lvqC-S8Xt69pU9L34YO5CTOB8E&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="9867" tvg-name="TV360+ 5" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267019948/634cdb439c75_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 5
+https://rr1-ateme.tv360.vn/live/eds/367/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzM2Ny9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTYzNjUzfQ._fDo5soshkp1Qb6QhP2m4IcxndakpxFYpDPOXjgNCXRj7sZnhT_wb6LhXfMDWSyFa7JFQK0Cy0aCqyugUpuc0Q&screen=MHL&uid=294779473
+#EXTINF:-1 tvg-id="9868" tvg-name="TV360+ 6" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267080314/d06a99b5bd9c_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 6
+https://fo-hlc.tv360.vn/bpk-tv/368/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzIsInVyaSI6Ii9icGstdHYvMzY4L291dHB1dC9pbmRleC5tcGQifQ.Wxq9vy1v1VfGcEcVtXCIPkkJ8-aG8xbWHVy8h8miYp8&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="9869" tvg-name="TV360+ 7" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/15/22/177626714329/4631db40bb03_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 7
+https://fo-hlc.tv360.vn/bpk-tv/369/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjM4MjQsInVyaSI6Ii9icGstdHYvMzY5L291dHB1dC9pbmRleC5tcGQifQ.CANp7OPNiOhe_vHPLwSx1-WHj1ZnI2sa_fuE3QrNbrI&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="9870" tvg-name="TV360+ 8" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267211780/516c4028c806_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 8
+https://rr1-ateme.tv360.vn/live/eds/370/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzM3MC9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTY0MjMyfQ.K2MkaFyRQkWgo51e5UXXyxHDEyudYgKNPzZqe63xp47-FeBot8988KRQ3tRLeoK0L8YTrnrs640kWZ1IdtR4wg&screen=MHL&uid=294779473
+#EXTINF:-1 tvg-id="10001" tvg-name="TV360+ 12" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/15/22/1776267662370/76b4144bff34_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 12
+https://fo-hlc.tv360.vn/bpk-tv/465/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjMzMzIsInVyaSI6Ii9icGstdHYvNDY1L291dHB1dC9pbmRleC5tcGQifQ.5NnvfihxH37YIU5m5xbHF9VUm99sTgVPBgzXTu7MVXc&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="10022" tvg-name="TV360+ 13" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/05/15/01/1778782670293/dd4067f28084_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 13
+https://fo-hlc.tv360.vn/bpk-tv/471/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzUsInVyaSI6Ii9icGstdHYvNDcxL291dHB1dC9pbmRleC5tcGQifQ.D8j1U3QnHncMs_VVGbyYNz1tFWQcHbOj4Wtbn6VBq_E&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="10023" tvg-name="TV360+ 14" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/05/15/01/177878325467/bbecb3ccb477_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 14
+https://fo-hlc.tv360.vn/bpk-tv/472/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzgsInVyaSI6Ii9icGstdHYvNDcyL291dHB1dC9pbmRleC5tcGQifQ.83msh2qk0X59vWcabcJ9uYfV1OkeT-PIxJzcBBqhvgQ&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="10024" tvg-name="TV360+ 15" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/05/15/01/1778783528367/ddfa21d56253_480_270.png" group-title="Sự kiện trực tiếp (DRM MPD)",TV360+ 15
+https://fo-hlc.tv360.vn/bpk-tv/473/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyMzgsInVyaSI6Ii9icGstdHYvNDczL291dHB1dC9pbmRleC5tcGQifQ.nAIa4HHNsivZAxGnjmNKJN2tg8EfXWET6tSfSHQqklQ&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="9903" tvg-name="Phim Âu Mỹ" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/09/08/1775697767861/9a6dc88794cf_480_270.png" group-title="Giải trí (DRM MPD)",Phim Âu Mỹ
+https://tr1-netcdn.tv360.vn/video1/2023/08/31/08/b83ff82e/6534b6/h264/dash/stream.mpd?timestamp=1791153420&token=c80382c9a21fe21a98ae742396654526&uid=294779473
+#EXTINF:-1 tvg-id="10012" tvg-name="360 Phim Kinh điển" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/04/13/13/1776063200976/6ced2ef539a4_480_270.png" group-title="Giải trí (DRM MPD)",360 Phim Kinh điển
+https://rr2-ateme.tv360.vn/video1/2025/11/18/13/7b400412/c534cb/h264/dash/stream.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDI1LzExLzE4LzEzLzdiNDAwNDEyL2M1MzRjYi9oMjY0L2Rhc2gvIiwibWV0aG9kIjoiR0VUIiwiZXhwIjoxNzkxMTU2NzIwfQ._ri4SgHdSci9tG2LI4xM0GB0exNGMVQUldGzumcKMHH7cGL2ZiWhAmjDF2RPZQ-va4wX8N6m6sxpftXsmPdJzA&uid=294779473
+#EXTINF:-1 tvg-id="10055" tvg-name="360 Phim 4K" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/07/30/10/1785382803894/362700e9107b_480_270.png" group-title="Giải trí (DRM MPD)",360 Phim 4K
+https://rr2-ateme.tv360.vn/video1/2024/09/05/10/335489e9/cc145b/h264/dash/stream.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL3ZpZGVvMS8yMDI0LzA5LzA1LzEwLzMzNTQ4OWU5L2NjMTQ1Yi9oMjY0L2Rhc2gvIiwibWV0aG9kIjoiR0VUIiwiZXhwIjoxNzkxMTY0MjIwfQ.YceK4ffuu__u6T-9RxcOZLakEQvE1BW0lOze7Ep8u2X-bX1Rk0uU8WTFNA1Yl0OeFqNX_Aq8xXhvAuUNl9WCJQ&uid=294779473
+#EXTINF:-1 tvg-id="271" tvg-name="HBO" tvg-logo="https://img-zlr1.tv360.vn/image1/2021/10/04/02/163329112517/6cb3ef1d12de_480_270.png" group-title="Kênh quốc tế (DRM MPD)",HBO
+https://prv.film4k.net/live/tv360/271/manifest.mpd
+#EXTINF:-1 tvg-id="239" tvg-name="Cinemax" tvg-logo="https://img-zlr1.tv360.vn/image1/2025/12/30/23/1767113557980/0de97d4682ea_480_270.png" group-title="Kênh quốc tế (DRM MPD)",Cinemax
+https://prv.film4k.net/live/tv360/239/manifest.mpd
+#EXTINF:-1 tvg-id="273" tvg-name="Warner TV" tvg-logo="https://img-zlr1.tv360.vn/image1/2021/09/30/17/1632996783674/68825acc06f6_480_270.png" group-title="Kênh quốc tế (DRM MPD)",Warner TV
+https://fo-hlc.tv360.vn/bpk-tv/241/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTAsInVyaSI6Ii9icGstdHYvMjQxL291dHB1dC9pbmRleC5tcGQifQ.b0VUJyyDPWEC8rE8cQgdEOGabTCYx4JrSuSRLxzoyLg&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="281" tvg-name="AXN" tvg-logo="https://img-zlr1.tv360.vn/image1/2021/09/30/21/1633012168716/95bc496176f2_480_270.png" group-title="Kênh quốc tế (DRM MPD)",AXN
+https://fo-hlc.tv360.vn/bpk-tv/262/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTAsInVyaSI6Ii9icGstdHYvMjYyL291dHB1dC9pbmRleC5tcGQifQ.RqkH2n8z-8ZlgHI2wlL1InhvO0IW-0ltsCJJRpVM_lU&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="159" tvg-name="Cinema World" tvg-logo="https://img-zlr1.tv360.vn/image1/2025/12/31/00/1767114171189/011dc2ee60d6_480_270.png" group-title="Kênh quốc tế (DRM MPD)",Cinema World
+https://fo-hlc.tv360.vn/bpk-tv/461/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTAsInVyaSI6Ii9icGstdHYvNDYxL291dHB1dC9pbmRleC5tcGQifQ.Mxft9EEaKAD07BpygXsOdAYj2n6VxFvqSoEXfCUQSfk&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="235" tvg-name="DreamWorks" tvg-logo="https://img-zlr1.tv360.vn/image1/2025/12/31/00/1767114503767/16fabdd762a9_480_270.png" group-title="Kênh quốc tế (DRM MPD)",DreamWorks
+https://rr1-ateme.tv360.vn/live/eds/463/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ2My9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTY0MjUwfQ.2eLSlo5Zg9TSM5BiOJ4yYhuUa_0yCd2gbUT7zjUrFyGPmaHBjBE28lmu704LbmFK7bVnpTGEQ7sVgU9wbDcA8w&screen=MHL&uid=294779473
+#EXTINF:-1 tvg-id="277" tvg-name="Cartoon" tvg-logo="https://img-zlr1.tv360.vn/image1/2021/09/30/17/16329991075/0c76e4e7e984_480_270.png" group-title="Kênh quốc tế (DRM MPD)",Cartoon
+https://fo-hlc.tv360.vn/bpk-tv/240/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTAsInVyaSI6Ii9icGstdHYvMjQwL291dHB1dC9pbmRleC5tcGQifQ.6XXGvblh4TLbn6GYF-qT_vmKzgf1a7vK4b2bU5zdDE0&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="163" tvg-name="FashionTV" tvg-logo="https://img-zlr1.tv360.vn/image1/2025/12/31/00/1767114669220/2a4f94f276e2_480_270.png" group-title="Kênh quốc tế (DRM MPD)",FashionTV
+https://fo-hlc.tv360.vn/bpk-tv/464/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTAsInVyaSI6Ii9icGstdHYvNDY0L291dHB1dC9pbmRleC5tcGQifQ.wATKzTK8Lf835yQvD9UAfT9yLw7UF4L-1Yc3aTDtruA&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="237" tvg-name="Bloomberg" tvg-logo="https://img-zlr1.tv360.vn/image1/2025/12/31/00/1767115195629/60e0ef5853e1_480_270.png" group-title="Kênh quốc tế (DRM MPD)",Bloomberg
+https://rr1-ateme.tv360.vn/live/eds/462/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ2Mi9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTY0MjUzfQ.SDC7I-dyU9PVUoJPBTfMsnNKQQd4rpIYjVsReqayV74CiXzBno2dYU3YoEI6WwxPxXV7PXaowx5PCreWGzj_-Q&screen=MHL&uid=294779473
+#EXTINF:-1 tvg-id="279" tvg-name="Discovery Channel" tvg-logo="https://img-zlr1.tv360.vn/image1/2021/09/30/17/1632999438220/cb5b2ef01b69_480_270.png" group-title="Kênh quốc tế (DRM MPD)",Discovery Channel
+https://fo-hlc.tv360.vn/bpk-tv/264/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTMsInVyaSI6Ii9icGstdHYvMjY0L291dHB1dC9pbmRleC5tcGQifQ.WElzRhKUg94iObTBUOpLOBkH6ZHpLeZmICzTPN2Tb84&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="275" tvg-name="CNN" tvg-logo="https://img-zlr1.tv360.vn/image1/2021/10/01/08/1633052531161/ccb61db3f667_480_270.png" group-title="Kênh quốc tế (DRM MPD)",CNN
+https://fo-hlc.tv360.vn/bpk-tv/242/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTYsInVyaSI6Ii9icGstdHYvMjQyL291dHB1dC9pbmRleC5tcGQifQ.tAFKkD7BglIUxGIp0c0NaMEa88DRfYWOIBdWnMEbco0&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="283" tvg-name="ABC Australia" tvg-logo="https://img-zlr1.tv360.vn/image1/2021/09/30/21/1633012334655/9f82fec7aa58_480_270.png" group-title="Kênh quốc tế (DRM MPD)",ABC Australia
+https://fo-hlc.tv360.vn/bpk-tv/269/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNTYsInVyaSI6Ii9icGstdHYvMjY5L291dHB1dC9pbmRleC5tcGQifQ.FsY865VVhY_h2O9tXPHYCzY3nxonT_t0GqZLOsYd8fM&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="174" tvg-name="VTVcab 16 - On Football HD" tvg-logo="https://img-zlr1.tv360.vn/image1/2023/04/28/09/1682650260303/bc7fe5334315_480_270.png" group-title="Kênh VTV Cab (DRM MPD)",VTVcab 16 - On Football HD
+https://rr1-ateme.tv360.vn/live/eds/222/DASH_DRM_MHL_2s/index.mpd?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzIyMi9EQVNIX0RSTV9NSExfMnMvIiwiZXhwIjoxNzkxMTY0Mjc0fQ.-VQVXlChVHtJg8anc6gwT9Y3pGWre7DIcvK4AMZpInCI10dnueGw9B2y0BSI1XBrAJ1F9n4Ye_E5Til4St0IbA&screen=MHL&uid=294779473
+#EXTINF:-1 tvg-id="173" tvg-name="VTVcab 3 - On Sports" tvg-logo="https://img-zlr1.tv360.vn/image1/2023/04/28/09/1682650417399/08d4190f7711_480_270.png" group-title="Kênh VTV Cab (DRM MPD)",VTVcab 3 - On Sports
+https://fo-hlc.tv360.vn/bpk-tv/221/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzQsInVyaSI6Ii9icGstdHYvMjIxL291dHB1dC9pbmRleC5tcGQifQ.fqjpkaVCEPFBRp3Lybi9udX2UdtruQZqPeinY6MrILA&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="170" tvg-name="VTVcab 18 - On Sports News" tvg-logo="https://img-zlr1.tv360.vn/image1/2023/04/28/09/1682650363143/71956aa35c78_480_270.png" group-title="Kênh VTV Cab (DRM MPD)",VTVcab 18 - On Sports News
+https://fo-hlc.tv360.vn/bpk-tv/223/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzcsInVyaSI6Ii9icGstdHYvMjIzL291dHB1dC9pbmRleC5tcGQifQ.GhWe32QuOsFVJoBfPr8-dJHuKnVnh0f-pz9yF1P11iQ&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="183" tvg-name="VTVcab 6 - On Sports +" tvg-logo="https://img-zlr1.tv360.vn/image1/2023/04/28/09/1682650447548/72acfa0eca2c_480_270.png" group-title="Kênh VTV Cab (DRM MPD)",VTVcab 6 - On Sports +
+https://fo-hlc.tv360.vn/bpk-tv/216/output/index.mpd?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTExNjQyNzcsInVyaSI6Ii9icGstdHYvMjE2L291dHB1dC9pbmRleC5tcGQifQ.AOUTwb2wgwMth-x4KkvwFWhmjB3z11ZV3MEsLaLCpDM&minrate=0&maxrate=12000000&uid=294779473
+#EXTINF:-1 tvg-id="ants:3" tvg-name="TNT Sports 1" tvg-logo="https://static.antsports.tv/tvlogo/tnt-sports-1.png" group-title="KÊNH KHÁC (Ants)",TNT Sports 1
+https://fiml4k.fun/api/tv/ants/3/index.m3u8
+#EXTINF:-1 tvg-id="ants:4" tvg-name="TNT Sports 2" tvg-logo="https://static.antsports.tv/tvlogo/tnt-sports-2.png" group-title="KÊNH KHÁC (Ants)",TNT Sports 2
+https://fiml4k.fun/api/tv/ants/4/index.m3u8
+#EXTINF:-1 tvg-id="ants:5" tvg-name="TNT Sports 3" tvg-logo="https://static.antsports.tv/tvlogo/tnt-sports-3.png" group-title="KÊNH KHÁC (Ants)",TNT Sports 3
+https://fiml4k.fun/api/tv/ants/5/index.m3u8
+#EXTINF:-1 tvg-id="ants:20" tvg-name="Sky Sports Main Events" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-events.png" group-title="KÊNH KHÁC (Ants)",Sky Sports Main Events
+https://fiml4k.fun/api/tv/ants/20/index.m3u8
+#EXTINF:-1 tvg-id="ants:16" tvg-name="Sky Sports Action" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-action.png" group-title="KÊNH KHÁC (Ants)",Sky Sports Action
+https://fiml4k.fun/api/tv/ants/16/index.m3u8
+#EXTINF:-1 tvg-id="ants:26" tvg-name="Sky Sports News" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-news.png" group-title="KÊNH KHÁC (Ants)",Sky Sports News
+https://fiml4k.fun/api/tv/ants/26/index.m3u8
+#EXTINF:-1 tvg-id="ants:28" tvg-name="Sky Sports Tennis" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-tennis.png" group-title="KÊNH KHÁC (Ants)",Sky Sports Tennis
+https://fiml4k.fun/api/tv/ants/28/index.m3u8
+#EXTINF:-1 tvg-id="ants:21" tvg-name="Sky Sports F1" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-f1.png" group-title="KÊNH KHÁC (Ants)",Sky Sports F1
+https://fiml4k.fun/api/tv/ants/21/index.m3u8
+#EXTINF:-1 tvg-id="ants:23" tvg-name="Sky Sports Golf" tvg-logo="https://static.antsports.tv/tvlogo/sky-sports-golf.png" group-title="KÊNH KHÁC (Ants)",Sky Sports Golf
+https://fiml4k.fun/api/tv/ants/23/index.m3u8
+#EXTINF:-1 tvg-id="ants:2420" tvg-name="BBC News" tvg-logo="https://static.antsports.tv/tvlogo/bbc-news.png" group-title="KÊNH KHÁC (Ants)",BBC News
+https://fiml4k.fun/api/tv/ants/2420/index.m3u8
+#EXTINF:-1 tvg-id="ants:2443" tvg-name="BBC TWO" tvg-logo="https://static.antsports.tv/tvlogo/bbc2.png" group-title="KÊNH KHÁC (Ants)",BBC TWO
+https://fiml4k.fun/api/tv/ants/2443/index.m3u8
+#EXTINF:-1 tvg-id="ants:2445" tvg-name="BBC ONE" tvg-logo="https://static.antsports.tv/tvlogo/bbc-one.png" group-title="KÊNH KHÁC (Ants)",BBC ONE
+https://fiml4k.fun/api/tv/ants/2445/index.m3u8
+#EXTINF:-1 tvg-id="ants:7867" tvg-name="Premier Sports 1" tvg-logo="https://static.antsports.tv/tvlogo/premier-sports-1.png" group-title="KÊNH KHÁC (Ants)",Premier Sports 1
+https://fiml4k.fun/api/tv/ants/7867/index.m3u8
+#EXTINF:-1 tvg-id="ants:7868" tvg-name="Premier Sports 2" tvg-logo="https://static.antsports.tv/tvlogo/premier-sports-2.png" group-title="KÊNH KHÁC (Ants)",Premier Sports 2
+https://fiml4k.fun/api/tv/ants/7868/index.m3u8
+#EXTINF:-1 tvg-id="ants:12311" tvg-name="NFL RedZone" tvg-logo="https://static.antsports.tv/tvlogo/nfl-redzone.png" group-title="KÊNH KHÁC (Ants)",NFL RedZone
+https://fiml4k.fun/api/tv/ants/12311/index.m3u8
+#EXTINF:-1 tvg-id="ants:7" tvg-name="ITV1" tvg-logo="https://static.antsports.tv/tvlogo/itv1.png" group-title="KÊNH KHÁC (Ants)",ITV1
+https://fiml4k.fun/api/tv/ants/7/index.m3u8
+#EXTINF:-1 tvg-id="ants:8" tvg-name="ITV2" tvg-logo="https://static.antsports.tv/tvlogo/itv2.png" group-title="KÊNH KHÁC (Ants)",ITV2
+https://fiml4k.fun/api/tv/ants/8/index.m3u8
+#EXTINF:-1 tvg-id="ants:9" tvg-name="ITV3" tvg-logo="https://static.antsports.tv/tvlogo/itv3.png" group-title="KÊNH KHÁC (Ants)",ITV3
+https://fiml4k.fun/api/tv/ants/9/index.m3u8
+#EXTINF:-1 tvg-id="ants:10" tvg-name="ITV4" tvg-logo="https://static.antsports.tv/tvlogo/itv4.png" group-title="KÊNH KHÁC (Ants)",ITV4
+https://fiml4k.fun/api/tv/ants/10/index.m3u8
