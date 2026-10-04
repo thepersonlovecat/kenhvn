@@ -1730,30 +1730,5 @@
       "source": "tv360"
     }
   ],
-  "events": [
-    {
-      "id": "2458",
-      "title": "Bóng đá: UEFA Nations League 2026/27 Lượt 4, Bồ Đào Nha vs Na Uy, 1giờ 45 phút, ngày 5/10, kênh TV360+ 4",
-      "image": "https://img-zlr1.tv360.vn/image1/2026/09/28/10/179056467275/c06bd472818e_1280_720.png",
-      "status": "",
-      "begin": 1791139500,
-      "end": 1791148500
-    },
-    {
-      "id": "9867",
-      "title": "Bóng đá: UEFA Nations League 2026/27 Lượt 4, Hy Lạp vs Đức, 1 giờ 45 phút , ngày 5/10, kênh TV360+ 5",
-      "image": "https://img-zlr1.tv360.vn/image1/2026/09/28/09/1790562799407/1648e25ec0d7_1280_720.png",
-      "status": "",
-      "begin": 1791139500,
-      "end": 1791148500
-    },
-    {
-      "id": "9869",
-      "title": "Bóng đá: UEFA Nations League 2026/27 Lượt 4, Hà Lan vs Serbia, 1 giờ 45 phút , ngày 5/10, kênh TV360+ 7",
-      "image": "https://img-zlr1.tv360.vn/image1/2026/09/28/09/1790563087218/095e40c77b51_1280_720.png",
-      "status": "",
-      "begin": 1791139500,
-      "end": 1791148500
-    }
-  ]
+  "events": []
 }

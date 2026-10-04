@@ -1,4 +1,4 @@
-#EXTM3U name="Film4K All 190 Channels" updated="2026-10-05 03:50:57"
+#EXTM3U name="Film4K All 190 Channels" updated="2026-10-05 04:18:14"
 #EXTINF:-1 tvg-id="2" tvg-name="VTV1" tvg-logo="https://img-zlr1.tv360.vn/image1/2026/09/10/15/1789027955396/02dce36fc3ff_480_270.png" group-title="Kênh thiết yếu",VTV1
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36
 https://tr-netcdn.tv360.vn/netcdn-live/154/output/index.m3u8?timestamp=1791163329&wmkid=0&token=c69cea6e9f011dee90a59104ed379178&minrate=0&maxrate=12000000&uid=294779473

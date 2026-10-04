@@ -8,8 +8,10 @@ export default {
     // 1. Tự động xác định danh sách phù hợp
     let targetFile = "danh_sach_kenh_potplayer.m3u";
 
-    // Cho phép người dùng hoặc ứng dụng chọn theo URL param (?type=tivi, ?type=pot, ?type=all)
-    if (path.includes("tivi") || url.searchParams.get("type") === "tivi") {
+    // Cho phép người dùng hoặc ứng dụng chọn theo URL param (?type=tv360, ?type=tivi, ?type=pot, ?type=all)
+    if (path.includes("tv360") || path.includes("clearkey") || url.searchParams.get("type") === "tv360") {
+      targetFile = "tv360.m3u";
+    } else if (path.includes("tivi") || url.searchParams.get("type") === "tivi") {
       targetFile = "danh_sach_kenh_tivimate.m3u";
     } else if (path.includes("all") || url.searchParams.get("type") === "all") {
       targetFile = "danh_sach_kenh_film4k.m3u";
