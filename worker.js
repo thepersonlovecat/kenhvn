@@ -1,3 +1,6 @@
+// Cloudflare Worker: KenhVN IPTV Fast Edge Gateway
+// Tự động nhận diện thiết bị (PotPlayer, TiviMate, Android Box) & Phát playlist trực tiếp từ GitHub
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -8,7 +11,6 @@ export default {
     // 1. Tự động xác định danh sách phù hợp
     let targetFile = "danh_sach_kenh_potplayer.m3u";
 
-    // Cho phép người dùng hoặc ứng dụng chọn theo URL param (?type=tv360, ?type=tivi, ?type=pot, ?type=all)
     if (path.includes("tv360") || path.includes("clearkey") || url.searchParams.get("type") === "tv360") {
       targetFile = "tv360.m3u";
     } else if (path.includes("tivi") || url.searchParams.get("type") === "tivi") {
@@ -18,9 +20,7 @@ export default {
     } else if (path.includes("pot") || url.searchParams.get("type") === "pot") {
       targetFile = "danh_sach_kenh_potplayer.m3u";
     } else {
-      // SMART AUTO-DETECTION: Tự nhận diện thiết bị qua User-Agent
-      // Nếu là TiviMate, OTT Navigator, Android TV, ExoPlayer -> Trả về bản pipe header của TiviMate
-      // Nếu là PotPlayer, VLC, PC -> Trả về bản clean HLS của PotPlayer
+      // Smart Device Auto-Detection
       if (
         ua.includes("tivimate") ||
         ua.includes("ott") ||
@@ -49,7 +49,7 @@ export default {
       });
     }
 
-    // 3. Tải nội dung M3U trực tiếp từ GitHub (kèm cache-buster theo phút để luôn lấy dữ liệu mới nhất)
+    // 3. Tải nội dung M3U trực tiếp từ GitHub
     const cacheMinute = Math.floor(Date.now() / 60000);
     const githubRawUrl = `https://raw.githubusercontent.com/thepersonlovecat/kenhvn/main/${targetFile}?t=${cacheMinute}`;
 
@@ -59,7 +59,7 @@ export default {
           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
         },
         cf: {
-          cacheTtl: 60, // Cache 1 phút tại Cloudflare Edge
+          cacheTtl: 30, // Cache 30 giây tại Edge
           cacheEverything: true
         }
       });
@@ -78,7 +78,7 @@ export default {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Headers": "*",
           "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
-          "Cache-Control": "public, max-age=60"
+          "Cache-Control": "public, max-age=30"
         }
       });
     } catch (e) {
@@ -93,7 +93,7 @@ function renderWebUI(origin) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KenhVN - Kho Kênh IPTV Tự Động 24/7</title>
+  <title>KenhVN IPTV - Danh Sách Kênh Chuẩn</title>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -195,18 +195,26 @@ function renderWebUI(origin) {
 </head>
 <body>
   <div class="container">
-    <div class="badge"><span class="dot"></span> Tự động làm mới token mỗi 4 tiếng</div>
+    <div class="badge"><span class="dot"></span> Tự động đồng bộ và nạp nhanh</div>
     <h1>📺 KenhVN IPTV Cloudflare</h1>
-    <p class="desc">Chỉ cần 1 đường link duy nhất. Hệ thống tự động nhận diện thiết bị để phát mượt mà trên cả <strong>PotPlayer</strong> (PC) lẫn <strong>TiviMate</strong> (Smart TV / Android Box).</p>
+    <p class="desc">Chỉ cần 1 đường link duy nhất. Hệ thống tự động nhận diện thiết bị (PotPlayer, TiviMate, Android Box) để phát đúng định dạng tối ưu.</p>
 
     <div class="box">
-      <div class="box-title">🌟 Đường link đa năng duy nhất (Khuyên dùng cho tất cả)</div>
+      <div class="box-title">🌟 Đường link đa năng duy nhất (Khuyên dùng)</div>
       <div class="url-row">
         <span id="url-main">${origin}/playlist.m3u</span>
         <button class="copy-btn" onclick="copyToClipboard('${origin}/playlist.m3u', this)">Sao chép</button>
       </div>
       <div style="font-size: 12px; color: #9ca3af; margin-top: 8px;">
-        👉 Dán link này vào <strong>PotPlayer</strong> hoặc <strong>TiviMate</strong> đều tự nhận đúng định dạng tối ưu!
+        👉 Dán link này vào <strong>PotPlayer</strong> hoặc <strong>TiviMate</strong> đều tự nhận đúng định dạng!
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-title">⚡ Link chuyên kênh TV360+ & VTVPrime ClearKey</div>
+      <div class="url-row">
+        <span id="url-tv360">${origin}/tv360.m3u</span>
+        <button class="copy-btn" onclick="copyToClipboard('${origin}/tv360.m3u', this)">Sao chép</button>
       </div>
     </div>
 
