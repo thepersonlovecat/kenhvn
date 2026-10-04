@@ -1,10 +1,8 @@
 name: Auto Update IPTV Channels & Tokens
 
+# Đã tắt cron tự động vì bạn sẽ cập nhật thủ công (tránh bị ghi đè dữ liệu)
 on:
-  schedule:
-    # Chạy mỗi 4 tiếng một lần (Token TV360 có thời hạn ~5-6 tiếng)
-    - cron: '0 */4 * * *'
-  workflow_dispatch: # Cho phép bấm nút "Run workflow" thủ công bất cứ lúc nào
+  workflow_dispatch: # Chỉ chạy khi bạn chủ động vào GitHub bấm nút (hoặc để trống)
 
 permissions:
   contents: write
