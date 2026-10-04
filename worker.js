@@ -49,8 +49,9 @@ export default {
       });
     }
 
-    // 3. Tải nội dung M3U trực tiếp từ GitHub
-    const githubRawUrl = `https://raw.githubusercontent.com/thepersonlovecat/kenhvn/main/${targetFile}`;
+    // 3. Tải nội dung M3U trực tiếp từ GitHub (kèm cache-buster theo phút để luôn lấy dữ liệu mới nhất)
+    const cacheMinute = Math.floor(Date.now() / 60000);
+    const githubRawUrl = `https://raw.githubusercontent.com/thepersonlovecat/kenhvn/main/${targetFile}?t=${cacheMinute}`;
 
     try {
       const response = await fetch(githubRawUrl, {
@@ -58,7 +59,7 @@ export default {
           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
         },
         cf: {
-          cacheTtl: 180, // Cache 3 phút tại Edge Cloudflare
+          cacheTtl: 60, // Cache 1 phút tại Cloudflare Edge
           cacheEverything: true
         }
       });
@@ -77,7 +78,7 @@ export default {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Headers": "*",
           "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
-          "Cache-Control": "public, max-age=180"
+          "Cache-Control": "public, max-age=60"
         }
       });
     } catch (e) {
