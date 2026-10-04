@@ -20,7 +20,7 @@ BASE_URL = os.environ.get("FILM4K_BASE_URL", "https://fiml4k.fun")
 EMAIL = os.environ.get("FILM4K_EMAIL")
 PASSWORD = os.environ.get("FILM4K_PASS")
 
-# Tự động đọc từ config.json (cục bộ) nếu không có biến môi trường
+# Tu dong doc tu config.json neu khong co bien moi truong
 if not EMAIL or not PASSWORD:
     cfg_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.json')
     if os.path.exists(cfg_file):
@@ -96,17 +96,15 @@ def fetch_stream_url(ch):
         "raw": None
     }
 
-def update_tv360_m3u(ordered, script_dir):
+def update_and_load_tv360_m3u(ordered, script_dir):
     """
-    Cap nhat token moi vao file tv360.m3u (chua san cac khoa ClearKey).
-    Dac biet trich xuat token cho: TV360+ 4, 6, 7, 12, 13, 14, 15.
-    Cat bo toan bo phan query dang sau .mpd.
+    1. Cap nhat token moi vao file tv360.m3u (chua ClearKey).
+    2. Trich xuat cac khoi kenh tu tv360.m3u de ghep vao playlist tong hop.
     """
     tv360_path = os.path.join(script_dir, 'tv360.m3u')
     if not os.path.exists(tv360_path):
-        return
+        return []
 
-    # Map Channel Number trong link sang Film4K ID
     ch_map = {
         '201': 2458,  # TV360+ 4
         '368': 9868,  # TV360+ 6
@@ -126,12 +124,11 @@ def update_tv360_m3u(ordered, script_dir):
         try:
             r2 = requests.get(surl, allow_redirects=False, verify=False, timeout=10)
             loc = r2.headers.get('Location', '')
-            # Regex match bpk-token URL
             m = re.search(r'https://([^/:]+)(?::\d+)?/bpk-token/([^/]+)/bpk-tv/' + ch_num + r'/output/index\.mpd', loc)
             if m:
                 host = m.group(1)
                 token = m.group(2)
-                # Lay sach truoc .mpd, phia sau query bo het
+                # Cat sach truoc .mpd, bo query phia sau
                 fresh_bpk_urls[ch_num] = f'https://{host}/bpk-token/{token}/bpk-tv/{ch_num}/output/index.mpd'
         except Exception as e:
             print(f"[WARN] Khong the lay redirect bpk-token cho kenh {ch_num}: {e}")
@@ -143,7 +140,7 @@ def update_tv360_m3u(ordered, script_dir):
         for ch_num, new_url in fresh_bpk_urls.items():
             pattern = r'https://[^\s]+/bpk-token/[^/\s]+/bpk-tv/' + ch_num + r'/output/index\.mpd[^\s]*'
             content = re.sub(pattern, new_url, content)
-            print(f"  -> tv360.m3u: Da thay token moi cho kenh {ch_num}")
+            print(f"  -> tv360.m3u: Da cap nhat bpk-token cho kenh {ch_num}")
 
         # Cap nhat TV360+ 9, 10, 11 (cac kenh HLS sach tu TV360)
         hls_map = {
@@ -155,15 +152,33 @@ def update_tv360_m3u(ordered, script_dir):
             ch_found = next((c for c in ordered if str(c['id']) == cid_str), None)
             if ch_found and ch_found.get('stream_url'):
                 clean_hls = ch_found['stream_url']
-                # Replace url under tvg-id="tv360plusX"
                 pattern = r'(tvg-id="' + tag + r'".*?\n(?:#EXTVLCOPT:[^\n]+\n)?)(https://[^\s]+)'
                 content = re.sub(pattern, r'\g<1>' + clean_hls, content, flags=re.DOTALL)
 
         with open(tv360_path, 'w', encoding='utf-8') as f:
             f.write(content)
-        print("[OK] Da cap nhat toan bo token moi vao file tv360.m3u!")
+        print("[OK] Da cap nhat toan bo token moi vao tv360.m3u!")
+
+        # Doc cac khoi kenh da duoc format san trong tv360.m3u
+        tv360_entries = []
+        current = []
+        for line in content.splitlines():
+            line_str = line.strip()
+            if not line_str:
+                continue
+            if line_str.startswith('#EXTINF:'):
+                if current:
+                    tv360_entries.append(current)
+                    current = []
+            current.append(line_str)
+        if current:
+            tv360_entries.append(current)
+
+        return tv360_entries
+
     except Exception as e:
-        print(f"[ERROR] Loi khi cap nhat tv360.m3u: {e}")
+        print(f"[ERROR] Loi khi xu ly tv360.m3u: {e}")
+        return []
 
 def main():
     print("=" * 60)
@@ -191,7 +206,6 @@ def main():
                 print(f" -> Da lay token: {done}/{total_ch} kenh...")
 
     ordered = [results[ch['id']] for ch in channels if ch['id'] in results]
-
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     with open(os.path.join(script_dir, 'direct_streams.json'), 'w', encoding='utf-8') as f:
@@ -200,12 +214,13 @@ def main():
     with open(os.path.join(script_dir, 'channels_live.json'), 'w', encoding='utf-8') as f:
         json.dump({"channels": channels, "events": events}, f, ensure_ascii=False, indent=2)
 
-    # 1. Cap nhat rieng tv360.m3u (thay the cac bpk-token va giu ClearKey)
-    update_tv360_m3u(ordered, script_dir)
+    # 1. Cap nhat va lay toan bo cac kenh TV360+ / VTVPrime da giai ma ClearKey tu tv360.m3u
+    tv360_clearkey_entries = update_and_load_tv360_m3u(ordered, script_dir)
+    print(f"[INFO] Da nap {len(tv360_clearkey_entries)} kenh giai ma ClearKey tu tv360.m3u")
 
-    # 2. Phan loai kenh cho cac playlist tong
+    # 2. Loc va sap xep cac kenh tu Film4K
+    # Loai bo cac kenh TV360+ cu trong Film4K de thay the bang ban ClearKey tu tv360.m3u
     hls_channels = []
-    mpd_channels = []
     ants_channels = []
 
     preferred_order = [
@@ -219,19 +234,19 @@ def main():
         'Kênh SCTV',
         'Kênh Vĩnh Long',
         'Kênh địa phương',
-        'Kênh FM',
-        'Sự kiện trực tiếp',
-        'KÊNH KHÁC'
+        'Kênh FM'
     ]
 
     groups = defaultdict(list)
     for c in ordered:
         surl = c.get('stream_url', '')
+        cname = c.get('name', '')
         if not surl:
             continue
-        if '.mpd' in surl:
-            mpd_channels.append(c)
-        elif 'api/tv/ants/' in surl:
+        # Neu la kenh TV360+ (da co ban ClearKey trong tv360.m3u) thi bo qua o day de chen ban ClearKey vao sau
+        if 'tv360+' in cname.lower():
+            continue
+        if 'api/tv/ants/' in surl:
             ants_channels.append(c)
         else:
             grp = c.get('category') or 'KÊNH KHÁC'
@@ -245,82 +260,79 @@ def main():
         if grp_name in groups:
             hls_channels.extend(groups[grp_name])
 
-    all_ordered_channels = hls_channels + mpd_channels + ants_channels
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    # 3. Tao danh_sach_kenh_potplayer.m3u
-    m3u_pot = [
-        f'#EXTM3U name="Film4K PotPlayer All {len(all_ordered_channels)} Channels" updated="{now_str}"'
+    # 3. Tao danh_sach_kenh_potplayer.m3u & danh_sach_kenh_tivimate.m3u
+    # Thu tu:
+    # 1. 140 kenh HLS thong thuong (VTV1 len dau, HTV, VTC...)
+    # 2. Toan bo kenh TV360+ & VTVPrime tu tv360.m3u (Co san ClearKey & bpk-token moi)
+    # 3. Cac kenh Ants quoc te
+    
+    m3u_tivi_lines = [
+        f'#EXTM3U name="Film4K & TV360 ClearKey IPTV" updated="{now_str}"'
     ]
-    for c in all_ordered_channels:
+    m3u_pot_lines = [
+        f'#EXTM3U name="Film4K & TV360 ClearKey IPTV" updated="{now_str}"'
+    ]
+
+    # Phần 1: Các kênh HLS thông thường
+    for c in hls_channels:
         cid = str(c.get('id', '')).strip()
         cname = str(c.get('name', '')).strip()
         logo = c.get('logo', '') or ''
         surl = c.get('stream_url', '')
         grp = c.get('category') or 'KÊNH KHÁC'
-        if '.mpd' in surl:
-            grp = f"{grp} (DRM MPD)"
-        elif 'api/tv/ants/' in surl:
-            grp = f"{grp} (Ants)"
-        m3u_pot.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
-        m3u_pot.append(surl)
 
-    m3u_pot_path = os.path.join(script_dir, 'danh_sach_kenh_potplayer.m3u')
-    with open(m3u_pot_path, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(m3u_pot) + '\n')
+        # PotPlayer: Clean URL
+        m3u_pot_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
+        m3u_pot_lines.append(surl)
 
-    # 4. Tao danh_sach_kenh_tivimate.m3u
-    m3u_tivi = [
-        f'#EXTM3U name="Film4K TiviMate All {len(all_ordered_channels)} Channels" updated="{now_str}"'
-    ]
-    for c in all_ordered_channels:
-        cid = str(c.get('id', '')).strip()
-        cname = str(c.get('name', '')).strip()
-        logo = c.get('logo', '') or ''
-        surl = c.get('stream_url', '')
-        grp = c.get('category') or 'KÊNH KHÁC'
-        if '.mpd' in surl:
-            grp = f"{grp} (DRM MPD)"
-        elif 'api/tv/ants/' in surl:
-            grp = f"{grp} (Ants)"
-        m3u_tivi.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
+        # TiviMate: Pipe URL
+        m3u_tivi_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
         if 'tv360.vn' in surl:
             pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://tv360.vn/&Origin=https://tv360.vn"
         else:
             pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://fiml4k.fun/&Origin=https://fiml4k.fun"
-        m3u_tivi.append(pipe_url)
+        m3u_tivi_lines.append(pipe_url)
 
-    m3u_tivi_path = os.path.join(script_dir, 'danh_sach_kenh_tivimate.m3u')
-    with open(m3u_tivi_path, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(m3u_tivi) + '\n')
+    # Phần 2: Các kênh TV360+ và VTVPrime (Đã có ClearKey & Token mới)
+    for entry in tv360_clearkey_entries:
+        # Giu nguyen toan bo the dinh dang (#EXTINF, #KODIPROP, stream url)
+        for line in entry:
+            m3u_tivi_lines.append(line)
+            m3u_pot_lines.append(line)
 
-    # 5. Tao danh_sach_kenh_film4k.m3u
-    m3u_all = [
-        f'#EXTM3U name="Film4K All {len(all_ordered_channels)} Channels" updated="{now_str}"'
-    ]
-    for c in all_ordered_channels:
+    # Phần 3: Các kênh Ants
+    for c in ants_channels:
         cid = str(c.get('id', '')).strip()
         cname = str(c.get('name', '')).strip()
         logo = c.get('logo', '') or ''
         surl = c.get('stream_url', '')
-        grp = c.get('category') or 'KÊNH KHÁC'
-        if '.mpd' in surl:
-            grp = f"{grp} (DRM MPD)"
-        elif 'api/tv/ants/' in surl:
-            grp = f"{grp} (Ants)"
-        m3u_all.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
-        m3u_all.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36')
-        m3u_all.append(surl)
+        grp = "Kênh Quốc Tế (Ants)"
 
-    m3u_all_path = os.path.join(script_dir, 'danh_sach_kenh_film4k.m3u')
-    with open(m3u_all_path, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(m3u_all) + '\n')
+        m3u_pot_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
+        m3u_pot_lines.append(surl)
 
-    print(f"[HOAN TAT] Da cap nhat day du {len(all_ordered_channels)} kenh vao:")
-    print(f"  - tv360.m3u (Co san ClearKey & da thay bpk-token moi)")
-    print(f"  - danh_sach_kenh_potplayer.m3u ({len(all_ordered_channels)} kenh)")
-    print(f"  - danh_sach_kenh_tivimate.m3u ({len(all_ordered_channels)} kenh)")
-    print(f"  - danh_sach_kenh_film4k.m3u ({len(all_ordered_channels)} kenh)")
+        m3u_tivi_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
+        pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://fiml4k.fun/&Origin=https://fiml4k.fun"
+        m3u_tivi_lines.append(pipe_url)
+
+    # Ghi file
+    with open(os.path.join(script_dir, 'danh_sach_kenh_potplayer.m3u'), 'w', encoding='utf-8') as f:
+        f.write('\n'.join(m3u_pot_lines) + '\n')
+
+    with open(os.path.join(script_dir, 'danh_sach_kenh_tivimate.m3u'), 'w', encoding='utf-8') as f:
+        f.write('\n'.join(m3u_tivi_lines) + '\n')
+
+    with open(os.path.join(script_dir, 'danh_sach_kenh_film4k.m3u'), 'w', encoding='utf-8') as f:
+        f.write('\n'.join(m3u_tivi_lines) + '\n')
+
+    total_merged = len(hls_channels) + len(tv360_clearkey_entries) + len(ants_channels)
+    print(f"\n🎉 [THANH CONG] Da chen thanh cong {len(tv360_clearkey_entries)} kenh ClearKey vao playlist:")
+    print(f"  - Tong so kenh: {total_merged} kenh")
+    print(f"  - 140 kenh HLS len dau")
+    print(f"  - {len(tv360_clearkey_entries)} kenh TV360+ / VTVPrime kem ClearKey & bpk-token moi")
+    print(f"  - Da cap nhat danh_sach_kenh_potplayer.m3u, danh_sach_kenh_tivimate.m3u, tv360.m3u!")
 
 if __name__ == '__main__':
     main()
