@@ -166,7 +166,7 @@ function rewriteExpiringTv360Urls(content, origin, useProxy = false) {
   return output;
 }
 
-function applyFilm4kProxy(content) {
+function applyFilm4kProxy(content, origin) {
   const lines = String(content || "").split("\n");
   const processed = lines.map(line => {
     const trimmed = line.trim();
@@ -180,12 +180,12 @@ function applyFilm4kProxy(content) {
       return line;
     }
     if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
-      // Giữ nguyên nếu đã qua proxy hoặc là kênh Ants nội bộ Film4K
-      if (trimmed.includes("fiml4k.fun/api/iptv/stream") || trimmed.includes("fiml4k.fun/api/tv/ants/")) {
-        return line;
-      }
       // Giữ nguyên nếu là link nội bộ Worker đã gắn cờ proxy
       if (trimmed.includes("/tv360") && trimmed.includes("proxy=1")) {
+        return line;
+      }
+      // Giữ nguyên nếu đã qua proxy của chính worker
+      if (trimmed.startsWith(`${origin}/p?url=`) || trimmed.startsWith(`${origin}/proxy?url=`)) {
         return line;
       }
       // Tách phần pipe headers nếu có: url|User-Agent=...
@@ -193,7 +193,17 @@ function applyFilm4kProxy(content) {
       let streamUrl = pipeIdx >= 0 ? line.slice(0, pipeIdx).trim() : line.trim();
       let pipeExtra = pipeIdx >= 0 ? line.slice(pipeIdx) : "";
 
-      const proxied = "https://fiml4k.fun/api/iptv/stream?url=" + encodeURIComponent(streamUrl);
+      // Nếu link cũ đang trỏ tới fiml4k.fun/api/iptv/stream?url=...
+      if (streamUrl.includes("fiml4k.fun/api/iptv/stream?url=")) {
+        const decodedMatch = streamUrl.match(/fiml4k\.fun\/api\/iptv\/stream\?url=([^&]+)/i);
+        if (decodedMatch) {
+          try {
+            streamUrl = decodeURIComponent(decodedMatch[1]);
+          } catch (_) {}
+        }
+      }
+
+      const proxied = `${origin}/p?url=${encodeURIComponent(streamUrl)}`;
       return proxied + pipeExtra;
     }
     return line;
@@ -295,16 +305,16 @@ async function resolveStreamUrl(cid, env, requestClientIp, bypassCache = false) 
     }
   }
 
-  const clientIp = requestClientIp || (env && env.CLIENT_IP) || "113.22.246.62";
-  let cookie = await getFilm4kSession(env, clientIp);
+  const upstreamIp = (env && env.CLIENT_IP) || "113.22.246.62";
+  let cookie = await getFilm4kSession(env, upstreamIp);
   let streamResp = await fetch(`https://fiml4k.fun/api/tv/${cid}/stream`, {
     headers: {
       "Cookie": cookie,
       "User-Agent": "Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36",
       "Accept": "application/json",
-      "X-Forwarded-For": clientIp,
-      "X-Real-IP": clientIp,
-      "Client-IP": clientIp
+      "X-Forwarded-For": upstreamIp,
+      "X-Real-IP": upstreamIp,
+      "Client-IP": upstreamIp
     }
   });
 
@@ -312,15 +322,15 @@ async function resolveStreamUrl(cid, env, requestClientIp, bypassCache = false) 
   if (streamResp.status === 401 || streamResp.status === 403) {
     cachedSessionCookie = null;
     sessionExpires = 0;
-    cookie = await getFilm4kSession(env, clientIp);
+    cookie = await getFilm4kSession(env, upstreamIp);
     streamResp = await fetch(`https://fiml4k.fun/api/tv/${cid}/stream`, {
       headers: {
         "Cookie": cookie,
         "User-Agent": "Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36",
         "Accept": "application/json",
-        "X-Forwarded-For": clientIp,
-        "X-Real-IP": clientIp,
-        "Client-IP": clientIp
+        "X-Forwarded-For": upstreamIp,
+        "X-Real-IP": upstreamIp,
+        "Client-IP": upstreamIp
       }
     });
   }
@@ -331,8 +341,8 @@ async function resolveStreamUrl(cid, env, requestClientIp, bypassCache = false) 
 
   const data = await streamResp.json();
   let streamUrl = data.url;
-  if (!streamUrl) {
-    throw new Error(`Không tìm thấy luồng cho kênh ID ${cid}`);
+  if (!streamUrl || streamUrl.includes("prv.film4k.net")) {
+    throw new Error(`Kênh ID ${cid} không có luồng hợp lệ (hoặc trỏ prv lỗi)`);
   }
 
   if (streamUrl.startsWith("/")) {
@@ -345,12 +355,159 @@ async function resolveStreamUrl(cid, env, requestClientIp, bypassCache = false) 
   return result;
 }
 
+async function handleProxyStream(request, env, url) {
+  if (request.method === "OPTIONS") {
+    return new Response(null, {
+      status: 204,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Max-Age": "86400"
+      }
+    });
+  }
+
+  let targetUrl = url.searchParams.get("url");
+  if (!targetUrl) {
+    const rawPath = url.pathname;
+    if (rawPath.startsWith("/p/http") || rawPath.startsWith("/proxy/http")) {
+      targetUrl = request.url.replace(/^https?:\/\/[^\/]+\/(?:p|proxy)\//i, "");
+    }
+  }
+
+  if (!targetUrl) {
+    return new Response("Thiếu tham số 'url'. Cú pháp: /p?url=https://...", {
+      status: 400,
+      headers: { "Content-Type": "text/plain; charset=utf-8" }
+    });
+  }
+
+  try {
+    const clientIp = request.headers.get("cf-connecting-ip") || request.headers.get("x-real-ip") || "113.22.246.62";
+    let cookie = await getFilm4kSession(env, clientIp);
+
+    let upstreamTarget = targetUrl;
+    if (upstreamTarget.startsWith("/")) {
+      upstreamTarget = `https://fiml4k.fun${upstreamTarget}`;
+    }
+
+    const upstreamProxyUrl = `https://fiml4k.fun/api/iptv/stream?url=${encodeURIComponent(upstreamTarget)}`;
+
+    const fetchHeaders = new Headers();
+    fetchHeaders.set("Cookie", cookie);
+    fetchHeaders.set("User-Agent", request.headers.get("user-agent") || "Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");
+    fetchHeaders.set("Referer", "https://tv360.vn/");
+    fetchHeaders.set("Origin", "https://tv360.vn");
+    fetchHeaders.set("Accept", "*/*");
+    if (request.headers.get("range")) {
+      fetchHeaders.set("Range", request.headers.get("range"));
+    }
+
+    let upstreamResp = await fetch(upstreamProxyUrl, {
+      method: request.method === "HEAD" ? "HEAD" : "GET",
+      headers: fetchHeaders,
+      redirect: "follow"
+    });
+
+    if (upstreamResp.status === 401 || upstreamResp.status === 403) {
+      cachedSessionCookie = null;
+      sessionExpires = 0;
+      cookie = await getFilm4kSession(env, clientIp);
+      fetchHeaders.set("Cookie", cookie);
+      upstreamResp = await fetch(upstreamProxyUrl, {
+        method: request.method === "HEAD" ? "HEAD" : "GET",
+        headers: fetchHeaders,
+        redirect: "follow"
+      });
+    }
+
+    const contentType = (upstreamResp.headers.get("content-type") || "").toLowerCase();
+
+    const isM3U8 = contentType.includes("mpegurl") ||
+                   contentType.includes("application/x-mpegurl") ||
+                   contentType.includes("application/vnd.apple.mpegurl") ||
+                   upstreamTarget.toLowerCase().includes(".m3u8");
+
+    if (upstreamResp.ok && (isM3U8 || contentType.includes("text/"))) {
+      let bodyText = await upstreamResp.text();
+
+      if (bodyText.includes("#EXTM3U")) {
+        const origin = url.origin;
+        bodyText = bodyText.replace(
+          /(?:https?:\/\/fiml4k\.fun)?\/api\/iptv\/stream\?url=/gi,
+          `${origin}/p?url=`
+        );
+
+        const respHeaders = new Headers();
+        respHeaders.set("Content-Type", "application/vnd.apple.mpegurl; charset=utf-8");
+        respHeaders.set("Access-Control-Allow-Origin", "*");
+        respHeaders.set("Access-Control-Allow-Headers", "*");
+        respHeaders.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
+        respHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
+
+        return new Response(bodyText, {
+          status: 200,
+          headers: respHeaders
+        });
+      }
+
+      return new Response(bodyText, {
+        status: upstreamResp.status,
+        headers: {
+          "Content-Type": contentType || "text/plain; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "no-store"
+        }
+      });
+    }
+
+    const respHeaders = new Headers();
+    for (const [k, v] of upstreamResp.headers.entries()) {
+      if (!["connection", "keep-alive", "transfer-encoding"].includes(k.toLowerCase())) {
+        respHeaders.set(k, v);
+      }
+    }
+    respHeaders.set("Access-Control-Allow-Origin", "*");
+    respHeaders.set("Access-Control-Allow-Headers", "*");
+    respHeaders.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
+
+    return new Response(upstreamResp.body, {
+      status: upstreamResp.status,
+      statusText: upstreamResp.statusText,
+      headers: respHeaders
+    });
+  } catch (err) {
+    return new Response(`Lỗi proxy luồng Film4K: ${err.message}`, {
+      status: 502,
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Access-Control-Allow-Origin": "*"
+      }
+    });
+  }
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const path = url.pathname.toLowerCase();
     const ua = (request.headers.get("user-agent") || "").toLowerCase();
     const accept = (request.headers.get("accept") || "").toLowerCase();
+
+    // -------------------------------------------------------------
+    // PROXY STREAM ENDPOINT: /p, /proxy, /api/iptv/stream
+    // Bẻ khóa triệt để Geo-Forbidden cho người dùng nước ngoài / VPN
+    // -------------------------------------------------------------
+    if (
+      path === "/p" ||
+      path === "/proxy" ||
+      path === "/api/iptv/stream" ||
+      path.startsWith("/p/") ||
+      path.startsWith("/proxy/")
+    ) {
+      return handleProxyStream(request, env, url);
+    }
 
     // Short links: /tv3601 ... /tv36015 (hỗ trợ .mpd, .m3u8 hoặc không đuôi)
     // Tự động cấp luồng Real-Time qua Film4K, không lo hết hạn token
@@ -412,8 +569,8 @@ export default {
         }
 
         let targetLocation = streamUrl;
-        if (url.searchParams.get("proxy") === "1" && !targetLocation.includes("fiml4k.fun/api/iptv/stream")) {
-          targetLocation = `https://fiml4k.fun/api/iptv/stream?url=${encodeURIComponent(targetLocation)}`;
+        if (url.searchParams.get("proxy") === "1") {
+          targetLocation = `${url.origin}/p?url=${encodeURIComponent(targetLocation)}`;
         }
 
         return new Response(null, {
@@ -464,8 +621,8 @@ export default {
         }
 
         let targetLocation = result.url;
-        if (url.searchParams.get("proxy") === "1" && !targetLocation.includes("fiml4k.fun/api/iptv/stream")) {
-          targetLocation = `https://fiml4k.fun/api/iptv/stream?url=${encodeURIComponent(targetLocation)}`;
+        if (url.searchParams.get("proxy") === "1") {
+          targetLocation = `${url.origin}/p?url=${encodeURIComponent(targetLocation)}`;
         }
 
         return new Response(null, {
@@ -502,8 +659,8 @@ export default {
         const result = await resolveStreamUrl(cid, env, clientIp);
 
         let targetLocation = result.url;
-        if (url.searchParams.get("proxy") === "1" && !targetLocation.includes("fiml4k.fun/api/iptv/stream")) {
-          targetLocation = `https://fiml4k.fun/api/iptv/stream?url=${encodeURIComponent(targetLocation)}`;
+        if (url.searchParams.get("proxy") === "1") {
+          targetLocation = `${url.origin}/p?url=${encodeURIComponent(targetLocation)}`;
         }
 
         return new Response(null, {
@@ -615,7 +772,7 @@ export default {
       let content = await response.text();
       content = rewriteExpiringTv360Urls(content, url.origin, isProxyPlaylist);
       if (isProxyPlaylist) {
-        content = applyFilm4kProxy(content);
+        content = applyFilm4kProxy(content, url.origin);
       }
 
       const outFilename = isProxyPlaylist ? "a.m3u8" : targetFile;
