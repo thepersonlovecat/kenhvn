@@ -40,6 +40,173 @@ const TV360_MAP = {
 let cachedSessionCookie = null;
 let sessionExpires = 0;
 const streamCache = new Map(); // key -> { url, expire }
+const AUTHORIZED_STREAM_TTL_MS = 4 * 60 * 60 * 1000;
+let authorizedStreamCache = { expire: 0, streams: null };
+
+function cleanManifestUrl(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+
+  const lower = raw.toLowerCase();
+  const mpdPos = lower.indexOf(".mpd");
+  if (mpdPos >= 0) {
+    return raw.slice(0, mpdPos + 4);
+  }
+
+  return raw;
+}
+
+function normalizeStreamFeed(payload) {
+  const source = payload && typeof payload === "object" && payload.streams
+    ? payload.streams
+    : payload;
+
+  if (!source || typeof source !== "object" || Array.isArray(source)) {
+    throw new Error("TV360 stream feed phai la JSON object");
+  }
+
+  const result = {};
+  for (const [rawKey, rawValue] of Object.entries(source)) {
+    const match = String(rawKey).match(/(?:tv360)?\s*(\d{1,2})$/i);
+    if (!match) continue;
+
+    const channel = Number(match[1]);
+    if (channel < 1 || channel > 15) continue;
+
+    const value = typeof rawValue === "string" ? rawValue : rawValue?.url;
+    const cleaned = cleanManifestUrl(value);
+    if (!cleaned) continue;
+
+    let parsed;
+    try {
+      parsed = new URL(cleaned);
+    } catch {
+      continue;
+    }
+    if (parsed.protocol !== "https:") continue;
+
+    result[String(channel)] = cleaned;
+  }
+
+  return result;
+}
+
+function normalizeM3uFeed(text) {
+  const result = {};
+  const blocks = String(text || "").split(/(?=#EXTINF:)/i);
+
+  for (const block of blocks) {
+    const idMatch = block.match(/tvg-id=["']tv360plus(\d{1,2})["']/i);
+    if (!idMatch) continue;
+
+    const channel = Number(idMatch[1]);
+    if (channel < 1 || channel > 15) continue;
+
+    const urlLine = block
+      .split(/\r?\n/)
+      .map(line => line.trim())
+      .find(line => /^https:\/\//i.test(line));
+
+    const cleaned = cleanManifestUrl(urlLine);
+    if (!cleaned) continue;
+
+    try {
+      const parsed = new URL(cleaned);
+      if (parsed.protocol !== "https:") continue;
+    } catch {
+      continue;
+    }
+
+    result[String(channel)] = cleaned;
+  }
+
+  return result;
+}
+
+function rewriteExpiringTv360Urls(content, origin) {
+  const dashChannelMap = {
+    "201": 4,
+    "368": 6,
+    "369": 7,
+    "465": 12,
+    "471": 13,
+    "472": 14,
+    "473": 15
+  };
+
+  let output = String(content || "");
+
+  // 1. Rewrite các kênh DASH Broadpeak (TV360+ 4, 6, 7, 12, 13, 14, 15)
+  for (const [bpkChannel, tv360Channel] of Object.entries(dashChannelMap)) {
+    const pattern = new RegExp(
+      `https:\\/\\/[^\\r\\n\\s]+\\/(?:bpk-token\\/[^\\r\\n\\s/]+\\/)?bpk-tv\\/${bpkChannel}\\/output\\/index\\.mpd[^\\r\\n\\s]*`,
+      "gi"
+    );
+    output = output.replace(pattern, `${origin}/tv360${tv360Channel}.mpd`);
+  }
+
+  // 2. Rewrite các kênh HLS có token hết hạn (TV360+ 9, 10, 11)
+  // TV360+ 9 (mã 379)
+  output = output.replace(
+    /https:\/\/[^\r\n\s]+(?:\/netcdn-live|\/live\/eds)\/379\/[^\r\n\s]*/gi,
+    `${origin}/tv3609.m3u8`
+  );
+  // TV360+ 10 (mã 449)
+  output = output.replace(
+    /https:\/\/[^\r\n\s]+\/bpk-tv\/449\/output\/index\.m3u8[^\r\n\s]*/gi,
+    `${origin}/tv36010.m3u8`
+  );
+  // TV360+ 11 (mã 450)
+  output = output.replace(
+    /https:\/\/[^\r\n\s]+(?:\/live\/eds|\/bpk-tv)\/450\/[^\r\n\s]*/gi,
+    `${origin}/tv36011.m3u8`
+  );
+
+  return output;
+}
+
+async function getAuthorizedStreamFeed(env, bypassCache = false) {
+  const now = Date.now();
+  if (!bypassCache && authorizedStreamCache.streams && authorizedStreamCache.expire > now) {
+    return authorizedStreamCache.streams;
+  }
+
+  let streams;
+  if (env?.TV360_FEED_URL) {
+    const feedUrl = new URL(env.TV360_FEED_URL);
+    if (feedUrl.protocol !== "https:") {
+      throw new Error("TV360_FEED_URL phai dung HTTPS");
+    }
+
+    const response = await fetch(feedUrl.toString(), {
+      headers: { "Accept": "application/json" },
+      cf: bypassCache ? undefined : {
+        cacheEverything: true,
+        cacheTtl: AUTHORIZED_STREAM_TTL_MS / 1000
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`Khong the tai TV360 feed (HTTP ${response.status})`);
+    }
+    const body = await response.text();
+    const contentType = response.headers.get("content-type") || "";
+    if (contentType.includes("application/json") || body.trim().startsWith("{")) {
+      streams = normalizeStreamFeed(JSON.parse(body));
+    } else {
+      streams = normalizeM3uFeed(body);
+    }
+  } else if (env?.TV360_STREAMS_JSON) {
+    streams = normalizeStreamFeed(JSON.parse(env.TV360_STREAMS_JSON));
+  } else {
+    throw new Error("Chua cau hinh TV360_STREAMS_JSON hoac TV360_FEED_URL");
+  }
+
+  authorizedStreamCache = {
+    streams,
+    expire: now + AUTHORIZED_STREAM_TTL_MS
+  };
+  return streams;
+}
 
 async function getFilm4kSession(env, clientIp) {
   const now = Date.now();
@@ -88,7 +255,7 @@ async function resolveStreamUrl(cid, env, requestClientIp, bypassCache = false) 
   if (!bypassCache) {
     const cached = streamCache.get(cacheKey);
     if (cached && cached.expire > now) {
-      return cached.url;
+      return cached;
     }
   }
 
@@ -109,12 +276,15 @@ async function resolveStreamUrl(cid, env, requestClientIp, bypassCache = false) 
   if (streamResp.status === 401 || streamResp.status === 403) {
     cachedSessionCookie = null;
     sessionExpires = 0;
-    cookie = await getFilm4kSession(env);
+    cookie = await getFilm4kSession(env, clientIp);
     streamResp = await fetch(`https://fiml4k.fun/api/tv/${cid}/stream`, {
       headers: {
         "Cookie": cookie,
         "User-Agent": "Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36",
-        "Accept": "application/json"
+        "Accept": "application/json",
+        "X-Forwarded-For": clientIp,
+        "X-Real-IP": clientIp,
+        "Client-IP": clientIp
       }
     });
   }
@@ -133,34 +303,10 @@ async function resolveStreamUrl(cid, env, requestClientIp, bypassCache = false) 
     streamUrl = `https://fiml4k.fun${streamUrl}`;
   }
 
-  // Nếu là kênh TV360 có bpk-tv cần trích xuất bpk-token từ CDN thực tế
-  let debugInfo = null;
-  if (streamUrl.includes("/bpk-tv/")) {
-    try {
-      const r2 = await fetch(streamUrl, {
-        method: "GET",
-        redirect: "follow",
-        headers: {
-          "User-Agent": "Dalvik/2.1.0"
-        }
-      });
-
-      const finalUrl = r2.url || streamUrl;
-      const text = await r2.text();
-      debugInfo = { status: r2.status, finalUrl, bodySnippet: text.slice(0, 150) };
-      const m = finalUrl.match(/https:\/\/([^/:]+)(?::\d+)?\/bpk-token\/([^/]+)\/bpk-tv\/(\d+)\/output\/index\.mpd/);
-      if (m) {
-        const [_, host, token, chNum] = m;
-        streamUrl = `https://${host}/bpk-token/${token}/bpk-tv/${chNum}/output/index.mpd`;
-      }
-    } catch (e) {
-      debugInfo = { error: e.message };
-    }
-  }
-
-  // Lưu cache 45 phút (thời gian an toàn trước khi token 4-6 tiếng hết hạn)
-  streamCache.set(cacheKey, { url: streamUrl, expire: now + 45 * 60 * 1000, debugInfo });
-  return { url: streamUrl, debugInfo };
+  // Lưu cache 30 phút trong isolate
+  const result = { url: streamUrl, expire: now + 30 * 60 * 1000, raw: data };
+  streamCache.set(cacheKey, result);
+  return result;
 }
 
 export default {
@@ -169,6 +315,86 @@ export default {
     const path = url.pathname.toLowerCase();
     const ua = (request.headers.get("user-agent") || "").toLowerCase();
     const accept = (request.headers.get("accept") || "").toLowerCase();
+
+    // Short links: /tv3601 ... /tv36015 (hỗ trợ .mpd, .m3u8 hoặc không đuôi)
+    // Tự động cấp luồng Real-Time qua Film4K, không lo hết hạn token
+    const shortTv360 = path.match(/^\/tv360(\d{1,2})(?:\.(?:mpd|m3u8))?\/?$/i);
+    if (shortTv360) {
+      const channel = Number(shortTv360[1]);
+      if (channel < 1 || channel > 15) {
+        return new Response("Kênh TV360 không hợp lệ. Chọn từ 1 đến 15.", {
+          status: 404,
+          headers: { "Content-Type": "text/plain; charset=utf-8" }
+        });
+      }
+
+      try {
+        const bypassCache = url.searchParams.get("refresh") === "1";
+        const clientIp = request.headers.get("cf-connecting-ip") || request.headers.get("x-real-ip") || "113.22.246.62";
+        const cid = TV360_MAP[String(channel)];
+
+        let streamUrl = null;
+        if (cid) {
+          try {
+            const res = await resolveStreamUrl(cid, env, clientIp, bypassCache);
+            streamUrl = res.url;
+          } catch (e) {
+            console.error(`Lỗi resolveStreamUrl cho TV360+ ${channel}:`, e);
+          }
+        }
+
+        // Dự phòng fallback sang feed nếu không resolve được
+        if (!streamUrl) {
+          try {
+            const streams = await getAuthorizedStreamFeed(env, bypassCache);
+            streamUrl = streams[String(channel)];
+          } catch (e) {
+            // ignore
+          }
+        }
+
+        if (!streamUrl) {
+          return new Response(`Chưa có URL cho tv360${channel}`, {
+            status: 404,
+            headers: { "Content-Type": "text/plain; charset=utf-8" }
+          });
+        }
+
+        if (url.searchParams.get("json") === "1") {
+          return new Response(JSON.stringify({
+            channel,
+            cid,
+            url: streamUrl,
+            cacheSeconds: 1800
+          }), {
+            headers: {
+              "Content-Type": "application/json; charset=utf-8",
+              "Access-Control-Allow-Origin": "*",
+              "Cache-Control": "no-store"
+            }
+          });
+        }
+
+        return new Response(null, {
+          status: 302,
+          headers: {
+            "Location": streamUrl,
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+            "Cache-Control": "public, max-age=900"
+          }
+        });
+      } catch (err) {
+        return new Response("Lỗi TV360: " + err.message, {
+          status: 502,
+          headers: {
+            "Content-Type": "text/plain; charset=utf-8",
+            "Cache-Control": "no-store"
+          }
+        });
+      }
+    }
 
     // -------------------------------------------------------------
     // 1. REAL-TIME STREAM REDIRECT: /live/tv360/:id
@@ -189,7 +415,10 @@ export default {
         const result = await resolveStreamUrl(cid, env, clientIp, bypassCache);
         if (url.searchParams.get("json") === "1") {
           return new Response(JSON.stringify(result), {
-            headers: { "Content-Type": "application/json" }
+            headers: {
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "*"
+            }
           });
         }
         return new Response(null, {
@@ -244,7 +473,21 @@ export default {
     // -------------------------------------------------------------
     let targetFile = "danh_sach_kenh_potplayer.m3u";
 
-    if (path.includes("tv360") || path.includes("clearkey") || url.searchParams.get("type") === "tv360") {
+    if (path === "/playlist.m3u" || path === "/playlist.m3u8") {
+      if (ua.includes("potplayer")) {
+        targetFile = "danh_sach_kenh_potplayer.m3u";
+      } else if (
+        ua.includes("tivimate") ||
+        ua.includes("ott") ||
+        ua.includes("exoplayer") ||
+        ua.includes("okhttp") ||
+        ua.includes("android")
+      ) {
+        targetFile = "danh_sach_kenh_tivimate.m3u";
+      } else {
+        targetFile = "danh_sach_kenh_film4k.m3u";
+      }
+    } else if (path.includes("tv360") || path.includes("clearkey") || url.searchParams.get("type") === "tv360") {
       targetFile = "tv360.m3u";
     } else if (path.includes("tivi") || url.searchParams.get("type") === "tivi") {
       targetFile = "danh_sach_kenh_tivimate.m3u";
@@ -301,7 +544,8 @@ export default {
         return new Response(`Lỗi kết nối GitHub (Status: ${response.status})`, { status: 502 });
       }
 
-      const content = await response.text();
+      let content = await response.text();
+      content = rewriteExpiringTv360Urls(content, url.origin);
 
       return new Response(content, {
         status: 200,
@@ -444,7 +688,7 @@ function renderWebUI(origin) {
     </div>
 
     <div class="box">
-      <div class="box-title">⚡ Link chuyên kênh TV360+ & VTVPrime ClearKey</div>
+      <div class="box-title">⚡ Link chuyên kênh TV360+ ClearKey</div>
       <div class="url-row">
         <span id="url-tv360">${origin}/tv360.m3u</span>
         <button class="copy-btn" onclick="copyToClipboard('${origin}/tv360.m3u', this)">Sao chép</button>

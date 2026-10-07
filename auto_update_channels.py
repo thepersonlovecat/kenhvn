@@ -174,7 +174,15 @@ def update_and_load_tv360_m3u(ordered, script_dir):
         if current:
             tv360_entries.append(current)
 
-        return tv360_entries
+        # Loc bo hoan toan cac kenh / su kien VTVPrime neu co
+        filtered_entries = []
+        for entry in tv360_entries:
+            entry_text = "\n".join(entry).lower()
+            if "vtvprime" in entry_text or "onsport" in entry_text:
+                continue
+            filtered_entries.append(entry)
+
+        return filtered_entries
 
     except Exception as e:
         print(f"[ERROR] Loi khi xu ly tv360.m3u: {e}")
@@ -214,7 +222,7 @@ def main():
     with open(os.path.join(script_dir, 'channels_live.json'), 'w', encoding='utf-8') as f:
         json.dump({"channels": channels, "events": events}, f, ensure_ascii=False, indent=2)
 
-    # 1. Cap nhat va lay toan bo cac kenh TV360+ / VTVPrime da giai ma ClearKey tu tv360.m3u
+    # 1. Cap nhat va lay toan bo cac kenh TV360+ da giai ma ClearKey tu tv360.m3u
     tv360_clearkey_entries = update_and_load_tv360_m3u(ordered, script_dir)
     print(f"[INFO] Da nap {len(tv360_clearkey_entries)} kenh giai ma ClearKey tu tv360.m3u")
 
@@ -265,7 +273,7 @@ def main():
     # 3. Tao danh_sach_kenh_potplayer.m3u & danh_sach_kenh_tivimate.m3u
     # Thu tu:
     # 1. 140 kenh HLS thong thuong (VTV1 len dau, HTV, VTC...)
-    # 2. Toan bo kenh TV360+ & VTVPrime tu tv360.m3u (Co san ClearKey & bpk-token moi)
+    # 2. Toan bo kenh TV360+ tu tv360.m3u (Co san ClearKey & bpk-token moi)
     # 3. Cac kenh Ants quoc te
     
     m3u_tivi_lines = [
@@ -275,7 +283,7 @@ def main():
         f'#EXTM3U name="Film4K & TV360 ClearKey IPTV" updated="{now_str}"'
     ]
 
-    # Phần 1: Các kênh HLS thông thường
+    # Phần 1: Các kênh HLS & ClearKey thông thường
     for c in hls_channels:
         cid = str(c.get('id', '')).strip()
         cname = str(c.get('name', '')).strip()
@@ -283,19 +291,65 @@ def main():
         surl = c.get('stream_url', '')
         grp = c.get('category') or 'KÊNH KHÁC'
 
-        # PotPlayer: Clean URL
-        m3u_pot_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
-        m3u_pot_lines.append(surl)
+        raw = c.get('raw') or {}
+        clearkey = raw.get('clearKey') if isinstance(raw, dict) else None
+        is_dash = c.get('dash') or '.mpd' in surl
 
-        # TiviMate: Pipe URL
-        m3u_tivi_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
-        if 'tv360.vn' in surl:
-            pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://tv360.vn/&Origin=https://tv360.vn"
+        if clearkey and clearkey.get('keyId') and clearkey.get('key'):
+            kid = clearkey.get('keyId')
+            key = clearkey.get('key')
+
+            entry_pot = [
+                f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}',
+                '#EXTVLCOPT:http-user-agent=Dalvik/2.1.0',
+                '#KODIPROP:inputstream.adaptive.manifest_type=mpd',
+                '#KODIPROP:inputstream.adaptive.license_type=clearkey',
+                f'#KODIPROP:inputstream.adaptive.license_key={kid}:{key}',
+                surl
+            ]
+            m3u_pot_lines.extend(entry_pot)
+
+            entry_tivi = [
+                f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}',
+                '#EXTVLCOPT:http-user-agent=Dalvik/2.1.0',
+                '#KODIPROP:inputstream.adaptive.manifest_type=mpd',
+                '#KODIPROP:inputstream.adaptive.license_type=clearkey',
+                f'#KODIPROP:inputstream.adaptive.license_key={kid}:{key}',
+                surl
+            ]
+            m3u_tivi_lines.extend(entry_tivi)
+
+        elif is_dash:
+            entry_pot = [
+                f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}',
+                '#EXTVLCOPT:http-user-agent=Dalvik/2.1.0',
+                '#KODIPROP:inputstream.adaptive.manifest_type=mpd',
+                surl
+            ]
+            m3u_pot_lines.extend(entry_pot)
+
+            entry_tivi = [
+                f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}',
+                '#EXTVLCOPT:http-user-agent=Dalvik/2.1.0',
+                '#KODIPROP:inputstream.adaptive.manifest_type=mpd',
+                surl
+            ]
+            m3u_tivi_lines.extend(entry_tivi)
+
         else:
-            pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://fiml4k.fun/&Origin=https://fiml4k.fun"
-        m3u_tivi_lines.append(pipe_url)
+            # PotPlayer: Clean URL
+            m3u_pot_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
+            m3u_pot_lines.append(surl)
 
-    # Phần 2: Các kênh TV360+ và VTVPrime (Đã có ClearKey & Token mới)
+            # TiviMate: Pipe URL
+            m3u_tivi_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
+            if 'tv360.vn' in surl:
+                pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://tv360.vn/&Origin=https://tv360.vn"
+            else:
+                pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://fiml4k.fun/&Origin=https://fiml4k.fun"
+            m3u_tivi_lines.append(pipe_url)
+
+    # Phần 2: Các kênh TV360+ (Đã có ClearKey & Token mới)
     for entry in tv360_clearkey_entries:
         # Giu nguyen toan bo the dinh dang (#EXTINF, #KODIPROP, stream url)
         for line in entry:
@@ -331,7 +385,7 @@ def main():
     print(f"\n🎉 [THANH CONG] Da chen thanh cong {len(tv360_clearkey_entries)} kenh ClearKey vao playlist:")
     print(f"  - Tong so kenh: {total_merged} kenh")
     print(f"  - 140 kenh HLS len dau")
-    print(f"  - {len(tv360_clearkey_entries)} kenh TV360+ / VTVPrime kem ClearKey & bpk-token moi")
+    print(f"  - {len(tv360_clearkey_entries)} kenh TV360+ kem ClearKey & bpk-token moi")
     print(f"  - Da cap nhat danh_sach_kenh_potplayer.m3u, danh_sach_kenh_tivimate.m3u, tv360.m3u!")
 
 if __name__ == '__main__':

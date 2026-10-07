@@ -6,6 +6,11 @@
   "observability": {
     "enabled": true
   },
+  "vars": {
+    "TV360_FEED_URL": "https://raw.githubusercontent.com/thepersonlovecat/kenhvn/main/tv360.m3u",
+    "FILM4K_EMAIL": "thepersonlovecat@gmail.com",
+    "FILM4K_PASS": "123123qwe"
+  },
   "routes": [
     {
       "pattern": "tivi.k-20.xyz",
