@@ -293,7 +293,13 @@ def main():
 
         raw = c.get('raw') or {}
         clearkey = raw.get('clearKey') if isinstance(raw, dict) else None
-        is_dash = c.get('dash') or '.mpd' in surl
+
+        # Fix prv.film4k.net stream: Luồng thực tế từ prv.film4k.net là HLS m3u8, không phải DASH mpd
+        if "prv.film4k.net" in surl:
+            surl = surl.replace(".mpd", ".m3u8")
+            is_dash = False
+        else:
+            is_dash = c.get('dash') or '.mpd' in surl
 
         if clearkey and clearkey.get('keyId') and clearkey.get('key'):
             kid = clearkey.get('keyId')
