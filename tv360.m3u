@@ -56,15 +56,15 @@ https://pop17-ec3-ateme.tv360.vn/live/eds/370/DASH_DRM_MHN_2s/index.mpd
 
 #EXTINF:-1 tvg-id="tv360plus9" group-title="Sự Kiện TV360" tvg-logo="https://vietanhtv.id.vn/logo/tv360plus9.png", TV360+9
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
-https://tr-netcdn.tv360.vn/netcdn-live/379/output/index.m3u8?timestamp=1791231327&wmkid=0&token=29c93fe3bd4958bb9961b40b288f6c15&minrate=0&maxrate=12000000&uid=294779473
+https://prv.film4k.net/live/tv360/9887/manifest.mpd
 
 #EXTINF:-1 tvg-id="tv360plus10" group-title="Sự Kiện TV360" tvg-logo="https://vietanhtv.id.vn/logo/tv360plus10.png", TV360+10
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
-https://fo-hlc.tv360.vn/bpk-tv/449/output/index.m3u8?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXRob2QiOiJHRVQiLCJleHAiOjE3OTEyMzA5NDAsInVyaSI6Ii9icGstdHYvNDQ5L291dHB1dC9pbmRleC5tM3U4In0.8q-XOw-nc5Dmv-uqNOCGVqRlGT6yECDSi7HzSnkAxSk&minrate=0&maxrate=12000000&uid=294779473
+https://prv.film4k.net/live/tv360/9957/manifest.mpd
 
 #EXTINF:-1 tvg-id="tv360plus11" group-title="Sự Kiện TV360" tvg-logo="https://vietanhtv.id.vn/logo/tv360plus11.png", TV360+11
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
-https://rr1-ateme.tv360.vn/live/eds/450/HLS_Clean_MHL_2s/index.m3u8?cdntoken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJwYXRoIjoiL2xpdmUvZWRzLzQ1MC9ITFNfQ2xlYW5fTUhMXzJzLyIsImV4cCI6MTc5MTIzMTAzNn0.BXf7gYmTEaBqxG0L7Gc46RPhM5deI1A_ZxX9jA1xULkoPsD95LRNjNp-bXVD-acuHspqcUmUfMWAPWemusDJgw&screen=MHL&uid=294779473
+https://prv.film4k.net/live/tv360/9958/manifest.mpd
 
 #EXTINF:-1 tvg-id="tv360plus12" group-title="Sự Kiện TV360" tvg-logo="https://vietanhtv.id.vn/logo/tv360plus12.png", TV360+12
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0
