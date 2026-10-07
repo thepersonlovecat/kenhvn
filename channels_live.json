@@ -25,22 +25,6 @@
       "source": "custom"
     },
     {
-      "id": "ants:6",
-      "name": "TNT Sports 4",
-      "logo": "https://static.antsports.tv/tvlogo/tnt-sports-4.png",
-      "src": "6",
-      "number": "",
-      "source": "custom"
-    },
-    {
-      "id": "ants:22",
-      "name": "Sky Sports Football",
-      "logo": "https://static.antsports.tv/tvlogo/sky-sports-football.png",
-      "src": "22",
-      "number": "",
-      "source": "custom"
-    },
-    {
       "id": "ants:20",
       "name": "Sky Sports Main Events",
       "logo": "https://static.antsports.tv/tvlogo/sky-sports-events.png",
@@ -49,34 +33,10 @@
       "source": "custom"
     },
     {
-      "id": "ants:4482",
-      "name": "Sky Sports League",
-      "logo": "https://static.antsports.tv/tvlogo/sky-sports-league.svg",
-      "src": "4482",
-      "number": "",
-      "source": "custom"
-    },
-    {
       "id": "ants:16",
       "name": "Sky Sports Action",
       "logo": "https://static.antsports.tv/tvlogo/sky-sports-action.png",
       "src": "16",
-      "number": "",
-      "source": "custom"
-    },
-    {
-      "id": "ants:25",
-      "name": "Sky Sports Mix",
-      "logo": "https://static.antsports.tv/tvlogo/sky-sports-mix.png",
-      "src": "25",
-      "number": "",
-      "source": "custom"
-    },
-    {
-      "id": "ants:17",
-      "name": "Sky Sports Arena",
-      "logo": "https://static.antsports.tv/tvlogo/sky-sports-arena.png",
-      "src": "17",
       "number": "",
       "source": "custom"
     },
@@ -113,14 +73,6 @@
       "source": "custom"
     },
     {
-      "id": "ants:27",
-      "name": "Sky Sports Racing",
-      "logo": "https://static.antsports.tv/tvlogo/sky-sports-racing.png",
-      "src": "27",
-      "number": "",
-      "source": "custom"
-    },
-    {
       "id": "ants:2420",
       "name": "BBC News",
       "logo": "https://static.antsports.tv/tvlogo/bbc-news.png",
@@ -133,14 +85,6 @@
       "name": "BBC TWO",
       "logo": "https://static.antsports.tv/tvlogo/bbc2.png",
       "src": "2443",
-      "number": "",
-      "source": "custom"
-    },
-    {
-      "id": "ants:2447",
-      "name": "Film4",
-      "logo": "https://static.antsports.tv/tvlogo/film4.png",
-      "src": "2447",
       "number": "",
       "source": "custom"
     },
@@ -173,22 +117,6 @@
       "name": "NFL RedZone",
       "logo": "https://static.antsports.tv/tvlogo/nfl-redzone.png",
       "src": "12311",
-      "number": "",
-      "source": "custom"
-    },
-    {
-      "id": "ants:35",
-      "name": "ESPN",
-      "logo": "https://static.antsports.tv/tvlogo/espn.png",
-      "src": "35",
-      "number": "",
-      "source": "custom"
-    },
-    {
-      "id": "ants:38",
-      "name": "ESPNU",
-      "logo": "https://static.antsports.tv/tvlogo/espnu.png",
-      "src": "38",
       "number": "",
       "source": "custom"
     },
