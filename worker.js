@@ -123,7 +123,7 @@ function normalizeM3uFeed(text) {
   return result;
 }
 
-function rewriteExpiringTv360Urls(content, origin) {
+function rewriteExpiringTv360Urls(content, origin, useProxy = false) {
   const dashChannelMap = {
     "201": 4,
     "368": 6,
@@ -135,6 +135,7 @@ function rewriteExpiringTv360Urls(content, origin) {
   };
 
   let output = String(content || "");
+  const proxySuffix = useProxy ? "?proxy=1" : "";
 
   // 1. Rewrite các kênh DASH Broadpeak (TV360+ 4, 6, 7, 12, 13, 14, 15)
   for (const [bpkChannel, tv360Channel] of Object.entries(dashChannelMap)) {
@@ -142,27 +143,62 @@ function rewriteExpiringTv360Urls(content, origin) {
       `https:\\/\\/[^\\r\\n\\s]+\\/(?:bpk-token\\/[^\\r\\n\\s/]+\\/)?bpk-tv\\/${bpkChannel}\\/output\\/index\\.mpd[^\\r\\n\\s]*`,
       "gi"
     );
-    output = output.replace(pattern, `${origin}/tv360${tv360Channel}.mpd`);
+    output = output.replace(pattern, `${origin}/tv360${tv360Channel}.mpd${proxySuffix}`);
   }
 
   // 2. Rewrite các kênh HLS có token hết hạn (TV360+ 9, 10, 11)
   // TV360+ 9 (mã 379)
   output = output.replace(
     /https:\/\/[^\r\n\s]+(?:\/netcdn-live|\/live\/eds)\/379\/[^\r\n\s]*/gi,
-    `${origin}/tv3609.m3u8`
+    `${origin}/tv3609.m3u8${proxySuffix}`
   );
   // TV360+ 10 (mã 449)
   output = output.replace(
     /https:\/\/[^\r\n\s]+\/bpk-tv\/449\/output\/index\.m3u8[^\r\n\s]*/gi,
-    `${origin}/tv36010.m3u8`
+    `${origin}/tv36010.m3u8${proxySuffix}`
   );
   // TV360+ 11 (mã 450)
   output = output.replace(
     /https:\/\/[^\r\n\s]+(?:\/live\/eds|\/bpk-tv)\/450\/[^\r\n\s]*/gi,
-    `${origin}/tv36011.m3u8`
+    `${origin}/tv36011.m3u8${proxySuffix}`
   );
 
   return output;
+}
+
+function applyFilm4kProxy(content) {
+  const lines = String(content || "").split("\n");
+  const processed = lines.map(line => {
+    const trimmed = line.trim();
+    if (!trimmed) return line;
+    if (trimmed.startsWith("#")) {
+      if (trimmed.startsWith("#EXTM3U")) {
+        return trimmed.includes('name="')
+          ? trimmed.replace(/name="[^"]*"/, 'name="Film4K Proxy IPTV (Quốc Tế - Bypass Geo)"')
+          : '#EXTM3U name="Film4K Proxy IPTV (Quốc Tế - Bypass Geo)"';
+      }
+      return line;
+    }
+    if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+      // Giữ nguyên nếu đã qua proxy hoặc là kênh Ants nội bộ Film4K
+      if (trimmed.includes("fiml4k.fun/api/iptv/stream") || trimmed.includes("fiml4k.fun/api/tv/ants/")) {
+        return line;
+      }
+      // Giữ nguyên nếu là link nội bộ Worker đã gắn cờ proxy
+      if (trimmed.includes("/tv360") && trimmed.includes("proxy=1")) {
+        return line;
+      }
+      // Tách phần pipe headers nếu có: url|User-Agent=...
+      const pipeIdx = line.indexOf("|");
+      let streamUrl = pipeIdx >= 0 ? line.slice(0, pipeIdx).trim() : line.trim();
+      let pipeExtra = pipeIdx >= 0 ? line.slice(pipeIdx) : "";
+
+      const proxied = "https://fiml4k.fun/api/iptv/stream?url=" + encodeURIComponent(streamUrl);
+      return proxied + pipeExtra;
+    }
+    return line;
+  });
+  return processed.join("\n");
 }
 
 async function getAuthorizedStreamFeed(env, bypassCache = false) {
@@ -375,10 +411,15 @@ export default {
           });
         }
 
+        let targetLocation = streamUrl;
+        if (url.searchParams.get("proxy") === "1" && !targetLocation.includes("fiml4k.fun/api/iptv/stream")) {
+          targetLocation = `https://fiml4k.fun/api/iptv/stream?url=${encodeURIComponent(targetLocation)}`;
+        }
+
         return new Response(null, {
           status: 302,
           headers: {
-            "Location": streamUrl,
+            "Location": targetLocation,
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -421,10 +462,16 @@ export default {
             }
           });
         }
+
+        let targetLocation = result.url;
+        if (url.searchParams.get("proxy") === "1" && !targetLocation.includes("fiml4k.fun/api/iptv/stream")) {
+          targetLocation = `https://fiml4k.fun/api/iptv/stream?url=${encodeURIComponent(targetLocation)}`;
+        }
+
         return new Response(null, {
           status: 302,
           headers: {
-            "Location": result.url,
+            "Location": targetLocation,
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -453,10 +500,16 @@ export default {
       try {
         const clientIp = request.headers.get("cf-connecting-ip") || request.headers.get("x-real-ip") || "113.22.246.62";
         const result = await resolveStreamUrl(cid, env, clientIp);
+
+        let targetLocation = result.url;
+        if (url.searchParams.get("proxy") === "1" && !targetLocation.includes("fiml4k.fun/api/iptv/stream")) {
+          targetLocation = `https://fiml4k.fun/api/iptv/stream?url=${encodeURIComponent(targetLocation)}`;
+        }
+
         return new Response(null, {
           status: 302,
           headers: {
-            "Location": result.url,
+            "Location": targetLocation,
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -471,9 +524,24 @@ export default {
     // -------------------------------------------------------------
     // 3. TỰ ĐỘNG XÁC ĐỊNH DANH SÁCH M3U PHÙ HỢP
     // -------------------------------------------------------------
+    const isProxyPlaylist = (path === "/a.m3u8" || path === "/a.m3u" || path === "/a" || url.searchParams.get("proxy") === "1");
     let targetFile = "danh_sach_kenh_potplayer.m3u";
 
-    if (path === "/playlist.m3u" || path === "/playlist.m3u8") {
+    if (isProxyPlaylist) {
+      if (ua.includes("potplayer")) {
+        targetFile = "danh_sach_kenh_potplayer.m3u";
+      } else if (
+        ua.includes("tivimate") ||
+        ua.includes("ott") ||
+        ua.includes("exoplayer") ||
+        ua.includes("okhttp") ||
+        ua.includes("android")
+      ) {
+        targetFile = "danh_sach_kenh_tivimate.m3u";
+      } else {
+        targetFile = "danh_sach_kenh_film4k.m3u";
+      }
+    } else if (path === "/playlist.m3u" || path === "/playlist.m3u8") {
       if (ua.includes("potplayer")) {
         targetFile = "danh_sach_kenh_potplayer.m3u";
       } else if (
@@ -545,13 +613,17 @@ export default {
       }
 
       let content = await response.text();
-      content = rewriteExpiringTv360Urls(content, url.origin);
+      content = rewriteExpiringTv360Urls(content, url.origin, isProxyPlaylist);
+      if (isProxyPlaylist) {
+        content = applyFilm4kProxy(content);
+      }
 
+      const outFilename = isProxyPlaylist ? "a.m3u8" : targetFile;
       return new Response(content, {
         status: 200,
         headers: {
           "Content-Type": "application/vnd.apple.mpegurl; charset=utf-8",
-          "Content-Disposition": `inline; filename="${targetFile}"`,
+          "Content-Disposition": `inline; filename="${outFilename}"`,
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Headers": "*",
           "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -684,6 +756,17 @@ function renderWebUI(origin) {
       </div>
       <div style="font-size: 12px; color: #9ca3af; margin-top: 8px;">
         👉 Dán link này vào <strong>PotPlayer</strong> hoặc <strong>TiviMate</strong> đều tự nhận đúng định dạng tối ưu!
+      </div>
+    </div>
+
+    <div class="box" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.05);">
+      <div class="box-title" style="color: #34d399;">🌍 Đường link Quốc Tế / Nước Ngoài (Bypass Geo-Block Proxy)</div>
+      <div class="url-row">
+        <span id="url-proxy">${origin}/a.m3u8</span>
+        <button class="copy-btn" style="background: #10b981;" onclick="copyToClipboard('${origin}/a.m3u8', this)">Sao chép</button>
+      </div>
+      <div style="font-size: 12px; color: #9ca3af; margin-top: 8px;">
+        👉 Dành riêng cho người xem ở <strong>Mỹ, Nhật, Châu Âu, nước ngoài</strong>. Toàn bộ stream được chuyển hướng qua Film4K Proxy để vượt chặn bản quyền địa lý của Viettel!
       </div>
     </div>
 
