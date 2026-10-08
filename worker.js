@@ -124,51 +124,122 @@ function normalizeM3uFeed(text) {
 }
 
 function rewriteExpiringTv360Urls(content, origin) {
-  const dashChannelMap = {
-    "201": 4,
-    "368": 6,
-    "369": 7,
-    "465": 12,
-    "471": 13,
-    "472": 14,
-    "473": 15
-  };
+  const blocks = String(content || "").split(/(?=#EXTINF:)/i);
+  const result = [];
 
-  let output = String(content || "");
+  for (const block of blocks) {
+    if (!block.trim().startsWith("#EXTINF:")) {
+      result.push(block);
+      continue;
+    }
 
-  // 1. Rewrite các kênh DASH Broadpeak (TV360+ 4, 6, 7, 12, 13, 14, 15)
-  for (const [bpkChannel, tv360Channel] of Object.entries(dashChannelMap)) {
-    const pattern = new RegExp(
-      `https:\\/\\/[^\\r\\n\\s]+\\/(?:bpk-token\\/[^\\r\\n\\s/]+\\/)?bpk-tv\\/${bpkChannel}\\/output\\/index\\.mpd[^\\r\\n\\s]*`,
-      "gi"
-    );
-    output = output.replace(pattern, `${origin}/tv360${tv360Channel}.mpd`);
+    const m = block.match(/tvg-id=["']tv360plus(\d{1,2})["']/i);
+    if (m) {
+      const chNum = m[1];
+      const isHls = ["9", "10", "11"].includes(chNum);
+      const ext = isHls ? ".m3u8" : ".mpd";
+      const newUrl = `${origin}/tv360${chNum}${ext}`;
+
+      const lines = block.split(/\r?\n/);
+      let urlIdx = -1;
+      for (let i = lines.length - 1; i >= 0; i--) {
+        if (/^https?:\/\//i.test(lines[i].trim())) {
+          urlIdx = i;
+          break;
+        }
+      }
+      if (urlIdx !== -1) {
+        lines[urlIdx] = newUrl;
+        result.push(lines.join("\n"));
+        continue;
+      }
+    }
+
+    result.push(block);
   }
 
-  // 2. Rewrite các kênh HLS có token hết hạn (TV360+ 9, 10, 11)
-  // TV360+ 9 (mã 379)
-  output = output.replace(
-    /https:\/\/[^\r\n\s]+(?:\/netcdn-live|\/live\/eds)\/379\/[^\r\n\s]*/gi,
-    `${origin}/tv3609.m3u8`
-  );
-  // TV360+ 10 (mã 449)
-  output = output.replace(
-    /https:\/\/[^\r\n\s]+\/bpk-tv\/449\/output\/index\.m3u8[^\r\n\s]*/gi,
-    `${origin}/tv36010.m3u8`
-  );
-  // TV360+ 11 (mã 450)
-  output = output.replace(
-    /https:\/\/[^\r\n\s]+(?:\/live\/eds|\/bpk-tv)\/450\/[^\r\n\s]*/gi,
-    `${origin}/tv36011.m3u8`
-  );
+  let output = result.join("");
 
-  // 3. Sửa lỗi các kênh prv.film4k.net bị ghi nhầm là .mpd / manifest_type=mpd (thực tế là HLS m3u8)
+  // Sửa lỗi các kênh prv.film4k.net bị ghi nhầm là .mpd / manifest_type=mpd (thực tế là HLS m3u8)
   output = output.replace(
     /(?:#KODIPROP:inputstream\.adaptive\.manifest_type=mpd\r?\n)?(https:\/\/prv\.film4k\.net\/[^\r\n\s]+?)\.mpd/gi,
     "$1.m3u8"
   );
 
   return output;
+}
+
+function wrapWithFilm4kProxy(content) {
+  const lines = String(content || "").split(/\r?\n/);
+  const proxyPrefix = "https://fiml4k.fun/api/iptv/stream?url=";
+  const wrapped = lines.map(line => {
+    const trimmed = line.trim();
+    if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+      if (trimmed.startsWith(proxyPrefix)) return trimmed;
+      if (trimmed.includes("|")) {
+        const [streamUrl, headers] = trimmed.split("|", 2);
+        return `${proxyPrefix}${encodeURIComponent(streamUrl)}|${headers}`;
+      }
+      return `${proxyPrefix}${encodeURIComponent(trimmed)}`;
+    }
+    return line;
+  });
+  return wrapped.join("\n");
+}
+
+function rewritePlaylistToRealtime(content, origin, wrapWithProxy = false) {
+  const blocks = String(content || "").split(/(?=#EXTINF:)/i);
+  const result = [];
+  const proxyPrefix = "https://fiml4k.fun/api/iptv/stream?url=";
+
+  for (const block of blocks) {
+    if (!block.trim().startsWith("#EXTINF:")) {
+      result.push(block);
+      continue;
+    }
+
+    const lines = block.split(/\r?\n/);
+    const header = lines[0];
+
+    const m = header.match(/tvg-id=["']([^"']+)["']/i);
+    const cid = m ? m[1].trim() : null;
+    const tv360Match = block.match(/tv360plus(\d{1,2})/i);
+
+    let urlIdx = -1;
+    for (let i = lines.length - 1; i >= 0; i--) {
+      if (/^https?:\/\//i.test(lines[i].trim())) {
+        urlIdx = i;
+        break;
+      }
+    }
+
+    if (urlIdx !== -1) {
+      if (tv360Match) {
+        const chNum = tv360Match[1];
+        const isHls = ["9", "10", "11"].includes(chNum);
+        const ext = isHls ? ".m3u8" : ".mpd";
+        let newUrl = `${origin}/tv360${chNum}${ext}`;
+        if (wrapWithProxy) {
+          newUrl = `${proxyPrefix}${encodeURIComponent(newUrl)}`;
+        }
+        lines[urlIdx] = newUrl;
+      } else if (cid && /^\d+$/.test(cid)) {
+        // Chỉ rewrite sang Film4K nếu id là số (kênh Film4K cũ)
+        const origUrl = lines[urlIdx].trim();
+        const isMpd = origUrl.includes(".mpd") || block.includes("manifest_type=mpd");
+        const ext = isMpd ? ".mpd" : ".m3u8";
+        let newUrl = `${origin}/live/channel/${encodeURIComponent(cid)}${ext}`;
+        if (wrapWithProxy) {
+          newUrl = `${proxyPrefix}${encodeURIComponent(newUrl)}`;
+        }
+        lines[urlIdx] = newUrl;
+      }
+    }
+
+    result.push(lines.join("\n"));
+  }
+
+  return result.join("");
 }
 
 async function getAuthorizedStreamFeed(env, bypassCache = false) {
@@ -450,19 +521,36 @@ export default {
     // -------------------------------------------------------------
     if (path.startsWith("/live/channel/") || path.startsWith("/live/film4k/")) {
       const parts = path.split("/");
-      const cidStr = (parts[3] || "").replace(/\.(mpd|m3u8)$/i, "");
-      const cid = parseInt(cidStr, 10);
-      if (isNaN(cid)) {
+      const rawCid = (parts.slice(3).join("/") || "").replace(/\.(mpd|m3u8)$/i, "");
+      const cid = decodeURIComponent(rawCid).trim();
+      if (!cid) {
         return new Response("Mã kênh không hợp lệ.", { status: 400 });
       }
 
       try {
         const clientIp = request.headers.get("cf-connecting-ip") || request.headers.get("x-real-ip") || "113.22.246.62";
-        const result = await resolveStreamUrl(cid, env, clientIp);
+        const bypassCache = url.searchParams.get("refresh") === "1";
+        const result = await resolveStreamUrl(cid, env, clientIp, bypassCache);
+
+        let targetStreamUrl = result.url;
+        if (url.searchParams.get("proxy") === "film4k" || url.searchParams.get("proxy") === "1") {
+          targetStreamUrl = `https://fiml4k.fun/api/iptv/stream?url=${encodeURIComponent(targetStreamUrl)}`;
+        }
+
+        if (url.searchParams.get("json") === "1") {
+          return new Response(JSON.stringify({ ...result, url: targetStreamUrl }), {
+            headers: {
+              "Content-Type": "application/json; charset=utf-8",
+              "Access-Control-Allow-Origin": "*",
+              "Cache-Control": "no-store"
+            }
+          });
+        }
+
         return new Response(null, {
           status: 302,
           headers: {
-            "Location": result.url,
+            "Location": targetStreamUrl,
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -491,8 +579,10 @@ export default {
       ) {
         targetFile = "danh_sach_kenh_tivimate.m3u";
       } else {
-        targetFile = "danh_sach_kenh_film4k.m3u";
+        targetFile = "playlist.m3u";
       }
+    } else if (path.includes("tv365") || url.searchParams.get("type") === "tv365") {
+      targetFile = "tv365_playlist.m3u";
     } else if (path.includes("tv360") || path.includes("clearkey") || url.searchParams.get("type") === "tv360") {
       targetFile = "tv360.m3u";
     } else if (path.includes("tivi") || url.searchParams.get("type") === "tivi") {
@@ -551,13 +641,45 @@ export default {
       }
 
       let content = await response.text();
-      content = rewriteExpiringTv360Urls(content, url.origin);
+
+      const isRealtimeRequested = path === "/realtime.m3u" ||
+        path === "/realtime.m3u8" ||
+        path === "/live.m3u" ||
+        path === "/live.m3u8" ||
+        path === "/realtime-proxy.m3u" ||
+        url.searchParams.get("mode") === "realtime" ||
+        url.searchParams.get("realtime") === "1";
+
+      const isProxyRequested = url.searchParams.get("proxy") === "film4k" ||
+        url.searchParams.get("proxy") === "1" ||
+        path === "/proxy.m3u" ||
+        path === "/film4k-proxy.m3u" ||
+        path === "/realtime-proxy.m3u" ||
+        path.includes("proxy");
+
+      if (isRealtimeRequested) {
+        content = rewritePlaylistToRealtime(content, url.origin, isProxyRequested);
+      } else {
+        content = rewriteExpiringTv360Urls(content, url.origin);
+        if (isProxyRequested) {
+          content = wrapWithFilm4kProxy(content);
+        }
+      }
+
+      let outFilename = targetFile;
+      if (isRealtimeRequested && isProxyRequested) {
+        outFilename = "film4k_realtime_proxy.m3u";
+      } else if (isRealtimeRequested) {
+        outFilename = "film4k_realtime.m3u";
+      } else if (isProxyRequested) {
+        outFilename = "film4k_proxy.m3u";
+      }
 
       return new Response(content, {
         status: 200,
         headers: {
           "Content-Type": "application/vnd.apple.mpegurl; charset=utf-8",
-          "Content-Disposition": `inline; filename="${targetFile}"`,
+          "Content-Disposition": `inline; filename="${outFilename}"`,
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Headers": "*",
           "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -690,6 +812,28 @@ function renderWebUI(origin) {
       </div>
       <div style="font-size: 12px; color: #9ca3af; margin-top: 8px;">
         👉 Dán link này vào <strong>PotPlayer</strong> hoặc <strong>TiviMate</strong> đều tự nhận đúng định dạng tối ưu!
+      </div>
+    </div>
+
+    <div class="box" style="border: 1px solid #10b981; background: rgba(16, 185, 129, 0.08);">
+      <div class="box-title" style="color: #34d399;">🔥 Link Real-time Dynamic 24/7 (Khuyên dùng — Không bao giờ hết hạn token)</div>
+      <div class="url-row">
+        <span id="url-realtime">${origin}/realtime.m3u</span>
+        <button class="copy-btn" style="background: #10b981;" onclick="copyToClipboard('${origin}/realtime.m3u', this)">Sao chép</button>
+      </div>
+      <div style="font-size: 12px; color: #9ca3af; margin-top: 8px;">
+        👉 Hoạt động giống hệt App Film4K: Tự động cấp token tươi mới theo thời gian thực mỗi khi mở kênh, xem ổn định từ mọi nơi!
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-title">🛡️ Link Real-time + Bọc Proxy Film4K (Vượt Chặn Mạng)</div>
+      <div class="url-row">
+        <span id="url-realtime-proxy">${origin}/realtime-proxy.m3u</span>
+        <button class="copy-btn" onclick="copyToClipboard('${origin}/realtime-proxy.m3u', this)">Sao chép</button>
+      </div>
+      <div style="font-size: 12px; color: #9ca3af; margin-top: 8px;">
+        👉 Kết hợp cấp token Real-Time và định tuyến qua Proxy Film4K (<code>https://fiml4k.fun/api/iptv/stream?url=...</code>)
       </div>
     </div>
 

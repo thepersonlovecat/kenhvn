@@ -16,13 +16,15 @@ try:
 except Exception:
     pass
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Cấu hình tài khoản Film4K để lấy token các kênh TV360+
 BASE_URL = os.environ.get("FILM4K_BASE_URL", "https://fiml4k.fun")
 EMAIL = os.environ.get("FILM4K_EMAIL")
 PASSWORD = os.environ.get("FILM4K_PASS")
 
-# Tu dong doc tu config.json neu khong co bien moi truong
 if not EMAIL or not PASSWORD:
-    cfg_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.json')
+    cfg_file = os.path.join(SCRIPT_DIR, 'config.json')
     if os.path.exists(cfg_file):
         try:
             with open(cfg_file, 'r', encoding='utf-8') as f:
@@ -32,6 +34,9 @@ if not EMAIL or not PASSWORD:
         except Exception:
             pass
 
+EMAIL = EMAIL or "thepersonlovecat@gmail.com"
+PASSWORD = PASSWORD or "123123qwe"
+
 session = requests.Session()
 session.verify = False
 session.headers.update({
@@ -39,360 +44,454 @@ session.headers.update({
     'Accept': 'application/json'
 })
 
-def login():
+# Danh sách 15 kênh TV360+ với cấu hình mã Film4K & Broadpeak
+TV360_MAP = {
+    '1':  {'cid': 2554, 'bpk': '198', 'name': 'TV360+1',  'logo': 'https://vietanhtv.id.vn/logo/tv360plus1.png', 'is_dash': True},
+    '2':  {'cid': 1,    'bpk': '199', 'name': 'TV360+2',  'logo': 'https://vietanhtv.id.vn/logo/tv360plus2.png', 'is_dash': True},
+    '3':  {'cid': 148,  'bpk': '200', 'name': 'TV360+3',  'logo': 'https://vietanhtv.id.vn/logo/tv360plus3.png', 'is_dash': True},
+    '4':  {'cid': 2458, 'bpk': '201', 'name': 'TV360+4',  'logo': 'https://vietanhtv.id.vn/logo/tv360plus4.png', 'is_dash': True},
+    '5':  {'cid': 9867, 'bpk': '367', 'name': 'TV360+5',  'logo': 'https://vietanhtv.id.vn/logo/tv360plus5.png', 'is_dash': True},
+    '6':  {'cid': 9868, 'bpk': '368', 'name': 'TV360+6',  'logo': 'https://vietanhtv.id.vn/logo/tv360plus6.png', 'is_dash': True},
+    '7':  {'cid': 9869, 'bpk': '369', 'name': 'TV360+7',  'logo': 'https://vietanhtv.id.vn/logo/tv360plus7.png', 'is_dash': True},
+    '8':  {'cid': 9870, 'bpk': '370', 'name': 'TV360+8',  'logo': 'https://vietanhtv.id.vn/logo/tv360plus8.png', 'is_dash': True},
+    '9':  {'cid': 9887, 'bpk': '379', 'name': 'TV360+9',  'logo': 'https://vietanhtv.id.vn/logo/tv360plus9.png', 'is_dash': False},
+    '10': {'cid': 9957, 'bpk': '449', 'name': 'TV360+10', 'logo': 'https://vietanhtv.id.vn/logo/tv360plus10.png', 'is_dash': False},
+    '11': {'cid': 9958, 'bpk': '450', 'name': 'TV360+11', 'logo': 'https://vietanhtv.id.vn/logo/tv360plus11.png', 'is_dash': False},
+    '12': {'cid': 10001,'bpk': '465', 'name': 'TV360+12', 'logo': 'https://vietanhtv.id.vn/logo/tv360plus12.png', 'is_dash': True},
+    '13': {'cid': 10022,'bpk': '471', 'name': 'TV360+13', 'logo': 'https://img-zlr1.tv360.vn/image1/2026/05/15/01/1778782670293/dd4067f28084_480_270.png', 'is_dash': True},
+    '14': {'cid': 10023,'bpk': '472', 'name': 'TV360+14', 'logo': 'https://img-zlr1.tv360.vn/image1/2026/05/15/01/177878325467/bbecb3ccb477_480_270.png', 'is_dash': True},
+    '15': {'cid': 10024,'bpk': '473', 'name': 'TV360+15', 'logo': 'https://img-zlr1.tv360.vn/image1/2026/05/15/01/1778783528367/ddfa21d56253_480_270.png', 'is_dash': True},
+}
+
+def login_film4k():
+    """Đăng nhập tài khoản Film4K để lấy quyền gọi stream TV360."""
     login_url = f"{BASE_URL}/api/auth/signin"
-    for attempt in range(5):
+    for attempt in range(3):
         try:
-            resp = session.post(login_url, json={"email": EMAIL, "password": PASSWORD}, timeout=25)
+            resp = session.post(login_url, json={"email": EMAIL, "password": PASSWORD}, timeout=15)
             if resp.status_code == 200:
-                print(f"[OK] Dang nhap thanh cong tai khoan: {EMAIL}")
+                print(f"[OK] Đăng nhập Film4K thành công ({EMAIL})")
                 return True
-            print(f"[WARN] Dang nhap status {resp.status_code}, thu lai...")
+            print(f"[WARN] Đăng nhập Film4K trả về HTTP {resp.status_code}, đang thử lại...")
         except Exception as e:
-            print(f"[WARN] Loi ket noi ({attempt+1}/5): {e}")
+            print(f"[WARN] Lỗi kết nối Film4K ({attempt+1}/3): {e}")
             time.sleep(1)
     return False
 
-def fetch_channels():
-    resp = session.get(f"{BASE_URL}/api/tv/channels", timeout=25)
-    return resp.json().get('channels', [])
-
-def fetch_events():
-    try:
-        resp = session.get(f"{BASE_URL}/api/tv/events", timeout=25)
-        return resp.json().get('events', [])
-    except Exception:
-        return []
-
-def fetch_stream_url(ch):
-    cid = ch['id']
-    url = f"{BASE_URL}/api/tv/{cid}/stream"
-    for _ in range(3):
-        try:
-            r = session.get(url, timeout=12)
-            if r.status_code == 200:
-                data = r.json()
-                surl = data.get('url', '')
-                if surl.startswith('/'):
-                    surl = f"{BASE_URL}{surl}"
-                return {
-                    "id": cid,
-                    "name": ch['name'],
-                    "category": ch.get('category') or 'KÊNH KHÁC',
-                    "logo": ch.get('logo', '') or '',
-                    "stream_url": surl,
-                    "dash": data.get('dash', False),
-                    "raw": data
-                }
-        except Exception:
-            time.sleep(0.5)
-    return {
-        "id": cid,
-        "name": ch['name'],
-        "category": ch.get('category') or 'KÊNH KHÁC',
-        "logo": ch.get('logo', '') or '',
-        "stream_url": "",
-        "dash": False,
-        "raw": None
-    }
-
-def update_and_load_tv360_m3u(ordered, script_dir):
-    """
-    1. Cap nhat token moi vao file tv360.m3u (chua ClearKey).
-    2. Trich xuat cac khoi kenh tu tv360.m3u de ghep vao playlist tong hop.
-    """
-    tv360_path = os.path.join(script_dir, 'tv360.m3u')
+def parse_existing_tv360_m3u():
+    """Đọc dữ liệu dự phòng từ file tv360.m3u hiện có."""
+    tv360_path = os.path.join(SCRIPT_DIR, 'tv360.m3u')
+    fallback_data = {}
     if not os.path.exists(tv360_path):
-        return []
-
-    ch_map = {
-        '201': 2458,  # TV360+ 4
-        '368': 9868,  # TV360+ 6
-        '369': 9869,  # TV360+ 7
-        '465': 10001, # TV360+ 12
-        '471': 10022, # TV360+ 13
-        '472': 10023, # TV360+ 14
-        '473': 10024  # TV360+ 15
-    }
-
-    fresh_bpk_urls = {}
-    for ch_num, cid in ch_map.items():
-        found = next((c for c in ordered if c['id'] == cid), None)
-        if not found or not found.get('stream_url'):
-            continue
-        surl = found['stream_url']
-        try:
-            r2 = requests.get(surl, allow_redirects=False, verify=False, timeout=10)
-            loc = r2.headers.get('Location', '')
-            m = re.search(r'https://([^/:]+)(?::\d+)?/bpk-token/([^/]+)/bpk-tv/' + ch_num + r'/output/index\.mpd', loc)
-            if m:
-                host = m.group(1)
-                token = m.group(2)
-                # Cat sach truoc .mpd, bo query phia sau
-                fresh_bpk_urls[ch_num] = f'https://{host}/bpk-token/{token}/bpk-tv/{ch_num}/output/index.mpd'
-        except Exception as e:
-            print(f"[WARN] Khong the lay redirect bpk-token cho kenh {ch_num}: {e}")
+        return fallback_data
 
     try:
         with open(tv360_path, 'r', encoding='utf-8') as f:
             content = f.read()
-
-        for ch_num, new_url in fresh_bpk_urls.items():
-            pattern = r'https://[^\s]+/bpk-token/[^/\s]+/bpk-tv/' + ch_num + r'/output/index\.mpd[^\s]*'
-            content = re.sub(pattern, new_url, content)
-            print(f"  -> tv360.m3u: Da cap nhat bpk-token cho kenh {ch_num}")
-
-        # Cap nhat TV360+ 9, 10, 11 (cac kenh HLS sach tu TV360)
-        hls_map = {
-            '9887': 'tv360plus9',
-            '9957': 'tv360plus10',
-            '9958': 'tv360plus11'
-        }
-        for cid_str, tag in hls_map.items():
-            ch_found = next((c for c in ordered if str(c['id']) == cid_str), None)
-            if ch_found and ch_found.get('stream_url'):
-                clean_hls = ch_found['stream_url']
-                pattern = r'(tvg-id="' + tag + r'".*?\n(?:#EXTVLCOPT:[^\n]+\n)?)(https://[^\s]+)'
-                content = re.sub(pattern, r'\g<1>' + clean_hls, content, flags=re.DOTALL)
-
-        with open(tv360_path, 'w', encoding='utf-8') as f:
-            f.write(content)
-        print("[OK] Da cap nhat toan bo token moi vao tv360.m3u!")
-
-        # Doc cac khoi kenh da duoc format san trong tv360.m3u
-        tv360_entries = []
-        current = []
-        for line in content.splitlines():
-            line_str = line.strip()
-            if not line_str:
+        blocks = re.split(r'(?=#EXTINF:)', content)
+        for b in blocks:
+            if not b.strip().startswith('#EXTINF:'):
                 continue
-            if line_str.startswith('#EXTINF:'):
-                if current:
-                    tv360_entries.append(current)
-                    current = []
-            current.append(line_str)
-        if current:
-            tv360_entries.append(current)
-
-        # Loc bo hoan toan cac kenh / su kien VTVPrime neu co
-        filtered_entries = []
-        for entry in tv360_entries:
-            entry_text = "\n".join(entry).lower()
-            if "vtvprime" in entry_text or "onsport" in entry_text:
+            m = re.search(r'tvg-id="tv360plus(\d+)"', b)
+            if not m:
                 continue
-            filtered_entries.append(entry)
-
-        return filtered_entries
-
+            ch_num = m.group(1)
+            key_m = re.search(r'#KODIPROP:inputstream\.adaptive\.license_key=([^\r\n]+)', b)
+            lines = [l.strip() for l in b.splitlines() if l.strip()]
+            url = lines[-1] if lines and lines[-1].startswith('http') else ''
+            fallback_data[ch_num] = {
+                'url': url,
+                'drm_key': key_m.group(1).strip() if key_m else '',
+                'block': b.strip()
+            }
     except Exception as e:
-        print(f"[ERROR] Loi khi xu ly tv360.m3u: {e}")
+        print(f"[WARN] Lỗi đọc fallback tv360.m3u: {e}")
+    return fallback_data
+
+def fetch_fresh_tv360_channels():
+    """Lấy luồng và DRM ClearKey tươi mới cho 15 kênh TV360+ từ Film4K API."""
+    fallback_info = parse_existing_tv360_m3u()
+    tv360_results = {}
+
+    has_logged_in = login_film4k()
+    if not has_logged_in:
+        print("[WARN] Không đăng nhập được Film4K, sử dụng dữ liệu đã lưu trong tv360.m3u.")
+
+    def fetch_single_tv360(ch_num, info):
+        cid = info['cid']
+        bpk = info['bpk']
+        final_url = ""
+        drm_key = ""
+
+        if has_logged_in:
+            for _ in range(3):
+                try:
+                    r = session.get(f"{BASE_URL}/api/tv/{cid}/stream", timeout=12)
+                    if r.status_code == 200:
+                        data = r.json()
+                        stream_url = data.get('url', '')
+                        ck = data.get('clearKey')
+                        if ck and ck.get('keyId') and ck.get('key'):
+                            drm_key = f"{ck['keyId']}:{ck['key']}"
+
+                        # Phân giải redirect 307 cho luồng Broadpeak để lấy link bpk-token sạch
+                        if 'fo-hlc' in stream_url:
+                            try:
+                                r_redir = requests.get(stream_url, allow_redirects=False, verify=False, timeout=6)
+                                if 'Location' in r_redir.headers:
+                                    loc = r_redir.headers['Location']
+                                    m = re.search(r'(https://[^/]+/bpk-token/[^/]+/bpk-tv/' + bpk + r'/output/index\.(?:mpd|m3u8))', loc)
+                                    if m:
+                                        stream_url = m.group(1)
+                            except Exception:
+                                pass
+
+                        final_url = stream_url
+                        break
+                except Exception:
+                    time.sleep(0.5)
+
+        # Nếu không lấy được qua API, dùng lại dữ liệu cũ từ tv360.m3u
+        if not final_url and ch_num in fallback_info:
+            final_url = fallback_info[ch_num].get('url', '')
+        if not drm_key and ch_num in fallback_info:
+            drm_key = fallback_info[ch_num].get('drm_key', '')
+
+        return ch_num, {
+            'name': info['name'],
+            'logo': info['logo'],
+            'bpk': bpk,
+            'is_dash': info['is_dash'],
+            'url': final_url,
+            'drm_key': drm_key
+        }
+
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = [executor.submit(fetch_single_tv360, ch_num, info) for ch_num, info in TV360_MAP.items()]
+        for f in as_completed(futures):
+            ch_num, res = f.result()
+            tv360_results[ch_num] = res
+
+    # Cập nhật và lưu lại file tv360.m3u
+    tv360_m3u_lines = []
+    for i in range(1, 16):
+        ch_num = str(i)
+        data = tv360_results.get(ch_num)
+        if not data or not data['url']:
+            continue
+
+        cname = data['name']
+        logo = data['logo']
+        extinf = f'#EXTINF:-1 tvg-id="tv360plus{ch_num}" group-title="Sự Kiện TV360" tvg-logo="{logo}", {cname}'
+        block = [extinf, '#EXTVLCOPT:http-user-agent=Dalvik/2.1.0']
+
+        if data['is_dash']:
+            block.append('#KODIPROP:inputstream.adaptive.manifest_type=mpd')
+            if data['drm_key']:
+                block.append('#KODIPROP:inputstream.adaptive.license_type=clearkey')
+                block.append(f'#KODIPROP:inputstream.adaptive.license_key={data["drm_key"]}')
+
+        block.append(data['url'])
+        tv360_m3u_lines.append('\n'.join(block))
+
+    tv360_full_text = '\n\n'.join(tv360_m3u_lines) + '\n'
+    tv360_path = os.path.join(SCRIPT_DIR, 'tv360.m3u')
+    with open(tv360_path, 'w', encoding='utf-8') as f:
+        f.write(tv360_full_text)
+    print(f"[OK] Đã cập nhật 15 kênh TV360+ vào {tv360_path}")
+
+    return tv360_results
+
+def fetch_vietnam_channels():
+    """Bóc tách danh sách kênh Việt Nam từ nguồn VIP TV365 (FPT Play, VTVGo, vtvprime...)."""
+    vip_url = "https://raw.githubusercontent.com/VIET-NAM-VIP/TOI-YEU-VIET-NAM/refs/heads/main/VIETNAM"
+    codeberg_url = "https://codeberg.org/TV365/TV365-STREAM/raw/branch/main/VIETNAM.m3u"
+
+    raw_text = ""
+    try:
+        r = requests.get(vip_url, timeout=12)
+        if r.status_code == 200 and len(r.text) > 1000:
+            raw_text = r.text
+            print(f"[OK] Tải danh sách TV365 VIP từ GitHub ({len(raw_text)} bytes)")
+    except Exception as e:
+        print(f"[WARN] Không thể tải TV365 VIP từ GitHub: {e}")
+
+    if not raw_text:
+        try:
+            r = requests.get(codeberg_url, timeout=12)
+            if r.status_code == 200:
+                raw_text = r.text
+                print(f"[OK] Tải danh sách dự phòng từ Codeberg ({len(raw_text)} bytes)")
+        except Exception as e:
+            print(f"[WARN] Không thể tải TV365 từ Codeberg: {e}")
+
+    cached_json = os.path.join(SCRIPT_DIR, "tv365_channels.json")
+    if not raw_text and os.path.exists(cached_json):
+        try:
+            with open(cached_json, "r", encoding="utf-8") as f:
+                channels = json.load(f)
+                print(f"[OK] Sử dụng danh sách cache cục bộ ({len(channels)} kênh)")
+                return channels
+        except Exception:
+            pass
+
+    if not raw_text:
+        print("[ERROR] Không tải được dữ liệu kênh Việt Nam!")
         return []
+
+    lines = raw_text.splitlines()
+    channels = []
+    current = None
+
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith("#EXTINF"):
+            comma = line.rfind(",")
+            name = line[comma + 1:].strip() if comma >= 0 else "Kênh không tên"
+            logo_m = re.search(r'tvg-logo="([^"]*)"', line, re.I)
+            group_m = re.search(r'group-title="([^"]*)"', line, re.I)
+            id_m = re.search(r'tvg-id="([^"]*)"', line, re.I)
+
+            # Lọc bỏ nếu kênh bị trùng tên TV360+ (để ưu tiên cụm TV360+ chính chủ)
+            if "tv360+" in name.lower() or "tv360 plus" in name.lower():
+                current = None
+                continue
+
+            current = {
+                "name": name,
+                "logo": logo_m.group(1) if logo_m else "",
+                "group": group_m.group(1) if group_m else "KÊNH KHÁC",
+                "id": id_m.group(1) if id_m else "",
+                "drm_key": "",
+                "license_type": "",
+                "user_agent": "",
+                "referer": "",
+                "url": ""
+            }
+        elif line.startswith("#KODIPROP:inputstream.adaptive.license_key="):
+            if current:
+                current["drm_key"] = line.split("=", 1)[1].strip()
+        elif line.startswith("#KODIPROP:inputstream.adaptive.license_type="):
+            if current:
+                current["license_type"] = line.split("=", 1)[1].strip()
+        elif line.startswith("#EXTVLCOPT:http-user-agent="):
+            if current:
+                current["user_agent"] = line.split("=", 1)[1].strip()
+        elif line.startswith("#EXTVLCOPT:http-referrer="):
+            if current:
+                current["referer"] = line.split("=", 1)[1].strip()
+        elif not line.startswith("#") and current:
+            current["url"] = line
+            channels.append(current)
+            current = None
+
+    print(f"[OK] Bóc tách thành công {len(channels)} kênh Việt Nam từ TV365.")
+
+    # Lưu lại file json
+    with open(cached_json, "w", encoding="utf-8") as f:
+        json.dump(channels, f, indent=2, ensure_ascii=False)
+
+    return channels
+
+def build_merged_playlists(tv360_data, vn_channels):
+    """
+    Ghép cụm 15 kênh Sự Kiện TV360+ và 252 kênh Việt Nam từ TV365.
+    Xuất ra:
+    - danh_sach_kenh_potplayer.m3u
+    - danh_sach_kenh_tivimate.m3u
+    - danh_sach_kenh_film4k.m3u
+    - playlist.m3u
+    - tv365_playlist.m3u
+    """
+    now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Phân loại nhóm kênh TV365 theo thứ tự ưu tiên hiển thị
+    group_order = [
+        'VTV',
+        'Thiết yếu',
+        'HTV',
+        'VTVcab',
+        'SCTV',
+        'Thiếu Nhi',
+        'Nghe nhạc',
+        'Địa phương',
+        'Quốc tế'
+    ]
+
+    grouped_vn = defaultdict(list)
+    for c in vn_channels:
+        grp = c.get('group', 'KÊNH KHÁC')
+        grouped_vn[grp].append(c)
+
+    # Thêm các nhóm khác chưa có trong danh sách
+    for g in grouped_vn:
+        if g not in group_order:
+            group_order.append(g)
+
+    # Khởi tạo danh sách các dòng M3U
+    header = f'#EXTM3U url-tvg="https://vnepg.site/epg.xml" name="KenhVN IPTV" updated="{now_str}"'
+    lines_pot = [header]
+    lines_tivi = [header]
+    lines_tv365_only = [header]
+
+    # ==========================================
+    # PHẦN 1: CỤM 15 KÊNH SỰ KIỆN THỂ THAO TV360+
+    # ==========================================
+    for i in range(1, 16):
+        ch_num = str(i)
+        info = tv360_data.get(ch_num)
+        if not info or not info.get('url'):
+            continue
+
+        cname = info['name']
+        logo = info['logo']
+        surl = info['url']
+        is_dash = info['is_dash']
+        drm_key = info['drm_key']
+
+        extinf = f'#EXTINF:-1 tvg-id="tv360plus{ch_num}" tvg-name="{cname}" tvg-logo="{logo}" group-title="Sự Kiện TV360",{cname}'
+
+        # 1. Cho PotPlayer / VLC
+        lines_pot.append(extinf)
+        lines_pot.append('#EXTVLCOPT:http-user-agent=Dalvik/2.1.0')
+        if is_dash:
+            lines_pot.append('#KODIPROP:inputstream.adaptive.manifest_type=mpd')
+            if drm_key:
+                lines_pot.append('#KODIPROP:inputstream.adaptive.license_type=clearkey')
+                lines_pot.append(f'#KODIPROP:inputstream.adaptive.license_key={drm_key}')
+        lines_pot.append(surl)
+
+        # 2. Cho TiviMate / Universal
+        lines_tivi.append(extinf)
+        lines_tivi.append('#EXTVLCOPT:http-user-agent=Dalvik/2.1.0')
+        if is_dash:
+            lines_tivi.append('#KODIPROP:inputstream.adaptive.manifest_type=mpd')
+            if drm_key:
+                lines_tivi.append('#KODIPROP:inputstream.adaptive.license_type=clearkey')
+                lines_tivi.append(f'#KODIPROP:inputstream.adaptive.license_key={drm_key}')
+        lines_tivi.append(surl)
+
+    # ==========================================
+    # PHẦN 2: CÁC KÊNH VIỆT NAM TỪ TV365 VIP
+    # ==========================================
+    for grp_name in group_order:
+        channels_in_grp = grouped_vn.get(grp_name, [])
+        for c in channels_in_grp:
+            cname = c.get('name', '')
+            cid = c.get('id', '')
+            logo = c.get('logo', '')
+            surl = c.get('url', '')
+            drm_key = c.get('drm_key', '')
+            ua = c.get('user_agent', '')
+            referer = c.get('referer', '')
+
+            # Tự động gán referer cho luồng vmttv nếu có
+            if not referer and "vmttv.dpdns.org" in surl:
+                referer = "https://vmttv.dpdns.org/VTVGo/"
+                ua = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+
+            extinf = f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp_name}",{cname}'
+
+            # --- Dành cho PotPlayer / VLC ---
+            lines_pot.append(extinf)
+            if drm_key:
+                lines_pot.append('#KODIPROP:inputstream.adaptive.license_type=clearkey')
+                lines_pot.append(f'#KODIPROP:inputstream.adaptive.license_key={drm_key}')
+            if ua:
+                lines_pot.append(f'#EXTVLCOPT:http-user-agent={ua}')
+            if referer:
+                lines_pot.append(f'#EXTVLCOPT:http-referrer={referer}')
+            lines_pot.append(surl)
+
+            # --- Dành cho TiviMate / Android TV ---
+            lines_tivi.append(extinf)
+            if drm_key:
+                lines_tivi.append('#KODIPROP:inputstream.adaptive.license_type=clearkey')
+                lines_tivi.append(f'#KODIPROP:inputstream.adaptive.license_key={drm_key}')
+            if ua:
+                lines_tivi.append(f'#EXTVLCOPT:http-user-agent={ua}')
+            if referer:
+                lines_tivi.append(f'#EXTVLCOPT:http-referrer={referer}')
+
+            # Định dạng Pipe headers cho TiviMate nếu cần gửi header riêng
+            pipe_parts = []
+            if ua:
+                pipe_parts.append(f"User-Agent={ua}")
+            if referer:
+                pipe_parts.append(f"Referer={referer}")
+
+            if pipe_parts and not ("|" in surl):
+                tivi_stream_url = f"{surl}|{'&'.join(pipe_parts)}"
+            else:
+                tivi_stream_url = surl
+
+            lines_tivi.append(tivi_stream_url)
+
+            # --- Dành cho TV365 Only ---
+            lines_tv365_only.append(extinf)
+            if drm_key:
+                lines_tv365_only.append('#KODIPROP:inputstream.adaptive.license_type=clearkey')
+                lines_tv365_only.append(f'#KODIPROP:inputstream.adaptive.license_key={drm_key}')
+            if ua:
+                lines_tv365_only.append(f'#EXTVLCOPT:http-user-agent={ua}')
+            if referer:
+                lines_tv365_only.append(f'#EXTVLCOPT:http-referrer={referer}')
+            lines_tv365_only.append(surl)
+
+    # Ghi file danh_sach_kenh_potplayer.m3u
+    file_pot = os.path.join(SCRIPT_DIR, 'danh_sach_kenh_potplayer.m3u')
+    with open(file_pot, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines_pot) + '\n')
+
+    # Ghi file danh_sach_kenh_tivimate.m3u
+    file_tivi = os.path.join(SCRIPT_DIR, 'danh_sach_kenh_tivimate.m3u')
+    with open(file_tivi, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines_tivi) + '\n')
+
+    # Ghi file playlist.m3u & danh_sach_kenh_film4k.m3u (chuẩn dùng chung)
+    file_main = os.path.join(SCRIPT_DIR, 'playlist.m3u')
+    with open(file_main, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines_tivi) + '\n')
+
+    file_film4k = os.path.join(SCRIPT_DIR, 'danh_sach_kenh_film4k.m3u')
+    with open(file_film4k, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines_tivi) + '\n')
+
+    # Ghi file tv365_playlist.m3u
+    file_tv365 = os.path.join(SCRIPT_DIR, 'tv365_playlist.m3u')
+    with open(file_tv365, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines_tv365_only) + '\n')
+
+    total_channels = len(tv360_data) + len(vn_channels)
+    print("\n" + "=" * 60)
+    print("🎉 HOÀN TẤT TẠO PLAYLIST HỢP NHẤT:")
+    print(f"  - ⚡ 15 Kênh TV360+ (kèm fresh token & ClearKey DRM)")
+    print(f"  - 📺 {len(vn_channels)} Kênh Việt Nam chất lượng cao (từ TV365)")
+    print(f"  - 🌟 Tổng cộng: {total_channels} kênh")
+    print(f"  - 📁 Đã ghi: danh_sach_kenh_potplayer.m3u, danh_sach_kenh_tivimate.m3u, playlist.m3u, danh_sach_kenh_film4k.m3u, tv360.m3u")
+    print("=" * 60)
 
 def main():
     print("=" * 60)
-    print("BAT DAU CAP NHAT DANH SACH KENH & TOKEN FILM4K")
+    print("BẮT ĐẦU CẬP NHẬT KÊNH TV365 & TOKEN TV360+")
     print("=" * 60)
 
-    if not login():
-        print("[ERROR] Dang nhap that bai! Vui long kiem tra email/password.")
-        sys.exit(1)
+    start_time = time.time()
+    # 1. Lấy token tươi mới cho 15 kênh TV360+
+    print("\n[Bước 1/2] Lấy fresh token & ClearKey cho 15 kênh TV360+...")
+    tv360_data = fetch_fresh_tv360_channels()
 
-    channels = fetch_channels()
-    events = fetch_events()
-    total_ch = len(channels)
-    print(f"[INFO] Tim thay tong cong {total_ch} kenh va {len(events)} su kien.")
+    # 2. Bóc tách 252 kênh Việt Nam từ TV365 VIP
+    print("\n[Bước 2/2] Bóc tách danh sách kênh Việt Nam từ TV365...")
+    vn_channels = fetch_vietnam_channels()
 
-    results = {}
-    with ThreadPoolExecutor(max_workers=8) as executor:
-        futures = {executor.submit(fetch_stream_url, ch): ch for ch in channels}
-        done = 0
-        for future in as_completed(futures):
-            res = future.result()
-            results[res['id']] = res
-            done += 1
-            if done % 30 == 0 or done == total_ch:
-                print(f" -> Da lay token: {done}/{total_ch} kenh...")
+    # 3. Hợp nhất danh sách và xuất file M3U
+    build_merged_playlists(tv360_data, vn_channels)
 
-    ordered = [results[ch['id']] for ch in channels if ch['id'] in results]
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    with open(os.path.join(script_dir, 'direct_streams.json'), 'w', encoding='utf-8') as f:
-        json.dump(ordered, f, ensure_ascii=False, indent=2)
-
-    with open(os.path.join(script_dir, 'channels_live.json'), 'w', encoding='utf-8') as f:
-        json.dump({"channels": channels, "events": events}, f, ensure_ascii=False, indent=2)
-
-    # 1. Cap nhat va lay toan bo cac kenh TV360+ da giai ma ClearKey tu tv360.m3u
-    tv360_clearkey_entries = update_and_load_tv360_m3u(ordered, script_dir)
-    print(f"[INFO] Da nap {len(tv360_clearkey_entries)} kenh giai ma ClearKey tu tv360.m3u")
-
-    # 2. Loc va sap xep cac kenh tu Film4K
-    # Loai bo cac kenh TV360+ cu trong Film4K de thay the bang ban ClearKey tu tv360.m3u
-    hls_channels = []
-    ants_channels = []
-
-    preferred_order = [
-        'Kênh thiết yếu',
-        'Kênh VTV',
-        'Thể thao',
-        'Giải trí',
-        'Kênh quốc tế',
-        'Kênh HTV',
-        'Kênh VTV Cab',
-        'Kênh SCTV',
-        'Kênh Vĩnh Long',
-        'Kênh địa phương',
-        'Kênh FM'
-    ]
-
-    groups = defaultdict(list)
-    for c in ordered:
-        surl = c.get('stream_url', '')
-        cname = c.get('name', '')
-        if not surl:
-            continue
-        # Neu la kenh TV360+ (da co ban ClearKey trong tv360.m3u) thi bo qua o day de chen ban ClearKey vao sau
-        if 'tv360+' in cname.lower():
-            continue
-        if 'api/tv/ants/' in surl:
-            ants_channels.append(c)
-        else:
-            grp = c.get('category') or 'KÊNH KHÁC'
-            groups[grp].append(c)
-
-    for g in groups:
-        if g not in preferred_order:
-            preferred_order.append(g)
-
-    for grp_name in preferred_order:
-        if grp_name in groups:
-            hls_channels.extend(groups[grp_name])
-
-    now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    # 3. Tao danh_sach_kenh_potplayer.m3u & danh_sach_kenh_tivimate.m3u
-    # Thu tu:
-    # 1. 140 kenh HLS thong thuong (VTV1 len dau, HTV, VTC...)
-    # 2. Toan bo kenh TV360+ tu tv360.m3u (Co san ClearKey & bpk-token moi)
-    # 3. Cac kenh Ants quoc te
-    
-    m3u_tivi_lines = [
-        f'#EXTM3U name="Film4K & TV360 ClearKey IPTV" updated="{now_str}"'
-    ]
-    m3u_pot_lines = [
-        f'#EXTM3U name="Film4K & TV360 ClearKey IPTV" updated="{now_str}"'
-    ]
-
-    # Phần 1: Các kênh HLS & ClearKey thông thường
-    for c in hls_channels:
-        cid = str(c.get('id', '')).strip()
-        cname = str(c.get('name', '')).strip()
-        logo = c.get('logo', '') or ''
-        surl = c.get('stream_url', '')
-        grp = c.get('category') or 'KÊNH KHÁC'
-
-        raw = c.get('raw') or {}
-        clearkey = raw.get('clearKey') if isinstance(raw, dict) else None
-
-        # Fix prv.film4k.net stream: Luồng thực tế từ prv.film4k.net là HLS m3u8, không phải DASH mpd
-        if "prv.film4k.net" in surl:
-            surl = surl.replace(".mpd", ".m3u8")
-            is_dash = False
-        else:
-            is_dash = c.get('dash') or '.mpd' in surl
-
-        if clearkey and clearkey.get('keyId') and clearkey.get('key'):
-            kid = clearkey.get('keyId')
-            key = clearkey.get('key')
-
-            entry_pot = [
-                f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}',
-                '#EXTVLCOPT:http-user-agent=Dalvik/2.1.0',
-                '#KODIPROP:inputstream.adaptive.manifest_type=mpd',
-                '#KODIPROP:inputstream.adaptive.license_type=clearkey',
-                f'#KODIPROP:inputstream.adaptive.license_key={kid}:{key}',
-                surl
-            ]
-            m3u_pot_lines.extend(entry_pot)
-
-            entry_tivi = [
-                f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}',
-                '#EXTVLCOPT:http-user-agent=Dalvik/2.1.0',
-                '#KODIPROP:inputstream.adaptive.manifest_type=mpd',
-                '#KODIPROP:inputstream.adaptive.license_type=clearkey',
-                f'#KODIPROP:inputstream.adaptive.license_key={kid}:{key}',
-                surl
-            ]
-            m3u_tivi_lines.extend(entry_tivi)
-
-        elif is_dash:
-            entry_pot = [
-                f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}',
-                '#EXTVLCOPT:http-user-agent=Dalvik/2.1.0',
-                '#KODIPROP:inputstream.adaptive.manifest_type=mpd',
-                surl
-            ]
-            m3u_pot_lines.extend(entry_pot)
-
-            entry_tivi = [
-                f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}',
-                '#EXTVLCOPT:http-user-agent=Dalvik/2.1.0',
-                '#KODIPROP:inputstream.adaptive.manifest_type=mpd',
-                surl
-            ]
-            m3u_tivi_lines.extend(entry_tivi)
-
-        else:
-            # PotPlayer: Clean URL
-            m3u_pot_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
-            m3u_pot_lines.append(surl)
-
-            # TiviMate: Pipe URL
-            m3u_tivi_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
-            if 'tv360.vn' in surl:
-                pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://tv360.vn/&Origin=https://tv360.vn"
-            else:
-                pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://fiml4k.fun/&Origin=https://fiml4k.fun"
-            m3u_tivi_lines.append(pipe_url)
-
-    # Phần 2: Các kênh TV360+ (Đã có ClearKey & Token mới)
-    for entry in tv360_clearkey_entries:
-        # Giu nguyen toan bo the dinh dang (#EXTINF, #KODIPROP, stream url)
-        for line in entry:
-            m3u_tivi_lines.append(line)
-            m3u_pot_lines.append(line)
-
-    # Phần 3: Các kênh Ants
-    for c in ants_channels:
-        cid = str(c.get('id', '')).strip()
-        cname = str(c.get('name', '')).strip()
-        logo = c.get('logo', '') or ''
-        surl = c.get('stream_url', '')
-        grp = "Kênh Quốc Tế (Ants)"
-
-        m3u_pot_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
-        m3u_pot_lines.append(surl)
-
-        m3u_tivi_lines.append(f'#EXTINF:-1 tvg-id="{cid}" tvg-name="{cname}" tvg-logo="{logo}" group-title="{grp}",{cname}')
-        pipe_url = f"{surl}|User-Agent=Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36&Referer=https://fiml4k.fun/&Origin=https://fiml4k.fun"
-        m3u_tivi_lines.append(pipe_url)
-
-    # Ghi file
-    with open(os.path.join(script_dir, 'danh_sach_kenh_potplayer.m3u'), 'w', encoding='utf-8') as f:
-        f.write('\n'.join(m3u_pot_lines) + '\n')
-
-    with open(os.path.join(script_dir, 'danh_sach_kenh_tivimate.m3u'), 'w', encoding='utf-8') as f:
-        f.write('\n'.join(m3u_tivi_lines) + '\n')
-
-    with open(os.path.join(script_dir, 'danh_sach_kenh_film4k.m3u'), 'w', encoding='utf-8') as f:
-        f.write('\n'.join(m3u_tivi_lines) + '\n')
-
-    total_merged = len(hls_channels) + len(tv360_clearkey_entries) + len(ants_channels)
-    print(f"\n🎉 [THANH CONG] Da chen thanh cong {len(tv360_clearkey_entries)} kenh ClearKey vao playlist:")
-    print(f"  - Tong so kenh: {total_merged} kenh")
-    print(f"  - 140 kenh HLS len dau")
-    print(f"  - {len(tv360_clearkey_entries)} kenh TV360+ kem ClearKey & bpk-token moi")
-    print(f"  - Da cap nhat danh_sach_kenh_potplayer.m3u, danh_sach_kenh_tivimate.m3u, tv360.m3u!")
+    elapsed = round(time.time() - start_time, 2)
+    print(f"⚡ Thời gian thực hiện: {elapsed} giây.")
 
 if __name__ == '__main__':
     main()

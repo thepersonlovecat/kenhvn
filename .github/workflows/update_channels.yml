@@ -40,9 +40,10 @@ jobs:
           git add danh_sach_kenh_film4k.m3u \
                   danh_sach_kenh_potplayer.m3u \
                   danh_sach_kenh_tivimate.m3u \
+                  playlist.m3u \
                   tv360.m3u \
-                  direct_streams.json \
-                  channels_live.json || true
+                  tv365_playlist.m3u \
+                  tv365_channels.json || true
 
           
           if git diff --staged --quiet; then

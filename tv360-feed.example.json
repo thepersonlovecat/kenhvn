@@ -1,0 +1,7 @@
+{
+  "streams": {
+    "tv3601": "https://example.com/channel-1/index.mpd",
+    "tv3604": "https://example.com/channel-4/index.mpd?temporary=query",
+    "tv3606": "https://example.com/channel-6/index.mpd"
+  }
+}
